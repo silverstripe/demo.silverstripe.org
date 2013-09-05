@@ -39,6 +39,9 @@ class Page_Controller extends ContentController {
 
 	public function init() {
 		parent::init();
+
+		Requirements::css("mysite/css/demo.css");
+		Requirements::css("mysite/css/moduleSupport.css");
 	}
 
 }

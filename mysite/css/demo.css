@@ -1,0 +1,70 @@
+/* SilverStripe Demo specific styles - extension of Simple theme */
+
+#countDown {
+	position: fixed;
+	top: 0;
+	right: 40px;
+	background-color: #666;
+	padding: 3px 8px;
+	color: #FFF;
+	font-size: 11px;
+	z-index: 99999;
+}
+#countDown.warning {
+	background-color: #B80000;
+}
+.typography img {
+	box-shadow: 0 0 2px #666;
+}
+nav.secondary {
+	margin-bottom: 25px;
+}
+
+/* Homepage */
+h1.heroHeading {
+	font-size: 45px;
+	line-height: 45px;
+	color: #B80000;
+	padding-bottom: 20px;
+}
+h1.heroHeading::after {
+	/* content: "V3"; */
+	font-size: 25px;
+	vertical-align: text-top;
+}
+.homeColumn blockquote {
+	width: 100%;
+}
+
+/* Forms */
+a.btn, .button, input[type="submit"], .Actions .action {
+    background: #005b92;
+    border-radius: 0;
+    font-size: 11px;
+    padding: 9px 10px;
+    float: none;
+
+}
+a.btn:hover, .button:hover, input[type="submit"]:hover, .Actions .action:hover {
+    box-shadow: 0 1px 3px #aaa;
+}
+
+/* Widgets */
+.WidgetHolder {
+	margin: 5px 0 20px;
+}
+.WidgetHolder ul {
+	margin-bottom: 0;
+}
+
+/* BREAKPOINT 920px for homepage 600px width video */
+
+/* when changing the breakpoint below, change it ito the same value in the script.js file as well */
+@media only screen and (max-width: 920px) { 
+	.homeColumn {
+	    width: 100%; /* sidenav is now shown above the page content */
+	}
+	.homeColumn iframe {
+		max-width: 100%;
+	}
+}

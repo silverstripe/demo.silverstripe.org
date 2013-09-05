@@ -1,0 +1,66 @@
+/* CORE MODULE SUPPORT FOR SIMPLE THEME
+
+	Blog
+	Forum
+	Userforms
+	Sitemap
+	
+-------------------------------------------- */
+
+/* GENERIC */
+
+/* To replicate .unit, .size3of4 & .lastunit */
+.blogcontent, #BlogContent { 
+	overflow:hidden;
+	*overflow:visible;
+	*zoom:1;
+	padding:0 10px;
+	float:none;
+	width:auto;
+	_position:relative; /* Bug fix for IE6 - Internet Explorer 6 and below wouldn't fail on properties that were prefixed with non-alphanumeric characters. 
+	meaning that anything prefixed with _ wouldn't be picked up by any other browsers */
+	_left:-3px;
+	_margin-right:-3px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box; /* box-sizing:border-box; creates a box-model where 
+	padding and border are NOT added onto the width - they are included in the width, 
+	so a 200px wide element with 20px padding will be 200px, NOT 240px wide */
+	width:75%;
+}
+h2.postTitle + .authorDate {
+	margin-top: -15px;
+	color: #999;
+}
+
+
+/* BLOG SPECIFIC */
+.tagcloud a {
+	padding: 0 4px;
+	line-height: 15px
+	background-color: #FFF;
+	border-radius: 2px;
+	margin-bottom: 3px;
+	display: inline-block;
+}
+	.tagcloud a:hover {
+		border-bottom: none;
+	}
+	.tagcloud a.not-popular {
+		background-color: #FFF;
+	}
+	.tagcloud a.not-very-popular {
+		background-color: #fffcfc;
+	}
+	.tagcloud a.somewhat-popular {
+		background-color: #ffebeb;
+	}
+	.tagcloud a.popular {
+		background-color: #ffdada;
+	}
+	.tagcloud a.very-popular {
+		background-color: #ffc9c9;
+	}
+	.tagcloud a.ultra-popular {
+		background-color: #ffb8b8;
+	}
