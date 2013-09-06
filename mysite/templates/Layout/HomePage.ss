@@ -1,6 +1,6 @@
 <div class="action-buttons Actions">
-	<a url="./admin" class="btn">Log in</a>
-	<a url="http://www.silverstripe.org/stable-download/" class="btn">Download</a>
+	<a href="./admin" class="btn">Log in</a>
+	<a href="http://www.silverstripe.org/stable-download/" class="btn">Download</a>
 </div>
 <div class="unit content-container">
 	<h1 class="heroHeading">$Title</h1>
@@ -15,10 +15,10 @@
 <div class="unit size1of4 lastUnit homeColumn">
 	<h3>Try out the content authoring interface yourself!</h3>
 	<div class="Actions">
-		<a url="./admin" class="btn">Log in to try the CMS</a><br />
+		<a href="./admin" class="btn">Log in to try the CMS</a><br />
 		<a title="Language support" href="./admin/security">Language support</a>
 		<hr />
-		<a url="http://www.silverstripe.org/stable-download/" class="btn">Download SilverStripe</a>
+		<a href="http://www.silverstripe.org/stable-download/" class="btn">Download SilverStripe</a>
 	</div>
 	<p>Visit the SilverStripe community on <a href="http://www.silverstripe.org/">silverstripe.org</a></p>
 	<hr />
