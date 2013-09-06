@@ -14,6 +14,9 @@ MySQLDatabase::set_connection_charset('utf8');
 // http://www.silverstripe.org/themes/
 SSViewer::set_theme('simple');
 
+// Disable BasicAuth by default
+BasicAuth::protect_entire_site(false);
+
 // Set the site locale
 i18n::set_locale('en_US');
 
