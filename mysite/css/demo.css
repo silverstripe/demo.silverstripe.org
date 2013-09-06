@@ -36,18 +36,35 @@ h1.heroHeading::after {
 	width: 100%;
 }
 
+/* Homepage buttons */
+.action-buttons {
+	display: none;
+	position: fixed;
+	top: 31px;
+	right: 31px;
+}
+.Actions.action-buttons a.btn {
+	margin-top: 0;
+	padding: 3px 9px;
+}
+
 /* Forms */
-.homeColumn .Actions .action {
+.homeColumn .Actions {
+	margin-bottom: 0;
+}
+.Actions a.btn {
     background: #005b92;
     border-radius: 0;
     font-size: 11px;
     padding: 9px 10px;
     float: none;
+    box-shadow: 0 1px 3px #fff;
 }
-.homeColumn .Actions .action:hover {
+.Actions a.btn:hover {
     box-shadow: 0 1px 3px #aaa;
+    border: none;
 }
-.homeColumn .Actions:after {
+.Actions a.btn:after {
 	content: none;
 }
 
@@ -63,10 +80,17 @@ h1.heroHeading::after {
 
 /* when changing the breakpoint below, change it ito the same value in the script.js file as well */
 @media only screen and (max-width: 920px) { 
-	.homeColumn {
-	    width: 100%; /* sidenav is now shown above the page content */
+	.action-buttons {
+		display: block;
+	}
+	.unit.size3of4 {
+	    width: 100%; 
+	}
+	.unit.content-container {
+		margin-bottom: 0;
 	}
 	.homeColumn iframe {
 		max-width: 100%;
 	}
+
 }
