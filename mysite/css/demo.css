@@ -32,21 +32,23 @@ h1.heroHeading::after {
 	font-size: 25px;
 	vertical-align: text-top;
 }
-.homeColumn blockquote {
+.typography .homeColumn blockquote {
 	width: 100%;
 }
 
 /* Forms */
-a.btn, .button, input[type="submit"], .Actions .action {
+.homeColumn .Actions .action {
     background: #005b92;
     border-radius: 0;
     font-size: 11px;
     padding: 9px 10px;
     float: none;
-
 }
-a.btn:hover, .button:hover, input[type="submit"]:hover, .Actions .action:hover {
+.homeColumn .Actions .action:hover {
     box-shadow: 0 1px 3px #aaa;
+}
+.homeColumn .Actions:after {
+	content: none;
 }
 
 /* Widgets */
