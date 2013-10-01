@@ -1,6 +1,6 @@
 {
-	"name": "silverstripe/installer",
-	"description": "The SilverStripe Framework Installer",
+	"name": "silverstripe/demo.silverstripe.org",
+	"description": "Demo SilverStripe Project",
 	"require": {
 		"php": ">=5.3.2",
 		"silverstripe/cms": "3.1.x-dev",
@@ -10,12 +10,6 @@
 		"silverstripe/forum": "dev-master",
 		"silverstripe/userforms": "dev-master",
 		"silverstripe/widgets": "dev-master"
-	},
-	"require-dev": {
-		"silverstripe/docsviewer": "*",
-		"silverstripe/behat-extension": "*",
-		"silverstripe/buildtools": "*",
-		"phpunit/phpunit": "3.7.*"
 	},
 	"config": {
 		"process-timeout": 600	
