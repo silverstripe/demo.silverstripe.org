@@ -1,0 +1,83 @@
+#demobar {
+	height: 50px;
+	background: #d6e4df url(../images/bar-bg.gif) repeat-x left top;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1200;
+	border-bottom: 1px solid #eff7f4;
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 2px #bfd5cf;
+	behavior: url(ss2demo/css/PIE.htc);
+}
+	#demobar-container {
+		width: 800px;
+		margin: 0 auto;
+	}
+		#demobar-logo {
+			display: block;
+			width: 150px;
+			height: 22px;
+			margin-top: 14px;
+			background: url(../images/bar-logo.gif) no-repeat left top;
+			text-indent: -9000px;
+			float: left;
+		}
+
+		#demobar-loginbutton {
+			float: right;
+			margin-top: 8px;
+		}
+			#demobar-loginbutton a {
+				display: block;
+				text-decoration: none;
+				font: 11px/1.5 "Lucida Grande", Helvetica, Arial, sans-serif;
+				color: #fff;
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				-moz-box-shadow: 0 0 3px #7b8089;
+				-webkit-box-shadow: 0 0 3px #7b8089;
+				border-radius: 20px;
+				box-shadow: 0 0 3px #7b8089;
+				text-shadow: 0 -1px #006b95;
+				padding: 4px 16px;
+				font-weight: bold;
+				line-height: 24px;
+				border: 1px solid #1b84b7;
+				behavior: url(ss2demo/css/PIE.htc);
+				background: #188fc8;
+				background: -webkit-gradient(linear, left top, left bottom, from(#22a7e7), to(#0f77aa));
+				background: -moz-linear-gradient(top,  #22a7e7,  #0f77aa);
+				-pie-background: linear-gradient(#22a7e7, #0f77aa);
+			}
+				#demobar-loginbutton a:hover {
+					background: #22a7e7;
+					background: -webkit-gradient(linear, left top, left bottom, from(#38afe8), to(#1b84b7));
+					background: -moz-linear-gradient(top,  #38afe8,  #1b84b7);
+					-pie-background: linear-gradient(#38afe8, #1b84b7);
+					outline: none;
+				}
+
+				#demobar-loginbutton a:focus {
+					background: #136d99;
+					background: -webkit-gradient(linear, left top, left bottom, from(#136d99), to(#1b84b7));
+					background: -moz-linear-gradient(top,  #136d99,  #22a7e7);
+					-pie-background: linear-gradient(#136d99, #22a7e7);
+					outline: none;
+				}
+
+		#demobar-information {
+			float: right;
+			padding: 15px 20px 0 0;
+		}
+			#demobar-information a {
+				color: #5b706a;
+				border: none;
+				text-decoration: underline;
+				font: 11px/1.5 "Lucida Grande", Helvetica, Arial, sans-serif;
+			}
+				#demobar-information a:hover {
+					text-decoration: none;
+				}
