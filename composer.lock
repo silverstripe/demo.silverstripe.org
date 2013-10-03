@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "89358dfe2a5c4a9049a3b2ef30365db3",
+    "hash": "3b1d28d9c3f7b3b61222de8ef9b8c18a",
     "packages": [
         {
             "name": "composer/installers",
@@ -115,47 +115,6 @@
             "time": "2013-05-30 08:36:30"
         },
         {
-            "name": "silverstripe/blog",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-blog.git",
-                "reference": "4f3c258bf4bf6fa56538ef96ae10156d0ffb5455"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-blog/zipball/4f3c258bf4bf6fa56538ef96ae10156d0ffb5455",
-                "reference": "4f3c258bf4bf6fa56538ef96ae10156d0ffb5455",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1"
-            },
-            "suggest": {
-                "silverstripe/comments": "Enable user comments on any page type, including blog posts",
-                "silverstripe/widgets": "Additional 'sidebar features', e.g. a list of recent posts and a tagcloud",
-                "simplepie/simplepie": "Parse RSS feeds, required for the RSS widget"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Saophalkun Ponlu",
-                    "email": "phalkunz@silverstripe.com"
-                },
-                {
-                    "name": "Carlos Barberis",
-                    "email": "carlos@silverstripe.com"
-                }
-            ],
-            "description": "The blog module allows you to post blogs on your SilverStripe. It includes the ability to post blogs using a site front-end form. Blogs are summarised on the blog holder page type, with more detail viewable when a specific blog is clicked.",
-            "keywords": [
-                "blog",
-                "silverstripe"
-            ],
-            "time": "2013-09-02 09:22:03"
-        },
-        {
             "name": "silverstripe/cms",
             "version": "3.1.x-dev",
             "source": {
@@ -203,49 +162,6 @@
             "time": "2013-09-30 23:45:33"
         },
         {
-            "name": "silverstripe/forum",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-forum.git",
-                "reference": "255b60ccc442dc8f93d4275ea54eb0682308ad9b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-forum/zipball/255b60ccc442dc8f93d4275ea54eb0682308ad9b",
-                "reference": "255b60ccc442dc8f93d4275ea54eb0682308ad9b",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Will Rossiter",
-                    "email": "will@fullscreen.io",
-                    "homepage": "http://wilr.github.com"
-                },
-                {
-                    "name": "Sean Harvey",
-                    "email": "sean@silverstripe.com",
-                    "homepage": "http://www.silverstripe.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Forum module for SilverStripe.",
-            "keywords": [
-                "forum",
-                "silverstripe"
-            ],
-            "time": "2013-09-19 07:16:45"
-        },
-        {
             "name": "silverstripe/framework",
             "version": "3.1.x-dev",
             "source": {
@@ -290,79 +206,6 @@
                 "silverstripe"
             ],
             "time": "2013-10-01 00:47:06"
-        },
-        {
-            "name": "silverstripe/userforms",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "d3e4b8a5e8aea388745214ebaa5c61588edf65ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/d3e4b8a5e8aea388745214ebaa5c61588edf65ed",
-                "reference": "d3e4b8a5e8aea388745214ebaa5c61588edf65ed",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Will Rossiter",
-                    "email": "will@fullscreen.io",
-                    "homepage": "http://wilr.github.com"
-                }
-            ],
-            "description": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code",
-            "keywords": [
-                "silverstripe",
-                "userforms"
-            ],
-            "time": "2013-09-07 03:07:22"
-        },
-        {
-            "name": "silverstripe/widgets",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe/silverstripe-widgets.git",
-                "reference": "c8dcbf58cf5339e8716af7add921db3488a303e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-widgets/zipball/c8dcbf58cf5339e8716af7add921db3488a303e8",
-                "reference": "c8dcbf58cf5339e8716af7add921db3488a303e8",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Ingo Schommer",
-                    "email": "ingo@silverstripe.com",
-                    "homepage": "http://chillu.com",
-                    "role": "tech-lead"
-                }
-            ],
-            "description": "Widgets are small pieces of functionality such as showing the latest Comments or Flickr Photos. They normally display on the sidebar of your website.",
-            "keywords": [
-                "blog",
-                "silverstripe",
-                "widgets"
-            ],
-            "time": "2013-08-22 15:05:49"
         }
     ],
     "packages-dev": [
@@ -374,11 +217,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "silverstripe/cms": 20,
-        "silverstripe/framework": 20,
-        "silverstripe/blog": 20,
-        "silverstripe/forum": 20,
-        "silverstripe/userforms": 20,
-        "silverstripe/widgets": 20
+        "silverstripe/framework": 20
     },
     "platform": {
         "php": ">=5.3.2"

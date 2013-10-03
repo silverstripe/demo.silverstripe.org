@@ -5,11 +5,7 @@
 		"php": ">=5.3.2",
 		"silverstripe/cms": "3.1.x-dev",
 		"silverstripe/framework": "3.1.x-dev",
-		"silverstripe-themes/simple": "*",
-		"silverstripe/blog": "dev-master",
-		"silverstripe/forum": "dev-master",
-		"silverstripe/userforms": "dev-master",
-		"silverstripe/widgets": "dev-master"
+		"silverstripe-themes/simple": "*"
 	},
 	"config": {
 		"process-timeout": 600	
