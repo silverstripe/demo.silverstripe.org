@@ -1,10 +1,17 @@
 /* SilverStripe Demo specific styles - extension of Simple theme */
 
+/* Typography */
 .typography img {
 	box-shadow: 0 0 2px #666;
 }
-nav.secondary {
-	margin-bottom: 25px;
+.typography .homeColumn blockquote {
+	width: 100%;
+}
+.typography blockquote cite {
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-indent: 0;
+	display: block;
 }
 
 /* Header */
@@ -25,9 +32,6 @@ h1.heroHeading::after {
 	font-size: 25px;
 	vertical-align: text-top;
 }
-.typography .homeColumn blockquote {
-	width: 100%;
-}
 
 /* Homepage buttons */
 .action-buttons {
@@ -38,6 +42,11 @@ h1.heroHeading::after {
 .Actions.action-buttons a.btn {
 	margin-top: 0;
 	padding: 3px 9px;
+}
+
+/* Nav */
+nav.secondary {
+	margin-bottom: 25px;
 }
 
 /* Forms */
