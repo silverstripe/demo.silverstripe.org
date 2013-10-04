@@ -52,10 +52,8 @@ h1.heroHeading::after {
     padding: 6px 10px;
     margin-top: 0;
     float: none;
-    box-shadow: 0 1px 3px #fff;
 }
 .Actions a.btn:hover {
-    box-shadow: 0 1px 3px #aaa;
     border: none;
 }
 .Actions a.btn:after {
