@@ -2,7 +2,7 @@
 class Page extends SiteTree {
 }
 
-class Page_Controller extends ContentController {
+class Page_Controller extends ContentController implements TemplateGlobalProvider  {
 
 	function init() {
 		parent::init();
@@ -40,6 +40,16 @@ JS
 	 */
 	function Content() {
 		return (Controller::curr() != "Security") ? $this->dbObject('Content') : false;
+	}
+
+	public static function get_template_global_variables() {
+		return array(
+			'Action' => 'nbn',
+		);
+	}
+
+	public static function nbn() {
+		return Controller::curr()->getAction();
 	}
 
 }
