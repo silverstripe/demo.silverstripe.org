@@ -45,18 +45,18 @@ h1.heroHeading::after {
 	margin-bottom: 0;
 }
 .Actions a.btn {
-    background: #b80000;
+    background: #005b92;
     color: #fff;
     border-radius: 0;
     font-size: 11px;
-    padding: 9px 10px;
+    padding: 6px 10px;
+    margin-top: 0;
     float: none;
     box-shadow: 0 1px 3px #fff;
 }
 .Actions a.btn:hover {
     box-shadow: 0 1px 3px #aaa;
     border: none;
-    background-color: #d80000;
 }
 .Actions a.btn:after {
 	content: none;
@@ -70,13 +70,23 @@ h1.heroHeading::after {
 	margin-bottom: 0;
 }
 
+/* BREAKPOINT 960px */
+
+@media only screen and (max-width: 960px) {
+	.content img {
+	    max-width: 97%;
+	    height: auto;
+	}
+	.header .primary ul {
+	    margin-left: -12px;
+	    -webkit-padding-start: 0px; /* removes default webkit padding on ul items */
+	}
+}
+
 /* BREAKPOINT 920px for homepage 600px width video */
 
 /* when changing the breakpoint below, change it ito the same value in the script.js file as well */
 @media only screen and (max-width: 920px) { 
-	.unit.size3of4 {
-	    width: 100%; 
-	}
 	.tablet-nav .header .inner {
 		padding-top: 35px;
 	}
