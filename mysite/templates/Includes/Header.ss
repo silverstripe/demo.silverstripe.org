@@ -1,6 +1,3 @@
-<div id="countDown">
-	This demo is due to refresh in <span>59:99</span>
-</div>
 <header class="header" role="banner">
 	<div class="inner">
 		<div class="unit size4of4 lastUnit">
@@ -20,3 +17,7 @@
 		</div>
 	</div>
 </header>
+<div class="action-buttons Actions">
+	<a href="./admin" class="btn">Log in</a>
+	<a href="http://www.silverstripe.org/stable-download/" class="btn">Download</a>
+</div>

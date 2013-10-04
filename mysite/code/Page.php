@@ -14,8 +14,8 @@ class Page_Controller extends ContentController {
 
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
 
-		Requirements::javascriptTemplate('mysite/javascript/demobar.js', array());
-		Requirements::css('mysite/css/demobar.css');
+		Requirements::css('mysite/css/demo.css');
+		Requirements::css('mysite/css/moduleSupport.css');
 
 		Requirements::customScript(<<<JS
 var _gaq = _gaq || [];

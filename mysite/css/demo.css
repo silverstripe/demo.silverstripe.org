@@ -1,23 +1,16 @@
 /* SilverStripe Demo specific styles - extension of Simple theme */
 
-#countDown {
-	position: fixed;
-	top: 0;
-	right: 40px;
-	background-color: #666;
-	padding: 3px 8px;
-	color: #FFF;
-	font-size: 11px;
-	z-index: 99999;
-}
-#countDown.warning {
-	background-color: #B80000;
-}
 .typography img {
 	box-shadow: 0 0 2px #666;
 }
 nav.secondary {
 	margin-bottom: 25px;
+}
+
+/* Header */
+.header .inner,
+.tablet-nav .header .inner {
+	padding-top: 35px;
 }
 
 /* Homepage */
@@ -38,9 +31,8 @@ h1.heroHeading::after {
 
 /* Homepage buttons */
 .action-buttons {
-	display: none;
 	position: fixed;
-	top: 31px;
+	top: 0;
 	right: 31px;
 }
 .Actions.action-buttons a.btn {
@@ -53,7 +45,8 @@ h1.heroHeading::after {
 	margin-bottom: 0;
 }
 .Actions a.btn {
-    background: #005b92;
+    background: #b80000;
+    color: #fff;
     border-radius: 0;
     font-size: 11px;
     padding: 9px 10px;
@@ -63,6 +56,7 @@ h1.heroHeading::after {
 .Actions a.btn:hover {
     box-shadow: 0 1px 3px #aaa;
     border: none;
+    background-color: #d80000;
 }
 .Actions a.btn:after {
 	content: none;
@@ -80,11 +74,11 @@ h1.heroHeading::after {
 
 /* when changing the breakpoint below, change it ito the same value in the script.js file as well */
 @media only screen and (max-width: 920px) { 
-	.action-buttons {
-		display: block;
-	}
 	.unit.size3of4 {
 	    width: 100%; 
+	}
+	.tablet-nav .header .inner {
+		padding-top: 35px;
 	}
 	.unit.content-container {
 		margin-bottom: 0;
