@@ -31,7 +31,7 @@ class DemoResetTask extends BuildTask {
 		echo "</pre>";
 		echo "Running dev/build...\n<br>";
 		echo "<pre>";
-		echo htmlentities(`nice -n 5 ./framework/sake dev/build`);
+		echo htmlentities(`nice -n 5 php ./framework/cli-script.php dev/build`);
 		echo "</pre>";
 		echo "Done!\n";
 	}}
