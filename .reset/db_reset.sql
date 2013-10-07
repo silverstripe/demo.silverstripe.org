@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.1.68)
 # Database: ss_ss3demo
-# Generation Time: 2013-10-07 13:56:20 +0000
+# Generation Time: 2013-10-07 21:01:19 +0000
 # ************************************************************
 
 
@@ -18,110 +18,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table _obsolete_Page
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `_obsolete_Page`;
-
-CREATE TABLE `_obsolete_Page` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `_obsolete_Page` WRITE;
-/*!40000 ALTER TABLE `_obsolete_Page` DISABLE KEYS */;
-
-INSERT INTO `_obsolete_Page` (`ID`, `MyWidgetAreaID`)
-VALUES
-	(1,0),
-	(2,0),
-	(3,0),
-	(5,0),
-	(6,0),
-	(7,0),
-	(8,0),
-	(9,0),
-	(7210,0),
-	(7211,0),
-	(7212,0),
-	(4,1),
-	(7209,90);
-
-/*!40000 ALTER TABLE `_obsolete_Page` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table _obsolete_Page_Live
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `_obsolete_Page_Live`;
-
-CREATE TABLE `_obsolete_Page_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `_obsolete_Page_Live` WRITE;
-/*!40000 ALTER TABLE `_obsolete_Page_Live` DISABLE KEYS */;
-
-INSERT INTO `_obsolete_Page_Live` (`ID`, `MyWidgetAreaID`)
-VALUES
-	(1,0),
-	(2,0),
-	(3,0),
-	(5,0),
-	(6,0),
-	(7,0),
-	(8,0),
-	(9,0),
-	(7210,0),
-	(7211,0),
-	(7212,0),
-	(4,1),
-	(7209,90);
-
-/*!40000 ALTER TABLE `_obsolete_Page_Live` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table _obsolete_Page_versions
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `_obsolete_Page_versions`;
-
-CREATE TABLE `_obsolete_Page_versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT '0',
-  `Version` int(11) NOT NULL DEFAULT '0',
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `_obsolete_Page_versions` WRITE;
-/*!40000 ALTER TABLE `_obsolete_Page_versions` DISABLE KEYS */;
-
-INSERT INTO `_obsolete_Page_versions` (`ID`, `RecordID`, `Version`, `MyWidgetAreaID`)
-VALUES
-	(11,7209,1,0),
-	(12,7209,2,90),
-	(13,7210,1,0),
-	(14,7211,1,0),
-	(15,7212,1,0),
-	(16,7210,2,0),
-	(17,7212,2,0);
-
-/*!40000 ALTER TABLE `_obsolete_Page_versions` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table ErrorPage
@@ -214,7 +110,7 @@ DROP TABLE IF EXISTS `File`;
 
 CREATE TABLE `File` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('File','Folder','Image','Image_Cached','Post_Attachment') CHARACTER SET utf8 DEFAULT 'File',
+  `ClassName` enum('File','Folder','Image','Image_Cached') CHARACTER SET utf8 DEFAULT 'File',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `Name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -443,6 +339,50 @@ CREATE TABLE `Group_Subsites` (
 
 
 
+# Dump of table HomePage
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `HomePage`;
+
+CREATE TABLE `HomePage` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RightContent` mediumtext,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table HomePage_Live
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `HomePage_Live`;
+
+CREATE TABLE `HomePage_Live` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RightContent` mediumtext,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table HomePage_versions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `HomePage_versions`;
+
+CREATE TABLE `HomePage_versions` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RecordID` int(11) NOT NULL DEFAULT '0',
+  `Version` int(11) NOT NULL DEFAULT '0',
+  `RightContent` mediumtext,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+  KEY `RecordID` (`RecordID`),
+  KEY `Version` (`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table LoginAttempt
 # ------------------------------------------------------------
 
@@ -620,110 +560,6 @@ VALUES
 	(8,'MemberPassword','2013-10-06 20:40:54','2013-10-06 20:40:54','923f940b7583a9c9ce243f269b74d05e455acf42','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','sha1_v2.4',499);
 
 /*!40000 ALTER TABLE `MemberPassword` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table Page
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `Page`;
-
-CREATE TABLE `Page` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `Page` WRITE;
-/*!40000 ALTER TABLE `Page` DISABLE KEYS */;
-
-INSERT INTO `Page` (`ID`, `MyWidgetAreaID`)
-VALUES
-	(1,0),
-	(2,0),
-	(3,0),
-	(5,0),
-	(6,0),
-	(7,0),
-	(8,0),
-	(9,0),
-	(7210,0),
-	(7211,0),
-	(7212,0),
-	(4,1),
-	(7209,90);
-
-/*!40000 ALTER TABLE `Page` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table Page_Live
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `Page_Live`;
-
-CREATE TABLE `Page_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `Page_Live` WRITE;
-/*!40000 ALTER TABLE `Page_Live` DISABLE KEYS */;
-
-INSERT INTO `Page_Live` (`ID`, `MyWidgetAreaID`)
-VALUES
-	(1,0),
-	(2,0),
-	(3,0),
-	(5,0),
-	(6,0),
-	(7,0),
-	(8,0),
-	(9,0),
-	(7210,0),
-	(7211,0),
-	(7212,0),
-	(4,1),
-	(7209,90);
-
-/*!40000 ALTER TABLE `Page_Live` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table Page_versions
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `Page_versions`;
-
-CREATE TABLE `Page_versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT '0',
-  `Version` int(11) NOT NULL DEFAULT '0',
-  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `Page_versions` WRITE;
-/*!40000 ALTER TABLE `Page_versions` DISABLE KEYS */;
-
-INSERT INTO `Page_versions` (`ID`, `RecordID`, `Version`, `MyWidgetAreaID`)
-VALUES
-	(11,7209,1,0),
-	(12,7209,2,90),
-	(13,7210,1,0),
-	(14,7211,1,0),
-	(15,7212,1,0),
-	(16,7210,2,0),
-	(17,7212,2,0);
-
-/*!40000 ALTER TABLE `Page_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -1045,7 +881,7 @@ DROP TABLE IF EXISTS `SiteTree`;
 
 CREATE TABLE `SiteTree` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('Page','BasicFieldsTestPage','GridFieldTestPage','LegacyTableFieldsTestPage','RelationFieldsTestPage','TestFileUploadPage','ErrorPage','RedirectorPage','SiteTree','BlogEntry','BlogTree','BlogHolder','HomePage','VirtualPage','Forum','ForumHolder','UserDefinedForm') CHARACTER SET utf8 DEFAULT 'Page',
+  `ClassName` enum('Page','ErrorPage','RedirectorPage','SiteTree','HomePage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -1760,7 +1596,7 @@ DROP TABLE IF EXISTS `SiteTree_Live`;
 
 CREATE TABLE `SiteTree_Live` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('Page','BasicFieldsTestPage','GridFieldTestPage','LegacyTableFieldsTestPage','RelationFieldsTestPage','TestFileUploadPage','ErrorPage','RedirectorPage','SiteTree','BlogEntry','BlogTree','BlogHolder','HomePage','VirtualPage','Forum','ForumHolder','UserDefinedForm') CHARACTER SET utf8 DEFAULT 'Page',
+  `ClassName` enum('Page','ErrorPage','RedirectorPage','SiteTree','HomePage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -1828,7 +1664,7 @@ VALUES
 	(6677,'Page','2012-05-25 10:11:31','2012-06-29 13:50:28','drop-images','Drop images',NULL,'<p>Uploading images is easier; just drag them into the insert image window from your desktop.</p>\n<p><img class=\"left\" title=\"\" src=\"assets/Uploads/_resampled/resizedimage600424-Screen-Shot-2012-05-25-at-10.41.34-AM2.png\" alt=\"Drag drop image demo\" height=\"424\" width=\"600\"/></p>','Drop images',NULL,NULL,1,1,NULL,0,3,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,6,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(4302,'Page','2007-11-20 12:56:41','2012-05-25 11:46:50','drag-and-drop-sitemap','Drag & drop sitemap',NULL,'<h2 style=\"text-align: left;\">The pages and files that make up the site tree of a SilverStripe website can be reshuffled by dragging and dropping them around.</h2>\n<p style=\"text-align: left;\">This makes re-arranging your site a fun and fast activity<em>.</em></p>\n<p style=\"text-align: left;\"><em><img class=\"left\" title=\"\" src=\"assets/Uploads/screenshot-dragdropsitemap.png\" alt=\"screenshot dragdrop sitemap\" height=\"298\" width=\"256\"/></em></p>\n<p><em> </em></p>\n<p> </p>\n<p> </p>\n<p> </p>','Drag & drop',NULL,NULL,1,1,NULL,0,2,NULL,0,0,'Published',NULL,'Anyone','LoggedInUsers',1,1,102,36,0.9,NULL,NULL,'Anyone','LoggedInUsers','en_US',0,0,0),
 	(6670,'ErrorPage','2010-08-19 12:31:00','2012-05-21 19:34:28','server-error','Server error',NULL,'<p>Sorry, there was a problem with handling your request.</p>',NULL,NULL,NULL,0,0,NULL,0,6,NULL,0,0,'New page',NULL,'Anyone','LoggedInUsers',0,0,0,2,NULL,NULL,NULL,'Inherit','Inherit','en_US',0,0,0),
-	(6673,'GridFieldTestPage','2012-05-24 17:33:58','2012-08-29 10:02:20','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,24,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(6673,'','2012-05-24 17:33:58','2012-08-29 10:02:20','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,24,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(6672,'Page','2012-05-24 17:32:21','2012-06-29 13:49:09','media-insertion','Media insertion',NULL,'<p>You can insert media from a variety of sites into your page, thanks to the magic of oEmbed! Just click the \"insert media\" button (it looks like a picture of a tree) and enter the URL of your video (youtube, vimeo), photo (flickr, or URL), or presentation (slideshare).</p>\n<p><img class=\"left\" title=\"\" src=\"assets/Uploads/_resampled/resizedimage600327-media-inserter.png\" alt=\"media inserter demo\" height=\"327\" width=\"600\"/></p>\n<p>Example embedded of video:</p>\n<div class=\"captionImage center\" style=\"width: 600px;\">[embed width=600 height=337 class=center thumbnail=http://b.vimeocdn.com/ts/103/759/103759717_640.jpg?r]http://vimeo.com/16842606[/embed]\n<p class=\"caption\">You can also embed SlideShare presentations.</p>\n<p class=\"caption\">[embed width=425 height=355 class=left thumbnail=http://www.slideshare.net/silverstripe/silverstripe-participates-in-gsoc-2012?r]http://www.slideshare.net/silverstripe/silverstripe-participates-in-gsoc-2012[/embed]</p>\n</div>','Media insertion',NULL,NULL,1,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,15,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(6679,'Page','2012-05-25 11:31:30','2012-05-25 11:55:57','easy-page-editing','Easy page editing',NULL,'<p>It\'s easy to locate a page to edit, and a rich-text editor makes content updating very easy. Adding pages, links, images, and videos can all be done from your web browser without technical or HTML knowledge.</p>\n<p>A site can have any number of page <em>types</em>, each with their own editable fields, templates, and behaviour. A developer can invent new types of fields and behaviour both in the CMS and for the public-facing website. This enables both the CMS and the website to be perfectly tailored to suit requirements.</p>\n<p>The notion of a Draft and Published site enables you to save and preview your changes before the public see it.</p>\n<p><img class=\"left\" title=\"\" src=\"assets/Uploads/_resampled/resizedimage600421-screenshot-3-general.png\" alt=\"screenshot 3 general\" height=\"421\" width=\"600\"/></p>\n<p> </p>','Easy page editing',NULL,NULL,1,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,102,5,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(6678,'Page','2012-05-25 10:58:19','2012-08-29 10:17:37','styles','Styles',NULL,'<p>Pages of your website should be typographically consistent. Content authors can choose from a list of styles by a designer (in a CSS file). Removing the option for content authors to chose font colours and faces produces better professionalism of the website, and makes the editing interface simpler. It also means you can later change the visual apperance or theme of your website without altering your written content.</p>\n<h1>Heading One</h1>\n<h2>Heading Two</h2>\n<h3>Heading Three</h3>\n<p>Normal text, <a href=\"[sitetree_link,id=86]\">hyperlinks</a>, <strong>bold</strong>, and <em>italics</em>.</p>\n<blockquote>\n<p>Quote. Quote. Quote.</p>\n</blockquote>\n<p>You can insert symbols © and SilverStripe supports characters from languages across the globe. ÄÃ¨Ã­Ã¸Ã¼.</p>\n<ul><li>Bullet One</li>\n<li>Bullet Two</li>\n<li>Bullet Three</li>\n</ul>','Styles',NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,102,5,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
@@ -2362,7 +2198,7 @@ CREATE TABLE `SiteTree_versions` (
   `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `AuthorID` int(11) NOT NULL DEFAULT '0',
   `PublisherID` int(11) NOT NULL DEFAULT '0',
-  `ClassName` enum('Page','BasicFieldsTestPage','GridFieldTestPage','LegacyTableFieldsTestPage','RelationFieldsTestPage','TestFileUploadPage','ErrorPage','RedirectorPage','SiteTree','BlogEntry','BlogTree','BlogHolder','HomePage','VirtualPage','Forum','ForumHolder','UserDefinedForm') CHARACTER SET utf8 DEFAULT 'Page',
+  `ClassName` enum('Page','ErrorPage','RedirectorPage','SiteTree','HomePage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -4442,32 +4278,32 @@ VALUES
 	(49470,86,251,1,1,1,'Page','2007-10-01 12:47:24','2012-06-29 13:53:37','home','Try the Silverstripe CMS Demo','Home','<div id=\"Thanks\">\n<p style=\"text-align: left;\">Welcome to the public demo of SilverStripe 3. Please browse around.</p>\n<p style=\"text-align: left;\"><a href=\"admin/\">Try out the content authoring interface</a> by logging in with \'admin\' and \'password\'.</p>\n<p style=\"text-align: left;\"> </p>\n<p style=\"text-align: left;\">[embed width=600 height=337 class=left thumbnail=http://b.vimeocdn.com/ts/312/000/312000748_1280.jpg?r]https://vimeo.com/44848958[/embed]</p>\n</div>','Welcome to the SilverStripe Open Source CMS demo','this is my test of this website template...','silverstripe 3, demo, cms, html5, open source content management system, php',1,1,NULL,0,1,NULL,0,0,'Published',NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Anyone','LoggedInUsers','en_US',0,0,0),
 	(49471,6686,8,1,1,1,'RedirectorPage','2012-06-29 08:46:36','2012-06-29 13:55:01','new-features','New Features',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,3,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(49472,6676,13,0,1,0,'Page','2012-05-25 10:09:09','2012-06-29 14:06:03','beautiful-interface','Beautiful interface',NULL,'<p>The first thing you\'ll notice a entirely refreshed content management user interface. Developers will appreciate it is built on HTML5 and jQuery, but content authors will just love that they can do their work more quickly, using a beautiful user interface. </p>\n<p><img class=\"leftAlone\" title=\"\" src=\"assets/Uploads/_resampled/resizedimage750552-Screen-Shot-2012-05-25-at-10.23.44-AM.png\" alt=\"Screen Shot of SS3 Interface\" width=\"750\" height=\"552\"/></p>','New Features',NULL,NULL,1,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6672,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49473,7197,1,1,1,1,'GridFieldTestPage','2012-06-29 15:17:09','2012-06-29 15:17:09','gridfieldtest','GridField Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49473,7197,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','gridfieldtest','GridField Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(49474,7198,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','test',' Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,8,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49475,7199,1,1,1,1,'BasicFieldsTestPage','2012-06-29 15:17:09','2012-06-29 15:17:09','many-cms-fields-available','Many CMS fields available',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,9,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49476,7200,1,1,1,1,'LegacyTableFieldsTestPage','2012-06-29 15:17:09','2012-06-29 15:17:09','legacytablefields-test','LegacyTableFields Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,10,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49477,7201,1,1,1,1,'RelationFieldsTestPage','2012-06-29 15:17:09','2012-06-29 15:17:09','manage-related-data','Manage related data',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,11,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49478,7202,1,1,1,1,'TestFileUploadPage','2012-06-29 15:17:09','2012-06-29 15:17:09','attach-files','Attach files',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,12,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49479,6673,20,1,1,1,'GridFieldTestPage','2012-05-24 17:33:58','2012-06-29 15:54:57','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49475,7199,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','many-cms-fields-available','Many CMS fields available',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,9,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49476,7200,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','legacytablefields-test','LegacyTableFields Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,10,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49477,7201,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','manage-related-data','Manage related data',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,11,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49478,7202,1,1,1,1,'','2012-06-29 15:17:09','2012-06-29 15:17:09','attach-files','Attach files',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,12,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49479,6673,20,1,1,1,'','2012-05-24 17:33:58','2012-06-29 15:54:57','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(49480,7203,1,1,1,1,'','2012-06-29 15:54:57','2012-06-29 15:54:57','test',' Test',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49481,6673,21,0,1,0,'GridFieldTestPage','2012-05-24 17:33:58','2012-06-29 16:13:25','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49482,6673,22,0,1,0,'GridFieldTestPage','2012-05-24 17:33:58','2012-06-29 16:13:25','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49483,6673,23,1,1,1,'GridFieldTestPage','2012-05-24 17:33:58','2012-06-29 16:13:32','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49481,6673,21,0,1,0,'','2012-05-24 17:33:58','2012-06-29 16:13:25','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49482,6673,22,0,1,0,'','2012-05-24 17:33:58','2012-06-29 16:13:25','gridfieldtest','GridField Test',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49483,6673,23,1,1,1,'','2012-05-24 17:33:58','2012-06-29 16:13:32','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,6686,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(49484,7204,1,0,0,0,'Page','2012-08-29 09:55:05','2012-08-29 09:55:05','feature-test-pages','Feature Test Pages',NULL,'A collection of pages for testing various features in the SilverStripe CMS',NULL,NULL,NULL,0,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49485,7205,1,1,0,0,'BasicFieldsTestPage','2012-08-29 09:55:05','2012-08-29 09:55:05','basicfields','BasicFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49486,7205,2,1,0,0,'BasicFieldsTestPage','2012-08-29 09:55:05','2012-08-29 10:02:20','basicfields','BasicFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49487,6673,24,1,0,0,'GridFieldTestPage','2012-05-24 17:33:58','2012-08-29 10:02:20','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49488,7206,1,1,0,0,'LegacyTableFieldsTestPage','2012-08-29 10:02:20','2012-08-29 10:02:20','legacytablefields','LegacyTableFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49489,7207,1,1,0,0,'RelationFieldsTestPage','2012-08-29 10:02:20','2012-08-29 10:02:20','relationfields','RelationFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,6,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49490,7208,1,1,0,0,'TestFileUploadPage','2012-08-29 10:02:20','2012-08-29 10:02:20','testfileuploadpage','TestFileUploadPage',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49485,7205,1,1,0,0,'','2012-08-29 09:55:05','2012-08-29 09:55:05','basicfields','BasicFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49486,7205,2,1,0,0,'','2012-08-29 09:55:05','2012-08-29 10:02:20','basicfields','BasicFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49487,6673,24,1,0,0,'','2012-05-24 17:33:58','2012-08-29 10:02:20','gridfieldtest','GridField',NULL,'<p>A <em>GridField</em> enables you to manage databases and lists of information stored on your website. It provides filtering, searching, adding, editing, importing, and exporting capabilities. A GridField can also manage relationships, such as letting you create a list of companies, and a list of people, and then connecting which people work for which companies.</p>\n<ul><li>A GridField can be added to a page. (E.g. to manage a list of image or text items relating to a particular page.) </li>\n<li>A GridField can be made into a full CMS section, through the use of ModelAdmin. (E.g. to manage a list of items that relate to the website as a whole.)</li>\n<li>A GridField can be displayed as a web page, and can even be made editable publicly as shown below.</li>\n</ul><p>SilverStripe CMS also uses GridField for <a href=\"[sitetree_link,id=6682]\">Listview</a>, Files, and Security features, resulting in a consistent and user friendly interface.</p>',NULL,NULL,NULL,1,1,NULL,0,4,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49488,7206,1,1,0,0,'','2012-08-29 10:02:20','2012-08-29 10:02:20','legacytablefields','LegacyTableFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,5,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49489,7207,1,1,0,0,'','2012-08-29 10:02:20','2012-08-29 10:02:20','relationfields','RelationFields',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,6,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49490,7208,1,1,0,0,'','2012-08-29 10:02:20','2012-08-29 10:02:20','testfileuploadpage','TestFileUploadPage',NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,7,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7204,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
 	(49491,86,252,1,1,1,'Page','2007-10-01 12:47:24','2012-08-29 10:17:37','home','Try the Silverstripe CMS Demo','Home','<div id=\"Thanks\">\n<p style=\"text-align: left;\">Welcome to the public demo of SilverStripe 3. Please browse around.</p>\n<p style=\"text-align: left;\"><a href=\"admin/\">Try out the content authoring interface</a> by logging in with \'admin\' and \'password\'.</p>\n<p>[embed width=600 height=337 class=leftAlone thumbnail=http://b.vimeocdn.com/ts/312/000/312000748_1280.jpg?r=76307]https://vimeo.com/44848958[/embed]</p>\n<p>You can also try the CMS interface in a different language with the following logins:</p>\n<ul><li>German (Username: \"german\", password: \"password\")</li>\n<li>French (Username: \"french\", password: \"password\")</li>\n<li>Spanish (Username: \"spanish\", password: \"password\")</li>\n<li>Chinese (Username: \"chinese\", password: \"password\")</li>\n<li>Te Reo/Māori (Username: \"tereo\", password: \"password\")</li>\n</ul><p>More languages are available in the <a href=\"http://admin/myprofile\">profile settings</a>.</p>\n</div>','Welcome to the SilverStripe Open Source CMS demo','this is my test of this website template...','silverstripe 3, demo, cms, html5, open source content management system, php',1,1,NULL,0,1,NULL,0,0,'Published',NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Anyone','LoggedInUsers','en_US',0,0,0),
-	(49492,7209,1,1,0,0,'BlogHolder','2013-10-01 12:10:37','2013-10-01 12:10:37','blog','Blog',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,8,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49493,7209,2,1,0,0,'BlogHolder','2013-10-01 12:10:37','2013-10-01 12:10:37','blog','Blog',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,8,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49494,7210,1,1,0,0,'BlogEntry','2013-10-01 12:10:37','2013-10-01 12:10:37','sample-blog-entry','SilverStripe blog module successfully installed',NULL,'<p>Congratulations, the SilverStripe blog module has been successfully installed. This blog entry can be safely deleted. You can configure aspects of your blog in <a href=\"admin\">the CMS</a>.</p>',NULL,NULL,NULL,0,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7209,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49495,7211,1,1,0,0,'ForumHolder','2013-10-01 12:10:37','2013-10-01 12:10:37','forums','Forums',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default ForumHolder page. You can now add forums.</p>',NULL,NULL,NULL,1,1,NULL,0,9,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49496,7212,1,1,0,0,'Forum','2013-10-01 12:10:37','2013-10-01 12:10:37','general-discussion','General Discussion',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default Forum page. You can now add topics.</p>',NULL,NULL,NULL,1,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7211,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49497,7210,2,0,1,0,'BlogEntry','2013-10-01 12:10:37','2013-10-01 12:29:53','sample-blog-entry','SilverStripe blog module successfully installed',NULL,'<p>Congratulations, the SilverStripe blog module has been successfully installed. This blog entry can be safely deleted. You can configure aspects of your blog in <a href=\"admin\">the CMS</a>.</p>',NULL,NULL,NULL,0,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7209,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
-	(49498,7212,2,0,1,0,'Forum','2013-10-01 12:10:37','2013-10-01 12:29:53','general-discussion','General Discussion',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default Forum page. You can now add topics.</p>',NULL,NULL,NULL,1,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7211,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0);
+	(49492,7209,1,1,0,0,'','2013-10-01 12:10:37','2013-10-01 12:10:37','blog','Blog',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,8,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49493,7209,2,1,0,0,'','2013-10-01 12:10:37','2013-10-01 12:10:37','blog','Blog',NULL,NULL,NULL,NULL,NULL,1,1,NULL,0,8,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49494,7210,1,1,0,0,'','2013-10-01 12:10:37','2013-10-01 12:10:37','sample-blog-entry','SilverStripe blog module successfully installed',NULL,'<p>Congratulations, the SilverStripe blog module has been successfully installed. This blog entry can be safely deleted. You can configure aspects of your blog in <a href=\"admin\">the CMS</a>.</p>',NULL,NULL,NULL,0,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7209,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49495,7211,1,1,0,0,'','2013-10-01 12:10:37','2013-10-01 12:10:37','forums','Forums',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default ForumHolder page. You can now add forums.</p>',NULL,NULL,NULL,1,1,NULL,0,9,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,0,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49496,7212,1,1,0,0,'','2013-10-01 12:10:37','2013-10-01 12:10:37','general-discussion','General Discussion',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default Forum page. You can now add topics.</p>',NULL,NULL,NULL,1,1,NULL,0,0,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7211,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49497,7210,2,0,1,0,'','2013-10-01 12:10:37','2013-10-01 12:29:53','sample-blog-entry','SilverStripe blog module successfully installed',NULL,'<p>Congratulations, the SilverStripe blog module has been successfully installed. This blog entry can be safely deleted. You can configure aspects of your blog in <a href=\"admin\">the CMS</a>.</p>',NULL,NULL,NULL,0,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7209,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0),
+	(49498,7212,2,0,1,0,'','2013-10-01 12:10:37','2013-10-01 12:29:53','general-discussion','General Discussion',NULL,'<p>Welcome to SilverStripe Forum Module! This is the default Forum page. You can now add topics.</p>',NULL,NULL,NULL,1,1,NULL,0,1,NULL,0,0,NULL,NULL,'Anyone','LoggedInUsers',0,0,7211,NULL,NULL,NULL,'Inherit','Inherit',NULL,0,0,0);
 
 /*!40000 ALTER TABLE `SiteTree_versions` ENABLE KEYS */;
 UNLOCK TABLES;
