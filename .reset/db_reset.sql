@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.1.68)
 # Database: ss_ss3demo
-# Generation Time: 2013-10-03 20:33:06 +0000
+# Generation Time: 2013-10-07 13:56:20 +0000
 # ************************************************************
 
 
@@ -18,6 +18,110 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table _obsolete_Page
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `_obsolete_Page`;
+
+CREATE TABLE `_obsolete_Page` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `_obsolete_Page` WRITE;
+/*!40000 ALTER TABLE `_obsolete_Page` DISABLE KEYS */;
+
+INSERT INTO `_obsolete_Page` (`ID`, `MyWidgetAreaID`)
+VALUES
+	(1,0),
+	(2,0),
+	(3,0),
+	(5,0),
+	(6,0),
+	(7,0),
+	(8,0),
+	(9,0),
+	(7210,0),
+	(7211,0),
+	(7212,0),
+	(4,1),
+	(7209,90);
+
+/*!40000 ALTER TABLE `_obsolete_Page` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table _obsolete_Page_Live
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `_obsolete_Page_Live`;
+
+CREATE TABLE `_obsolete_Page_Live` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `_obsolete_Page_Live` WRITE;
+/*!40000 ALTER TABLE `_obsolete_Page_Live` DISABLE KEYS */;
+
+INSERT INTO `_obsolete_Page_Live` (`ID`, `MyWidgetAreaID`)
+VALUES
+	(1,0),
+	(2,0),
+	(3,0),
+	(5,0),
+	(6,0),
+	(7,0),
+	(8,0),
+	(9,0),
+	(7210,0),
+	(7211,0),
+	(7212,0),
+	(4,1),
+	(7209,90);
+
+/*!40000 ALTER TABLE `_obsolete_Page_Live` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table _obsolete_Page_versions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `_obsolete_Page_versions`;
+
+CREATE TABLE `_obsolete_Page_versions` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RecordID` int(11) NOT NULL DEFAULT '0',
+  `Version` int(11) NOT NULL DEFAULT '0',
+  `MyWidgetAreaID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+  KEY `RecordID` (`RecordID`),
+  KEY `Version` (`Version`),
+  KEY `MyWidgetAreaID` (`MyWidgetAreaID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `_obsolete_Page_versions` WRITE;
+/*!40000 ALTER TABLE `_obsolete_Page_versions` DISABLE KEYS */;
+
+INSERT INTO `_obsolete_Page_versions` (`ID`, `RecordID`, `Version`, `MyWidgetAreaID`)
+VALUES
+	(11,7209,1,0),
+	(12,7209,2,90),
+	(13,7210,1,0),
+	(14,7211,1,0),
+	(15,7212,1,0),
+	(16,7210,2,0),
+	(17,7212,2,0);
+
+/*!40000 ALTER TABLE `_obsolete_Page_versions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table ErrorPage
@@ -438,11 +542,11 @@ LOCK TABLES `Member` WRITE;
 INSERT INTO `Member` (`ID`, `ClassName`, `Created`, `LastEdited`, `FirstName`, `Surname`, `Email`, `Password`, `NumVisit`, `LastVisited`, `Bounced`, `AutoLoginHash`, `AutoLoginExpired`, `BlacklistedEmail`, `ForumRank`, `Occupation`, `Country`, `Nickname`, `FirstNamePublic`, `SurnamePublic`, `OccupationPublic`, `CountryPublic`, `EmailPublic`, `LastViewed`, `AvatarID`, `Address`, `AddressLine2`, `City`, `HomePhone`, `MobilePhone`, `Notes`, `RememberLoginToken`, `PasswordEncryption`, `Salt`, `Locale`, `IdentityURL`, `Hash`, `GroupCode`, `PasswordExpiry`, `LockedOutUntil`, `Signature`, `Company`, `CompanyPublic`, `CityPublic`, `FailedLoginCount`, `Street`, `Suburb`, `CityTown`, `DateFormat`, `TimeFormat`, `FavouritePageID`, `AFileID`, `AImageID`, `SuspendedUntil`)
 VALUES
 	(1,'Member','2007-07-12 20:34:51','2013-10-01 12:29:47','Demo','Admin','admin','password',299,'2013-10-03 22:32:00',0,NULL,NULL,0,'Community Member',NULL,'NZ','Sig',0,0,0,0,0,'2010-10-27 12:12:29',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'none','3t4yx0tb94w268kgsso0o0kc40ccggs400wwogw','en_US','http://www.sigurdmagnusson.com/',NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL),
-	(102,'Member','2007-11-20 17:58:27','2010-05-20 15:44:41','French Demo',NULL,'french','7bf3725e500ecdb6d6853fc84c50223bf7c96734',7,'2010-05-20 15:45:02',0,NULL,NULL,0,'Community Member',NULL,'FR','French Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','ffqozvskwsg0sg8kc8g48wooc40wg48gw8gssc','fr_FR',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
-	(302,'Member','2007-11-20 17:59:56','2010-03-30 15:42:39','Spanish Demo',NULL,'spanish','dihm2q5xcfsw0gk4884skswwskgsss8',5,'2010-03-30 16:06:56',0,NULL,NULL,0,'Community Member',NULL,'ES','Spanish Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1','j5qfxbdjbg8wwc48gs8csw8os8cg4ko0gcwgkc','es_ES',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
-	(402,'Member','2007-11-20 18:00:39','2012-08-29 10:18:55','German Demo',NULL,'german','923f940b7583a9c9ce243f269b74d05e455acf42',8,'2012-08-29 10:18:55',0,NULL,NULL,0,'Community Member',NULL,'DE','German Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','de_DE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
-	(403,'Member','2009-07-23 09:57:02','2013-10-01 12:28:51','Chinese Demo',NULL,'chinese','198fba5681acbbe25e9e05e9dbccfe4e7e51f704',9,'2013-10-01 12:28:51',0,NULL,NULL,0,'Community Member',NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'<p></p>',NULL,'sha1_v2.4','4aajta8tur0gcoss0kkks8k08ckg04cskggs8w0','zh_CN',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'yyyy-M-d','ahh:mm:ss',0,0,0,NULL),
-	(499,'Member','2012-08-29 10:12:11','2012-08-29 10:19:04','Te Reo','Demo','tereo','$2y$10$00d0b38b1829820e58bacu5b2r5Ixym2gj7YSOArzVqGUfsVvTOC.',2,'2012-08-29 10:19:04',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'blowfish','10$00d0b38b1829820e58bac6','mi_NZ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL);
+	(102,'Member','2007-11-20 17:58:27','2013-10-07 15:55:20','French Demo',NULL,'french','923f940b7583a9c9ce243f269b74d05e455acf42',8,'2013-10-07 15:55:20',0,NULL,NULL,0,'Community Member',NULL,'FR','French Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','fr_FR',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
+	(302,'Member','2007-11-20 17:59:56','2010-03-30 15:42:39','Spanish Demo',NULL,'spanish','923f940b7583a9c9ce243f269b74d05e455acf42',5,'2010-03-30 16:06:56',0,NULL,NULL,0,'Community Member',NULL,'ES','Spanish Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','es_ES',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
+	(402,'Member','2007-11-20 18:00:39','2013-10-06 20:39:20','German Demo',NULL,'german','923f940b7583a9c9ce243f269b74d05e455acf42',8,'2013-10-06 20:39:20',0,NULL,NULL,0,'Community Member',NULL,'DE','German Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','de_DE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
+	(403,'Member','2009-07-23 09:57:02','2013-10-07 15:55:02','Chinese Demo',NULL,'chinese','923f940b7583a9c9ce243f269b74d05e455acf42',10,'2013-10-07 15:55:02',0,NULL,NULL,0,'Community Member',NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'<p></p>',NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','zh_CN',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'yyyy-M-d','ahh:mm:ss',0,0,0,NULL),
+	(499,'Member','2012-08-29 10:12:11','2013-10-07 15:56:08','Te Reo','Demo','tereo','923f940b7583a9c9ce243f269b74d05e455acf42',4,'2013-10-07 15:56:08',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','mi_NZ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL);
 
 /*!40000 ALTER TABLE `Member` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -512,7 +616,8 @@ VALUES
 	(4,'MemberPassword','2010-04-01 09:46:44','2010-04-01 09:46:44',NULL,NULL,'none',404),
 	(5,'MemberPassword','2010-04-01 12:25:26','2010-04-01 12:25:26',NULL,NULL,'none',405),
 	(6,'MemberPassword','2012-08-29 10:12:11','2012-08-29 10:12:11','$2y$10$00d0b38b1829820e58bacu5b2r5Ixym2gj7YSOArzVqGUfsVvTOC.','10$00d0b38b1829820e58bac6','blowfish',499),
-	(7,'MemberPassword','2012-08-29 10:18:20','2012-08-29 10:18:20','923f940b7583a9c9ce243f269b74d05e455acf42','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','sha1_v2.4',402);
+	(7,'MemberPassword','2012-08-29 10:18:20','2012-08-29 10:18:20','923f940b7583a9c9ce243f269b74d05e455acf42','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','sha1_v2.4',402),
+	(8,'MemberPassword','2013-10-06 20:40:54','2013-10-06 20:40:54','923f940b7583a9c9ce243f269b74d05e455acf42','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','sha1_v2.4',499);
 
 /*!40000 ALTER TABLE `MemberPassword` ENABLE KEYS */;
 UNLOCK TABLES;
