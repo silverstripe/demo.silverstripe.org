@@ -6,8 +6,8 @@
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.1.68)
-# Database: ss_ss3demo
-# Generation Time: 2013-10-07 21:01:19 +0000
+# Database: SS_ss3demo
+# Generation Time: 2013-10-08 23:30:56 +0000
 # ************************************************************
 
 
@@ -290,18 +290,20 @@ LOCK TABLES `Group_Members` WRITE;
 
 INSERT INTO `Group_Members` (`ID`, `GroupID`, `MemberID`)
 VALUES
-	(1503,1,1),
-	(102,2,2),
-	(202,2,3),
-	(302,2,4),
-	(402,2,5),
-	(502,2,6),
-	(1402,1,102),
-	(802,1,202),
-	(1502,1,302),
-	(1302,1,402),
+	(1506,1,499),
 	(1505,1,403),
-	(1506,1,499);
+	(1302,1,402),
+	(1502,1,302),
+	(802,1,202),
+	(1402,1,102),
+	(502,2,6),
+	(402,2,5),
+	(302,2,4),
+	(202,2,3),
+	(102,2,2),
+	(1503,1,1),
+	(1507,1,500),
+	(1508,1,501);
 
 /*!40000 ALTER TABLE `Group_Members` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -481,12 +483,14 @@ LOCK TABLES `Member` WRITE;
 
 INSERT INTO `Member` (`ID`, `ClassName`, `Created`, `LastEdited`, `FirstName`, `Surname`, `Email`, `Password`, `NumVisit`, `LastVisited`, `Bounced`, `AutoLoginHash`, `AutoLoginExpired`, `BlacklistedEmail`, `ForumRank`, `Occupation`, `Country`, `Nickname`, `FirstNamePublic`, `SurnamePublic`, `OccupationPublic`, `CountryPublic`, `EmailPublic`, `LastViewed`, `AvatarID`, `Address`, `AddressLine2`, `City`, `HomePhone`, `MobilePhone`, `Notes`, `RememberLoginToken`, `PasswordEncryption`, `Salt`, `Locale`, `IdentityURL`, `Hash`, `GroupCode`, `PasswordExpiry`, `LockedOutUntil`, `Signature`, `Company`, `CompanyPublic`, `CityPublic`, `FailedLoginCount`, `Street`, `Suburb`, `CityTown`, `DateFormat`, `TimeFormat`, `FavouritePageID`, `AFileID`, `AImageID`, `SuspendedUntil`)
 VALUES
-	(1,'Member','2007-07-12 20:34:51','2013-10-01 12:29:47','Demo','Admin','admin','password',299,'2013-10-03 22:32:00',0,NULL,NULL,0,'Community Member',NULL,'NZ','Sig',0,0,0,0,0,'2010-10-27 12:12:29',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'none','3t4yx0tb94w268kgsso0o0kc40ccggs400wwogw','en_US','http://www.sigurdmagnusson.com/',NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL),
+	(1,'Member','2007-07-12 20:34:51','2013-10-09 12:28:46','Demo','Admin','admin','password',300,'2013-10-09 12:28:50',0,NULL,NULL,0,'Community Member',NULL,'NZ','Sig',0,0,0,0,0,'2010-10-27 12:12:29',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'none','3t4yx0tb94w268kgsso0o0kc40ccggs400wwogw','en_GB','http://www.sigurdmagnusson.com/',NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL),
 	(102,'Member','2007-11-20 17:58:27','2013-10-07 15:55:20','French Demo',NULL,'french','923f940b7583a9c9ce243f269b74d05e455acf42',8,'2013-10-07 15:55:20',0,NULL,NULL,0,'Community Member',NULL,'FR','French Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','fr_FR',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
 	(302,'Member','2007-11-20 17:59:56','2010-03-30 15:42:39','Spanish Demo',NULL,'spanish','923f940b7583a9c9ce243f269b74d05e455acf42',5,'2010-03-30 16:06:56',0,NULL,NULL,0,'Community Member',NULL,'ES','Spanish Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','es_ES',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
 	(402,'Member','2007-11-20 18:00:39','2013-10-06 20:39:20','German Demo',NULL,'german','923f940b7583a9c9ce243f269b74d05e455acf42',8,'2013-10-06 20:39:20',0,NULL,NULL,0,'Community Member',NULL,'DE','German Demo',0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','de_DE',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL),
 	(403,'Member','2009-07-23 09:57:02','2013-10-07 15:55:02','Chinese Demo',NULL,'chinese','923f940b7583a9c9ce243f269b74d05e455acf42',10,'2013-10-07 15:55:02',0,NULL,NULL,0,'Community Member',NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'<p></p>',NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','zh_CN',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'yyyy-M-d','ahh:mm:ss',0,0,0,NULL),
-	(499,'Member','2012-08-29 10:12:11','2013-10-07 15:56:08','Te Reo','Demo','tereo','923f940b7583a9c9ce243f269b74d05e455acf42',4,'2013-10-07 15:56:08',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','mi_NZ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL);
+	(499,'Member','2012-08-29 10:12:11','2013-10-07 15:56:08','Te Reo','Demo','tereo','923f940b7583a9c9ce243f269b74d05e455acf42',4,'2013-10-07 15:56:08',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','mi_NZ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL),
+	(500,'Member','2012-08-29 10:12:11','2013-10-09 12:28:26','Arabic','Demo','arabic','923f940b7583a9c9ce243f269b74d05e455acf42',5,'2013-10-09 12:29:02',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','ar_EG',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL),
+	(501,'Member','2012-08-29 10:12:11','2013-10-07 15:56:08','Russian','Demo','russian','923f940b7583a9c9ce243f269b74d05e455acf42',4,'2013-10-07 15:56:08',0,NULL,NULL,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'sha1_v2.4','1k5cb08hg2jo408go4wgs0kc4k8gscg08gcs0k4','ru_RU',NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,NULL,NULL,NULL,'MMM d, y','h:mm:ss a',0,0,0,NULL);
 
 /*!40000 ALTER TABLE `Member` ENABLE KEYS */;
 UNLOCK TABLES;
