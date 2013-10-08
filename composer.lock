@@ -120,12 +120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "107e4b27134db4968ad632eef5e6fc1a9180d2a5"
+                "reference": "34a0fe3bf12205f0e6f3245d1199f5a284a86aa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/107e4b27134db4968ad632eef5e6fc1a9180d2a5",
-                "reference": "107e4b27134db4968ad632eef5e6fc1a9180d2a5",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/34a0fe3bf12205f0e6f3245d1199f5a284a86aa2",
+                "reference": "34a0fe3bf12205f0e6f3245d1199f5a284a86aa2",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2013-10-07 13:19:18"
+            "time": "2013-10-08 10:20:21"
         },
         {
             "name": "silverstripe/framework",
@@ -167,12 +167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "11fd15c87dba903a5e89528f2971034b284a9161"
+                "reference": "f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/11fd15c87dba903a5e89528f2971034b284a9161",
-                "reference": "11fd15c87dba903a5e89528f2971034b284a9161",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80",
+                "reference": "f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2013-10-07 13:21:56"
+            "time": "2013-10-08 19:28:35"
         }
     ],
     "packages-dev": [
