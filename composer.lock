@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f"
+                "reference": "46085247845046fadfdbf1b3d8ac851fa90a48d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
-                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
+                "url": "https://api.github.com/repos/composer/installers/zipball/46085247845046fadfdbf1b3d8ac851fa90a48d5",
+                "reference": "46085247845046fadfdbf1b3d8ac851fa90a48d5",
                 "shasum": ""
             },
             "replace": {
@@ -76,7 +76,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-08-20 04:37:09"
+            "time": "2013-10-11 03:22:56"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -84,12 +84,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-themes/silverstripe-simple.git",
-                "reference": "fa346339a5237460ad94c6efea66c54b0585501f"
+                "reference": "84c1215f914b8c20f924202a2ace2812f28d6c0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/fa346339a5237460ad94c6efea66c54b0585501f",
-                "reference": "fa346339a5237460ad94c6efea66c54b0585501f",
+                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/84c1215f914b8c20f924202a2ace2812f28d6c0a",
+                "reference": "84c1215f914b8c20f924202a2ace2812f28d6c0a",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                 "silverstripe",
                 "theme"
             ],
-            "time": "2013-05-30 08:36:30"
+            "time": "2013-10-15 22:16:12"
         },
         {
             "name": "silverstripe/cms",
@@ -120,12 +120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "34a0fe3bf12205f0e6f3245d1199f5a284a86aa2"
+                "reference": "aae6b2b2966db9b6b41621a3ce6e8c65337ba2c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/34a0fe3bf12205f0e6f3245d1199f5a284a86aa2",
-                "reference": "34a0fe3bf12205f0e6f3245d1199f5a284a86aa2",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/aae6b2b2966db9b6b41621a3ce6e8c65337ba2c9",
+                "reference": "aae6b2b2966db9b6b41621a3ce6e8c65337ba2c9",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2013-10-08 10:20:21"
+            "time": "2013-10-10 22:27:21"
         },
         {
             "name": "silverstripe/framework",
@@ -167,12 +167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80"
+                "reference": "653d7bc1b73a259bdce9bf62f1fc1ebf28b96766"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80",
-                "reference": "f0ccdeb9fcb1da43c8043bea3f54b8473d5b9d80",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/653d7bc1b73a259bdce9bf62f1fc1ebf28b96766",
+                "reference": "653d7bc1b73a259bdce9bf62f1fc1ebf28b96766",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2013-10-08 19:28:35"
+            "time": "2013-10-15 22:19:32"
         }
     ],
     "packages-dev": [
