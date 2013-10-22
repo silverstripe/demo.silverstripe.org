@@ -2,7 +2,7 @@
 	<article>
 		<h1>$Title</h1>
 		<% if Action = login %>
-			<div class="content">Please login using Username: "admin" and password: "password"</div>
+			<% if CurrentMember %><% else %><div class="content">Please login using username: "admin" and password: "password"</div><% end_if %>
 		<% else %>
 			<div class="content">$Content</div>
 		<% end_if %>
@@ -20,8 +20,11 @@
 			<li>Russian (Username: "russian", password: "password")</li>
 			<li>Spanish (Username: "spanish", password: "password")</li>
 			<li>Te Reo/Māori (Username: "tereo", password: "password")</li>
+			<li>Arabic (Username: "arabic", password: "password")</li>
+			<li>Russian (Username: "russian", password: "password")</li>
+			<li>Japanese (Username: "japanese", password: "password")</li>
 		</ul>
-		<p>More languages are available in the <a href="http://admin/myprofile">profile settings</a>.</p>
+		<p>More languages are available in the <a href="admin/myprofile">profile settings</a>.</p>
 	</div>
 	<% end_if %>
 </div>

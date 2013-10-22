@@ -53,6 +53,9 @@ nav.secondary {
 .homeColumn .Actions {
 	margin-bottom: 0;
 }
+.Actions {
+	overflow: hidden;
+}
 .Actions a.btn {
     background: #005b92;
     color: #fff;
