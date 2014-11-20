@@ -2,7 +2,7 @@
 	<article>
 		<h1>$Title</h1>
 		<% if Action = login %>
-			<% if CurrentMember %><% else %><div class="content">Please login using username: "admin" and password: "password"</div><% end_if %>
+			<% if CurrentMember %><% else %><div class="content">Please login using email "admin" and password: "password"</div><% end_if %>
 		<% else %>
 			<div class="content">$Content</div>
 		<% end_if %>
