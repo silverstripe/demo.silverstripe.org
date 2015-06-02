@@ -1,7 +1,8 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
     "hash": "f30ea71752bf158ae1eef784ae573198",
     "packages": [
@@ -11,20 +12,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c"
+                "reference": "a66f93a541c2214b4865161426b077e2b7d951de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d792632d27e1980d921cbbba12eab7b888338d4c",
-                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c",
+                "url": "https://api.github.com/repos/composer/installers/zipball/a66f93a541c2214b4865161426b077e2b7d951de",
+                "reference": "a66f93a541c2214b4865161426b077e2b7d951de",
                 "shasum": ""
             },
             "replace": {
+                "roundcube/plugin-installer": "*",
                 "shama/baton": "*"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "composer-installer",
             "extra": {
@@ -46,38 +48,58 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
-                    "role": "Developer"
+                    "homepage": "https://github.com/shama"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
-                "TYPO3 CMS",
-                "TYPO3 Flow",
-                "TYPO3 Neos",
+                "Craft",
+                "Dolibarr",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
                 "agl",
+                "aimeos",
+                "annotatecms",
+                "bitrix",
                 "cakephp",
+                "chef",
                 "codeigniter",
                 "concrete5",
+                "croogo",
+                "dokuwiki",
                 "drupal",
+                "elgg",
                 "fuelphp",
+                "grav",
                 "installer",
                 "joomla",
                 "kohana",
                 "laravel",
-                "li3",
                 "lithium",
+                "magento",
                 "mako",
+                "mediawiki",
                 "modulework",
+                "moodle",
                 "phpbb",
+                "piwik",
                 "ppi",
+                "puppet",
+                "roundcube",
+                "shopware",
                 "silverstripe",
                 "symfony",
+                "typo3",
                 "wordpress",
-                "zend"
+                "zend",
+                "zikula"
             ],
-            "time": "2013-10-24 16:13:49"
+            "time": "2015-04-21 19:54:55"
         },
         {
             "name": "mindscape/raygun4php",
@@ -85,16 +107,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MindscapeHQ/raygun4php.git",
-                "reference": "f2ba363cf2537bfc60a65f8c71cc61af0148eea4"
+                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MindscapeHQ/raygun4php/zipball/f2ba363cf2537bfc60a65f8c71cc61af0148eea4",
-                "reference": "f2ba363cf2537bfc60a65f8c71cc61af0148eea4",
+                "url": "https://api.github.com/repos/MindscapeHQ/raygun4php/zipball/c3a04ca69158b99fdd54095250c739a2f47d3294",
+                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
                 "ext-curl": "*"
@@ -124,7 +149,7 @@
                 "logging",
                 "raygun"
             ],
-            "time": "2013-11-03 21:05:16"
+            "time": "2015-04-23 23:34:05"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -132,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-themes/silverstripe-simple.git",
-                "reference": "84c1215f914b8c20f924202a2ace2812f28d6c0a"
+                "reference": "3cf638c170e649b6b122504c8f62d6d8946b853c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/84c1215f914b8c20f924202a2ace2812f28d6c0a",
-                "reference": "84c1215f914b8c20f924202a2ace2812f28d6c0a",
+                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/3cf638c170e649b6b122504c8f62d6d8946b853c",
+                "reference": "3cf638c170e649b6b122504c8f62d6d8946b853c",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +185,7 @@
                 "silverstripe",
                 "theme"
             ],
-            "time": "2013-10-15 22:16:12"
+            "time": "2015-04-09 03:18:37"
         },
         {
             "name": "silverstripe/cms",
@@ -168,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "e444b359ec3f38a29e59a11677ee5228773db228"
+                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/e444b359ec3f38a29e59a11677ee5228773db228",
-                "reference": "e444b359ec3f38a29e59a11677ee5228773db228",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/0557c0d47be849ff0d1693ab387c7ebad9b634e5",
+                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +232,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2013-11-15 13:44:39"
+            "time": "2015-05-14 01:52:21"
         },
         {
             "name": "silverstripe/framework",
@@ -215,17 +240,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "be99d1532bbeab34e797bf100335d49b5aa337f4"
+                "reference": "0f3e62f61312ed4c9447e85e9837b50b29335a47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/be99d1532bbeab34e797bf100335d49b5aa337f4",
-                "reference": "be99d1532bbeab34e797bf100335d49b5aa337f4",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/0f3e62f61312ed4c9447e85e9837b50b29335a47",
+                "reference": "0f3e62f61312ed4c9447e85e9837b50b29335a47",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "*",
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7@stable"
             },
             "type": "silverstripe-module",
             "autoload": {
@@ -253,7 +281,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2013-11-18 20:09:59"
+            "time": "2015-06-02 03:16:48"
         },
         {
             "name": "silverstripe/raygun",
@@ -261,16 +289,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-labs/silverstripe-raygun.git",
-                "reference": "b89b9e06e5b29a20c36bf5bd970d76791f9aed64"
+                "reference": "9a059f22976320b697d2e758a4b0c9ea9d517d7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-raygun/zipball/b89b9e06e5b29a20c36bf5bd970d76791f9aed64",
-                "reference": "b89b9e06e5b29a20c36bf5bd970d76791f9aed64",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-raygun/zipball/9a059f22976320b697d2e758a4b0c9ea9d517d7b",
+                "reference": "9a059f22976320b697d2e758a4b0c9ea9d517d7b",
                 "shasum": ""
             },
             "require": {
-                "mindscape/raygun4php": "*@stable"
+                "mindscape/raygun4php": "*@stable",
+                "silverstripe/framework": ">=2.4.0.0"
             },
             "type": "silverstripe-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -290,25 +319,21 @@
                 "raygun",
                 "silverstripe"
             ],
-            "time": "2013-11-19 23:56:13"
+            "time": "2014-06-21 04:25:28"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "silverstripe/cms": 20,
         "silverstripe/framework": 20,
         "silverstripe/raygun": 20
     },
+    "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.2"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
