@@ -1,7 +1,8 @@
 <?php
+
 class HomePage extends Page {
 
-	static $db = array(
+	private static $db = array(
 		'RightContent' => "HTMLText"
 	);
 
@@ -12,8 +13,5 @@ class HomePage extends Page {
 		
 		return $fields;
 	}
-
-}
-class HomePage_Controller extends Page_Controller {
 
 }

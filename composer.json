@@ -3,8 +3,10 @@
 	"description": "Demo SilverStripe Project",
 	"require": {
 		"php": ">=5.3.2",
-		"silverstripe/cms": "3.1.x-dev",
-		"silverstripe/framework": "3.1.x-dev",
+		"silverstripe/cms": "3.2.0@stable",
+		"silverstripe/framework": "3.2.0@stable",
+		"silverstripe/reports": "3.2.0@stable",
+		"silverstripe/siteconfig": "3.2.0@stable",
 		"silverstripe-themes/simple": "*",
 		"silverstripe/raygun": "*@dev"
 	},

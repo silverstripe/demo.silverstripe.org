@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f30ea71752bf158ae1eef784ae573198",
+    "hash": "8781b3d704eaf5a94f97778049028965",
+    "content-hash": "205d427b4e0435b66344cb7c84f49cf2",
     "packages": [
         {
             "name": "composer/installers",
@@ -12,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "a66f93a541c2214b4865161426b077e2b7d951de"
+                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/a66f93a541c2214b4865161426b077e2b7d951de",
-                "reference": "a66f93a541c2214b4865161426b077e2b7d951de",
+                "url": "https://api.github.com/repos/composer/installers/zipball/e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
+                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
                 "shasum": ""
             },
             "replace": {
@@ -99,7 +100,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-04-21 19:54:55"
+            "time": "2015-06-13 15:30:38"
         },
         {
             "name": "mindscape/raygun4php",
@@ -107,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MindscapeHQ/raygun4php.git",
-                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294"
+                "reference": "466e51bcc4bd773394f4e1001948c49a70396df1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MindscapeHQ/raygun4php/zipball/c3a04ca69158b99fdd54095250c739a2f47d3294",
-                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294",
+                "url": "https://api.github.com/repos/MindscapeHQ/raygun4php/zipball/466e51bcc4bd773394f4e1001948c49a70396df1",
+                "reference": "466e51bcc4bd773394f4e1001948c49a70396df1",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +150,7 @@
                 "logging",
                 "raygun"
             ],
-            "time": "2015-04-23 23:34:05"
+            "time": "2015-06-04 21:52:47"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -157,12 +158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-themes/silverstripe-simple.git",
-                "reference": "3cf638c170e649b6b122504c8f62d6d8946b853c"
+                "reference": "9f471eb4ccff850d91c0120c3a3b59df523776b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/3cf638c170e649b6b122504c8f62d6d8946b853c",
-                "reference": "3cf638c170e649b6b122504c8f62d6d8946b853c",
+                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/9f471eb4ccff850d91c0120c3a3b59df523776b7",
+                "reference": "9f471eb4ccff850d91c0120c3a3b59df523776b7",
                 "shasum": ""
             },
             "require": {
@@ -185,26 +186,28 @@
                 "silverstripe",
                 "theme"
             ],
-            "time": "2015-04-09 03:18:37"
+            "time": "2015-08-16 23:26:45"
         },
         {
             "name": "silverstripe/cms",
-            "version": "3.1.x-dev",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5"
+                "reference": "d8915115f837633fb9183bbd66b05a2238606e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/0557c0d47be849ff0d1693ab387c7ebad9b634e5",
-                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/d8915115f837633fb9183bbd66b05a2238606e19",
+                "reference": "d8915115f837633fb9183bbd66b05a2238606e19",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "*",
-                "php": ">=5.3.2",
-                "silverstripe/framework": "3.1.*"
+                "php": ">=5.3.3",
+                "silverstripe/framework": "~3.2",
+                "silverstripe/reports": "~3.2",
+                "silverstripe/siteconfig": "~3.2"
             },
             "type": "silverstripe-module",
             "autoload": {
@@ -232,28 +235,28 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2015-05-14 01:52:21"
+            "time": "2015-10-06 05:33:16"
         },
         {
             "name": "silverstripe/framework",
-            "version": "3.1.x-dev",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "0f3e62f61312ed4c9447e85e9837b50b29335a47"
+                "reference": "0092792568fb8a33674669aa200c7c81b163a365"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/0f3e62f61312ed4c9447e85e9837b50b29335a47",
-                "reference": "0f3e62f61312ed4c9447e85e9837b50b29335a47",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/0092792568fb8a33674669aa200c7c81b163a365",
+                "reference": "0092792568fb8a33674669aa200c7c81b163a365",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "*",
-                "php": ">=5.3.2"
+                "composer/installers": "~1.0",
+                "php": ">=5.3.3,<7"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7@stable"
+                "phpunit/phpunit": "~3.7"
             },
             "type": "silverstripe-module",
             "autoload": {
@@ -281,7 +284,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2015-06-02 03:16:48"
+            "time": "2015-10-11 19:44:34"
         },
         {
             "name": "silverstripe/raygun",
@@ -289,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-labs/silverstripe-raygun.git",
-                "reference": "9a059f22976320b697d2e758a4b0c9ea9d517d7b"
+                "reference": "843682bb4110fd852748b85bb5c5d9a9503f2941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-raygun/zipball/9a059f22976320b697d2e758a4b0c9ea9d517d7b",
-                "reference": "9a059f22976320b697d2e758a4b0c9ea9d517d7b",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-raygun/zipball/843682bb4110fd852748b85bb5c5d9a9503f2941",
+                "reference": "843682bb4110fd852748b85bb5c5d9a9503f2941",
                 "shasum": ""
             },
             "require": {
@@ -319,15 +322,100 @@
                 "raygun",
                 "silverstripe"
             ],
-            "time": "2014-06-21 04:25:28"
+            "time": "2015-07-30 05:28:22"
+        },
+        {
+            "name": "silverstripe/reports",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-labs/silverstripe-reports.git",
+                "reference": "435ccb79c546dd50fca8f573b3c17638fa89a05b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-reports/zipball/435ccb79c546dd50fca8f573b3c17638fa89a05b",
+                "reference": "435ccb79c546dd50fca8f573b3c17638fa89a05b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "silverstripe/framework": ">=3.1.x-dev"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "SilverStripe",
+                    "homepage": "http://silverstripe.com"
+                },
+                {
+                    "name": "The SilverStripe Community",
+                    "homepage": "http://silverstripe.org"
+                }
+            ],
+            "homepage": "http://silverstripe.org",
+            "keywords": [
+                "cms",
+                "reports",
+                "silverstripe"
+            ],
+            "time": "2015-07-22 12:21:54"
+        },
+        {
+            "name": "silverstripe/siteconfig",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-siteconfig.git",
+                "reference": "a5532f7a680f6464ee415aa1d538de5471c65042"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-siteconfig/zipball/a5532f7a680f6464ee415aa1d538de5471c65042",
+                "reference": "a5532f7a680f6464ee415aa1d538de5471c65042",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "*"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "branch-alias": {
+                    "3.x-dev": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "tests/behat/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
+                }
+            ],
+            "description": "Site wide settings administration.",
+            "keywords": [
+                "silverstripe",
+                "siteconfig"
+            ],
+            "time": "2015-10-06 05:33:17"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "silverstripe/cms": 20,
-        "silverstripe/framework": 20,
+        "silverstripe/cms": 0,
+        "silverstripe/framework": 0,
+        "silverstripe/reports": 0,
+        "silverstripe/siteconfig": 0,
         "silverstripe/raygun": 20
     },
     "prefer-stable": false,

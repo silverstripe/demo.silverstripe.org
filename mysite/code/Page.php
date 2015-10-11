@@ -1,10 +1,11 @@
 <?php
+
 class Page extends SiteTree {
 }
 
 class Page_Controller extends ContentController implements TemplateGlobalProvider  {
 
-	function init() {
+	public function init() {
 		parent::init();
 
 		Requirements::themedCSS('reset');
@@ -38,8 +39,11 @@ JS
 	 * Hide content on the login pages as the warning message is hard coded in
 	 * the form.
 	 */
-	function Content() {
-		return (Controller::curr() != "Security") ? $this->dbObject('Content') : false;
+	public function Content() {
+		if(Controller::has_curr() && Controller::curr() instanceof Security) {
+			return false;
+		}
+		return $this->dbObject('Content');
 	}
 
 	public static function get_template_global_variables() {
