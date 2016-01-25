@@ -3,12 +3,12 @@
 	"description": "Demo SilverStripe Project",
 	"require": {
 		"php": ">=5.3.2",
-		"silverstripe/cms": "3.2.0@stable",
-		"silverstripe/framework": "3.2.0@stable",
-		"silverstripe/reports": "3.2.0@stable",
-		"silverstripe/siteconfig": "3.2.0@stable",
+		"silverstripe/cms": "3.3.0-rc1",
+		"silverstripe/framework": "3.3.0-rc1",
+		"silverstripe/reports": "3.3.0-rc1",
+		"silverstripe/siteconfig": "3.3.0-rc1",
 		"silverstripe-themes/simple": "*",
-		"silverstripe/raygun": "*@dev"
+		"silverstripe/raygun": "dev-master"
 	},
 	"config": {
 		"process-timeout": 600	
