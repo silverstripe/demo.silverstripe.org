@@ -8,7 +8,8 @@
 		"silverstripe/reports": "3.2.0@stable",
 		"silverstripe/siteconfig": "3.2.0@stable",
 		"silverstripe-themes/simple": "*",
-		"silverstripe/raygun": "*@dev"
+		"silverstripe/raygun": "*@dev",
+		"silverstripe/dynamodb": "~1.1"
 	},
 	"config": {
 		"process-timeout": 600	
