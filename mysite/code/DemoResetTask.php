@@ -10,7 +10,7 @@ class DemoResetTask extends BuildTask {
 		$CLI_server = escapeshellarg($databaseConfig['server']);
 
 		$mysqlBin = null;
-		$mysqls = array("/opt/local/lib/mysql5/bin/mysql", "/usr/bin/mysql");
+		$mysqls = array("/opt/local/lib/mysql5/bin/mysql", "/usr/bin/mysql", "/usr/local/bin/mysql");
 		foreach($mysqls as $item) if(file_exists($item)) {
 			$mysqlBin = $item;
 			break;
