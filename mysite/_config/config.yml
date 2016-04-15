@@ -9,3 +9,10 @@ After:
 # Caution: Indentation through two spaces, not tabs
 SSViewer:
   theme: 'simple'
+LeftAndMain:
+  extra_requirements_javascript:
+    - 'mysite/javascript/googleanalytics.js'
+SiteTree:
+  nested_urls: true
+MySQLDatabase:
+  connection_charset: 'utf8'
