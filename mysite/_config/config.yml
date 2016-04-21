@@ -16,3 +16,5 @@ SiteTree:
   nested_urls: true
 MySQLDatabase:
   connection_charset: 'utf8'
+Security:
+  default_login_dest: '/admin/pages'
