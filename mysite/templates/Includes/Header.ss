@@ -17,7 +17,3 @@
 		</div>
 	</div>
 </header>
-<div class="action-buttons Actions">
-	<a href="./admin" class="btn">Log in</a>
-	<a href="http://www.silverstripe.org/download/" class="btn">Download</a>
-</div>

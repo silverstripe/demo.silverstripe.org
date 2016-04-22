@@ -11,24 +11,24 @@
                             <fieldset>
                                 <div class="form-item">
                                     <label for="">Email address</label>
-                                    <input type="text" name="Email" placeholder="Email address" value="">
+                                    <input type="text" name="Email" placeholder="Email address" value="admin">
                                 </div>
                                 <div class="form-item">
                                     <label for="">Password</label>
-                                    <input type="password" name="Password" placeholder="Password" value="">
+                                    <input type="password" name="Password" placeholder="Password" value="password">
                                 </div>
                             </fieldset>
                             <button type="submit" name="button">Login</button>
-                            <select name="">
-                                <option value="en" selected>EN – English</option>
-                                <option value="de">DE – Deutsche</option>
-                                <option value="es">ES – Español</option>
-                                <option value="fr">FR – Français</option>
-                                <option value="mi">MI – Māori</option>
-                                <option value="ru">RU – русский</option>
-                                <option value="ar">AR – العربية</option>
-                                <option value="zh">ZH – 中文</option>
-                                <option value="ja">JA – 日本語</option>
+                            <select name="Language">
+                                <option value="admin" selected>EN – English</option>
+                                <option value="german">DE – Deutsche</option>
+                                <option value="spanish">ES – Español</option>
+                                <option value="french">FR – Français</option>
+                                <option value="tereo">MI – Māori</option>
+                                <option value="russian">RU – русский</option>
+                                <option value="arabic">AR – العربية</option>
+                                <option value="chinese">ZH – 中文</option>
+                                <option value="japanese">JA – 日本語</option>
                             </select>
                         </form>
                     </section>
