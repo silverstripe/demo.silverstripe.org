@@ -1,3 +1,4 @@
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <section class="login-bar">
         <div class="container">
             <div class="row">
@@ -19,17 +20,19 @@
                                 </div>
                             </fieldset>
                             <button type="submit" name="button">Login</button>
-                            <select name="Language">
-                                <option value="admin" selected>EN – English</option>
-                                <option value="german">DE – Deutsche</option>
-                                <option value="spanish">ES – Español</option>
-                                <option value="french">FR – Français</option>
-                                <option value="tereo">MI – Māori</option>
-                                <option value="russian">RU – русский</option>
-                                <option value="arabic">AR – العربية</option>
-                                <option value="chinese">ZH – 中文</option>
-                                <option value="japanese">JA – 日本語</option>
-                            </select>
+                            <span class="dropdown">
+                                <select name="Language">
+                                    <option value="admin" selected>EN – English</option>
+                                    <option value="german">DE – Deutsche</option>
+                                    <option value="spanish">ES – Español</option>
+                                    <option value="french">FR – Français</option>
+                                    <option value="tereo">MI – Māori</option>
+                                    <option value="russian">RU – русский</option>
+                                    <option value="arabic">AR – العربية</option>
+                                    <option value="chinese">ZH – 中文</option>
+                                    <option value="japanese">JA – 日本語</option>
+                                </select>
+                            </span>
                         </form>
                     </section>
                 </div>
