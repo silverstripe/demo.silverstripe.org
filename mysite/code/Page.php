@@ -17,7 +17,7 @@ class Page_Controller extends ContentController implements TemplateGlobalProvide
 
 		Requirements::css('mysite/css/demo.css');
 		Requirements::css('mysite/css/moduleSupport.css');
-
+		Requirements::javascript('mysite/javascript/loginbar.js');
 		Requirements::javascript('mysite/javascript/googleanalytics.js');
 
 	}
