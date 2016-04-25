@@ -11,6 +11,9 @@ Sample project to demonstrate the capabilities of
 	cd demo.silverstripe.org
 	composer install
 	sake dev/tasks/DemoResetTask
+	
+Note: you will need to run all dev tasks, builds and flushes using CLI/Sake as these are blocked via HTTP 
+as these should not be accessible on public demo.
 
 ## License ##
 
