@@ -1,3 +1,8 @@
+/* Collapses CTAs panel if menu bar collapses */
+#cms-menu.collapsed .demo-ctas {
+    display: none;
+}
+/* Main panel */
 #cms-menu .demo-ctas {
     background: transparent;
     margin: 15px 10px 15px 0;
@@ -15,7 +20,7 @@
 }
 
 
-
+/* Main Title */
 #cms-menu .demo-ctas h3 {
     color: #fff;
     font-size: 18px;
@@ -32,7 +37,7 @@
 }
 
 
-
+/* Panel button styles */
 #cms-menu .demo-ctas a.cta-btn {
     display: block;
     padding: 16px 22px;
@@ -62,7 +67,7 @@
 }
 
 
-
+/* Media queries */
 @media only screen and (max-height:664px){
     #cms-menu .demo-ctas {
         display: none;
