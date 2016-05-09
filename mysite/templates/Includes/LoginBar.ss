@@ -22,7 +22,7 @@
         </a>
         <div class="fallback-logo"><a href="http://www.silverstripe.org/"><img src="../mysite/images/logotype.png" alt="" /></a></div>
         <div class="login-form">
-            <h3>Try it yourself</h3>
+            <h3>Try the CMS yourself</h3>
             <form action="/Security/LoginForm" method="post" enctype="application/x-www-form-urlencoded" class="form-holder">
                 <fieldset>
                     <div class="form-item">
@@ -51,6 +51,6 @@
             </form>
         </div>
         <a class="return" href="http://www.silverstripe.org/">
-            Go to SilverStripe.org
+            <%-- SilverStripe community site --%>
         </a>
     </section>
