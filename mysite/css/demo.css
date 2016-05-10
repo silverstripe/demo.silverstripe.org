@@ -22,11 +22,10 @@
     width: 100%;
     position: relative;
     top: 0;
-    background-color: #1a364c;
+    background-color: #142237;
     z-index: 100;
     color: white;
 	text-align: center;
-	border-bottom: 5px solid #132236;
 }
 .ie8 .login-bar {
 	height: 100px;
@@ -147,9 +146,9 @@ span.dropdown:before {
     content:'';
     right:-10px;
     top:0;
-    height:38px;
+    height:49px;
     width:28px;
-    background:#1a364c;
+    background:#142237;
     z-index:5;
 }
 select option {
@@ -238,7 +237,7 @@ select:hover:-moz-focusring {
 			margin-top: 46px;
 		}
 		.login-form form{
-			margin-top: 36px;
+			margin-top: 35px;
 		}
 		.login-form button {
 			font-size: 22px;
