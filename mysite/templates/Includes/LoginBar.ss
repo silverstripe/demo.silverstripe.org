@@ -23,7 +23,8 @@
         <div class="fallback-logo"><a href="http://www.silverstripe.org/"><img src="../mysite/images/logotype.png" alt="" /></a></div>
         <div class="login-form">
             <h3>Try the CMS yourself</h3>
-            <form action="/Security/LoginForm" method="post" enctype="application/x-www-form-urlencoded" class="form-holder">
+            <% with $LoginForm %>
+            <form action="$FormAction" method="post" enctype="application/x-www-form-urlencoded" class="form-holder">
                 <fieldset>
                     <div class="form-item">
                         <label for="">Email address</label>
@@ -33,8 +34,11 @@
                         <label for="">Password</label>
                         <input type="password" name="Password" placeholder="Password" value="password">
                     </div>
+                    $HiddenFields
                 </fieldset>
-                <button type="submit" name="button">Enter CMS</button>
+                <% loop $Actions %>
+                <button type="submit" name="$Name">Enter CMS</button>
+                <% end_loop %>
                 <span class="dropdown">
                     <select name="Language">
                         <option value="admin" selected>EN  –  English</option>
@@ -49,6 +53,7 @@
                     </select>
                 </span>
             </form>
+            <% end_with %>
         </div>
         <a class="return" href="http://www.silverstripe.org/">
             <%-- SilverStripe community site --%>

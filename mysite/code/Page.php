@@ -43,4 +43,11 @@ class Page_Controller extends ContentController implements TemplateGlobalProvide
 		return Controller::curr()->getAction();
 	}
 
+	public function LoginForm() {
+		$s = new Security();
+		$form = $s->LoginForm();
+		$form->Actions()->removeByName('forgotPassword');
+		return $form;
+	}
+
 }
