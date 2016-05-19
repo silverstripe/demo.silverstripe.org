@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.22)
 # Database: SS_ss3demo
-# Generation Time: 2016-05-18 00:53:28 +0000
+# Generation Time: 2016-05-19 05:01:15 +0000
 # ************************************************************
 
 
@@ -18,6 +18,67 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table ChangeSet
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ChangeSet`;
+
+CREATE TABLE `ChangeSet` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ClassName` enum('ChangeSet') DEFAULT 'ChangeSet',
+  `LastEdited` datetime DEFAULT NULL,
+  `Created` datetime DEFAULT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `State` enum('open','published','reverted') DEFAULT 'open',
+  `OwnerID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `OwnerID` (`OwnerID`),
+  KEY `ClassName` (`ClassName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table ChangeSetItem
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ChangeSetItem`;
+
+CREATE TABLE `ChangeSetItem` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ClassName` enum('ChangeSetItem') DEFAULT 'ChangeSetItem',
+  `LastEdited` datetime DEFAULT NULL,
+  `Created` datetime DEFAULT NULL,
+  `VersionBefore` int(11) NOT NULL DEFAULT '0',
+  `VersionAfter` int(11) NOT NULL DEFAULT '0',
+  `Added` enum('explicitly','implicitly') DEFAULT 'implicitly',
+  `ChangeSetID` int(11) NOT NULL DEFAULT '0',
+  `ObjectID` int(11) NOT NULL DEFAULT '0',
+  `ObjectClass` enum('CronTaskStatus','File','Folder','Image','Group','LoginAttempt','Member','MemberPassword','Permission','PermissionRole','PermissionRoleCode','RememberLoginHash','SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage','ChangeSet','ChangeSetItem','SiteConfig') DEFAULT 'CronTaskStatus',
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ObjectUniquePerChangeSet` (`ObjectID`,`ObjectClass`,`ChangeSetID`),
+  KEY `ChangeSetID` (`ChangeSetID`),
+  KEY `ObjectID` (`ObjectID`),
+  KEY `ClassName` (`ClassName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table ChangeSetItem_ReferencedBy
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ChangeSetItem_ReferencedBy`;
+
+CREATE TABLE `ChangeSetItem_ReferencedBy` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ChangeSetItemID` int(11) NOT NULL DEFAULT '0',
+  `ChildID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `ChangeSetItemID` (`ChangeSetItemID`),
+  KEY `ChildID` (`ChildID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table CronTaskStatus
@@ -129,7 +190,7 @@ DROP TABLE IF EXISTS `File`;
 
 CREATE TABLE `File` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('File','Folder','Image','Image_Cached') CHARACTER SET utf8 DEFAULT 'File',
+  `ClassName` enum('File','Folder','Image') CHARACTER SET utf8 DEFAULT 'File',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `Name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -145,6 +206,10 @@ CREATE TABLE `File` (
   `LimitDimensions` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `SubsiteID` int(11) NOT NULL DEFAULT '0',
   `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `Version` int(11) NOT NULL DEFAULT '0',
+  `FileHash` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `FileFilename` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `FileVariant` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `ParentID` (`ParentID`),
   KEY `OwnerID` (`OwnerID`),
@@ -156,23 +221,149 @@ CREATE TABLE `File` (
 LOCK TABLES `File` WRITE;
 /*!40000 ALTER TABLE `File` DISABLE KEYS */;
 
-INSERT INTO `File` (`ID`, `ClassName`, `Created`, `LastEdited`, `Name`, `Title`, `Filename`, `Content`, `Sort`, `ParentID`, `OwnerID`, `PopupWidth`, `PopupHeight`, `Embed`, `LimitDimensions`, `SubsiteID`, `ShowInSearch`)
+INSERT INTO `File` (`ID`, `ClassName`, `Created`, `LastEdited`, `Name`, `Title`, `Filename`, `Content`, `Sort`, `ParentID`, `OwnerID`, `PopupWidth`, `PopupHeight`, `Embed`, `LimitDimensions`, `SubsiteID`, `ShowInSearch`, `Version`, `FileHash`, `FileFilename`, `FileVariant`)
 VALUES
-	(47466,'File','2012-06-28 23:45:01','2012-06-28 23:45:01','error-500.html','error-500.html','assets/error-500.html',NULL,0,0,1,0,0,0,0,0,1),
-	(47397,'File','2010-04-01 09:29:30','2010-04-01 09:29:30','error-404.html','error-404.html','assets/error-404.html',NULL,0,0,1,0,0,0,0,0,1),
-	(47467,'Folder','2013-10-04 13:45:06','2013-10-04 13:45:06','Uploads','Uploads','assets/Uploads/',NULL,0,0,1,0,0,0,0,0,1),
-	(47468,'Image','2013-10-04 13:45:06','2013-10-04 13:45:06','screen-about.png','screen about','assets/Uploads/screen-about.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47469,'Image','2013-10-04 14:05:02','2013-10-04 14:05:02','community.png','community','assets/Uploads/community.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47470,'Image','2013-10-04 17:30:00','2013-10-04 17:30:00','Responsive-SilverStripe.png','Responsive SilverStripe','assets/Uploads/Responsive-SilverStripe.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47471,'Image','2013-10-21 10:19:01','2013-10-21 10:19:01','CMS-editor.png','CMS editor','assets/Uploads/CMS-editor.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47472,'Image','2013-10-21 10:22:27','2013-10-21 10:22:27','CMS-editor2.png','CMS editor2','assets/Uploads/CMS-editor2.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47473,'Image','2013-10-21 10:39:09','2013-10-21 10:39:09','responsive-web-design.jpg','responsive web design','assets/Uploads/responsive-web-design.jpg',NULL,0,47467,1,0,0,0,0,0,1),
-	(47474,'Image','2013-10-21 11:21:59','2013-10-21 11:21:59','change-theme.png','change theme','assets/Uploads/change-theme.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47475,'Image','2013-10-21 14:29:34','2013-10-21 14:29:34','responsive.png','responsive','assets/Uploads/responsive.png',NULL,0,47467,1,0,0,0,0,0,1),
-	(47478,'Image','2016-02-02 15:41:48','2016-02-02 15:43:43','Platform-Banner.png','Platform Banner','assets/Uploads/Platform-Banner.png',NULL,0,47467,503,0,0,0,0,0,1);
+	(47466,'File','2012-06-28 23:45:01','2016-05-19 16:58:32','error-500.html','error-500.html','assets/error-500.html',NULL,0,0,1,0,0,0,0,0,1,2,'1e63a4d7143f97362e9356cec15b38180d35343b','error-500.html',NULL),
+	(47397,'File','2010-04-01 09:29:30','2016-05-19 16:58:32','error-404.html','error-404.html','assets/error-404.html',NULL,0,0,1,0,0,0,0,0,1,2,'be4614d8afe7e324dc68adc14f933c5e517d5e90','error-404.html',NULL),
+	(47467,'Folder','2013-10-04 13:45:06','2013-10-04 13:45:06','Uploads','Uploads','assets/Uploads/',NULL,0,0,1,0,0,0,0,0,1,0,NULL,NULL,NULL),
+	(47468,'Image','2013-10-04 13:45:06','2016-05-19 16:58:33','screen-about.png','screen about','assets/Uploads/screen-about.png',NULL,0,47467,1,0,0,0,0,0,1,2,'f5ffcd8353613b8133a129513bec4a9df1f9bd71','Uploads/screen-about.png',NULL),
+	(47469,'Image','2013-10-04 14:05:02','2016-05-19 16:58:32','community.png','community','assets/Uploads/community.png',NULL,0,47467,1,0,0,0,0,0,1,2,'b83f598780e3c169b67c39580e51bdeb98a4aa72','Uploads/community.png',NULL),
+	(47470,'Image','2013-10-04 17:30:00','2016-05-19 16:58:32','Responsive-SilverStripe.png','Responsive SilverStripe','assets/Uploads/Responsive-SilverStripe.png',NULL,0,47467,1,0,0,0,0,0,1,2,'53c24bcd6f663254344ec2c8f6db2b79a36b8441','Uploads/Responsive-SilverStripe.png',NULL),
+	(47471,'Image','2013-10-21 10:19:01','2016-05-19 16:58:32','CMS-editor.png','CMS editor','assets/Uploads/CMS-editor.png',NULL,0,47467,1,0,0,0,0,0,1,2,'adeedfe42f5e6dc4fa9c8895910b4c7c69aed79a','Uploads/CMS-editor.png',NULL),
+	(47472,'Image','2013-10-21 10:22:27','2016-05-19 16:58:32','CMS-editor2.png','CMS editor2','assets/Uploads/CMS-editor2.png',NULL,0,47467,1,0,0,0,0,0,1,2,'03356d8a4c5e9207ffdf7203c378e35d0645af2c','Uploads/CMS-editor2.png',NULL),
+	(47473,'Image','2013-10-21 10:39:09','2016-05-19 16:58:33','responsive-web-design.jpg','responsive web design','assets/Uploads/responsive-web-design.jpg',NULL,0,47467,1,0,0,0,0,0,1,2,'9ca031a0fafd00295c760084ed832762bf7d1724','Uploads/responsive-web-design.jpg',NULL),
+	(47474,'Image','2013-10-21 11:21:59','2016-05-19 16:58:32','change-theme.png','change theme','assets/Uploads/change-theme.png',NULL,0,47467,1,0,0,0,0,0,1,2,'fe35ebea3d549055013070c9643fa0b3dcfe9f88','Uploads/change-theme.png',NULL),
+	(47475,'Image','2013-10-21 14:29:34','2016-05-19 16:58:33','responsive.png','responsive','assets/Uploads/responsive.png',NULL,0,47467,1,0,0,0,0,0,1,2,'17c45d8a4d18382b3d802ace725e3edfc1be7d13','Uploads/responsive.png',NULL),
+	(47478,'Image','2016-02-02 15:41:48','2016-05-19 16:58:32','Platform-Banner.png','Platform Banner','assets/Uploads/Platform-Banner.png',NULL,0,47467,503,0,0,0,0,0,1,2,'e2d2406a56598bd741bb43e31cbcec9f885f75b3','Uploads/Platform-Banner.png',NULL);
 
 /*!40000 ALTER TABLE `File` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table File_Live
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `File_Live`;
+
+CREATE TABLE `File_Live` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ClassName` enum('File','Folder','Image') DEFAULT 'File',
+  `LastEdited` datetime DEFAULT NULL,
+  `Created` datetime DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Title` varchar(255) DEFAULT NULL,
+  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `Version` int(11) NOT NULL DEFAULT '0',
+  `ParentID` int(11) NOT NULL DEFAULT '0',
+  `OwnerID` int(11) NOT NULL DEFAULT '0',
+  `FileHash` varchar(255) DEFAULT NULL,
+  `FileFilename` varchar(255) DEFAULT NULL,
+  `FileVariant` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ParentID` (`ParentID`),
+  KEY `OwnerID` (`OwnerID`),
+  KEY `ClassName` (`ClassName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `File_Live` WRITE;
+/*!40000 ALTER TABLE `File_Live` DISABLE KEYS */;
+
+INSERT INTO `File_Live` (`ID`, `ClassName`, `LastEdited`, `Created`, `Name`, `Title`, `ShowInSearch`, `Version`, `ParentID`, `OwnerID`, `FileHash`, `FileFilename`, `FileVariant`)
+VALUES
+	(47397,'File','2016-05-19 16:58:32','2010-04-01 09:29:30','error-404.html','error-404.html',1,2,0,1,'be4614d8afe7e324dc68adc14f933c5e517d5e90','error-404.html',NULL),
+	(47466,'File','2016-05-19 16:58:32','2012-06-28 23:45:01','error-500.html','error-500.html',1,2,0,1,'1e63a4d7143f97362e9356cec15b38180d35343b','error-500.html',NULL),
+	(47468,'Image','2016-05-19 16:58:33','2013-10-04 13:45:06','screen-about.png','screen about',1,2,47467,1,'f5ffcd8353613b8133a129513bec4a9df1f9bd71','Uploads/screen-about.png',NULL),
+	(47469,'Image','2016-05-19 16:58:32','2013-10-04 14:05:02','community.png','community',1,2,47467,1,'b83f598780e3c169b67c39580e51bdeb98a4aa72','Uploads/community.png',NULL),
+	(47470,'Image','2016-05-19 16:58:33','2013-10-04 17:30:00','Responsive-SilverStripe.png','Responsive SilverStripe',1,2,47467,1,'53c24bcd6f663254344ec2c8f6db2b79a36b8441','Uploads/Responsive-SilverStripe.png',NULL),
+	(47471,'Image','2016-05-19 16:58:32','2013-10-21 10:19:01','CMS-editor.png','CMS editor',1,2,47467,1,'adeedfe42f5e6dc4fa9c8895910b4c7c69aed79a','Uploads/CMS-editor.png',NULL),
+	(47472,'Image','2016-05-19 16:58:32','2013-10-21 10:22:27','CMS-editor2.png','CMS editor2',1,2,47467,1,'03356d8a4c5e9207ffdf7203c378e35d0645af2c','Uploads/CMS-editor2.png',NULL),
+	(47473,'Image','2016-05-19 16:58:33','2013-10-21 10:39:09','responsive-web-design.jpg','responsive web design',1,2,47467,1,'9ca031a0fafd00295c760084ed832762bf7d1724','Uploads/responsive-web-design.jpg',NULL),
+	(47474,'Image','2016-05-19 16:58:32','2013-10-21 11:21:59','change-theme.png','change theme',1,2,47467,1,'fe35ebea3d549055013070c9643fa0b3dcfe9f88','Uploads/change-theme.png',NULL),
+	(47475,'Image','2016-05-19 16:58:33','2013-10-21 14:29:34','responsive.png','responsive',1,2,47467,1,'17c45d8a4d18382b3d802ace725e3edfc1be7d13','Uploads/responsive.png',NULL),
+	(47478,'Image','2016-05-19 16:58:32','2016-02-02 15:41:48','Platform-Banner.png','Platform Banner',1,2,47467,503,'e2d2406a56598bd741bb43e31cbcec9f885f75b3','Uploads/Platform-Banner.png',NULL);
+
+/*!40000 ALTER TABLE `File_Live` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table File_versions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `File_versions`;
+
+CREATE TABLE `File_versions` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RecordID` int(11) NOT NULL DEFAULT '0',
+  `Version` int(11) NOT NULL DEFAULT '0',
+  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `AuthorID` int(11) NOT NULL DEFAULT '0',
+  `PublisherID` int(11) NOT NULL DEFAULT '0',
+  `ClassName` enum('File','Folder','Image') DEFAULT 'File',
+  `LastEdited` datetime DEFAULT NULL,
+  `Created` datetime DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Title` varchar(255) DEFAULT NULL,
+  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `ParentID` int(11) NOT NULL DEFAULT '0',
+  `OwnerID` int(11) NOT NULL DEFAULT '0',
+  `FileHash` varchar(255) DEFAULT NULL,
+  `FileFilename` varchar(255) DEFAULT NULL,
+  `FileVariant` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `RecordID_Version` (`RecordID`,`Version`),
+  KEY `RecordID` (`RecordID`),
+  KEY `Version` (`Version`),
+  KEY `AuthorID` (`AuthorID`),
+  KEY `PublisherID` (`PublisherID`),
+  KEY `ParentID` (`ParentID`),
+  KEY `OwnerID` (`OwnerID`),
+  KEY `ClassName` (`ClassName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `File_versions` WRITE;
+/*!40000 ALTER TABLE `File_versions` DISABLE KEYS */;
+
+INSERT INTO `File_versions` (`ID`, `RecordID`, `Version`, `WasPublished`, `AuthorID`, `PublisherID`, `ClassName`, `LastEdited`, `Created`, `Name`, `Title`, `ShowInSearch`, `ParentID`, `OwnerID`, `FileHash`, `FileFilename`, `FileVariant`)
+VALUES
+	(1,47479,1,0,1,0,'Image','2016-05-19 15:47:57','2016-05-19 15:47:57','pbjt-3.gif','pbjt 3',1,47467,1,'d3e61a0597ff455ce63299993882318073371f81','Uploads/pbjt-3.gif',NULL),
+	(2,47474,1,1,0,0,'Image','2016-05-19 15:52:55','2013-10-21 11:21:59','change-theme.png','change theme',1,47467,1,'fe35ebea3d549055013070c9643fa0b3dcfe9f88','Uploads/change-theme.png',NULL),
+	(3,47471,1,1,0,0,'Image','2016-05-19 15:52:55','2013-10-21 10:19:01','CMS-editor.png','CMS editor',1,47467,1,'adeedfe42f5e6dc4fa9c8895910b4c7c69aed79a','Uploads/CMS-editor.png',NULL),
+	(4,47472,1,1,0,0,'Image','2016-05-19 15:52:55','2013-10-21 10:22:27','CMS-editor2.png','CMS editor2',1,47467,1,'03356d8a4c5e9207ffdf7203c378e35d0645af2c','Uploads/CMS-editor2.png',NULL),
+	(5,47469,1,1,0,0,'Image','2016-05-19 15:52:55','2013-10-04 14:05:02','community.png','community',1,47467,1,'b83f598780e3c169b67c39580e51bdeb98a4aa72','Uploads/community.png',NULL),
+	(6,47397,1,1,0,0,'File','2016-05-19 15:55:57','2010-04-01 09:29:30','error-404.html','error-404.html',1,0,1,'78c37d4c4930189fbe58b53e20b7ba8cbb9b3d8c','error-404.html',NULL),
+	(7,47466,1,1,0,0,'File','2016-05-19 15:55:57','2012-06-28 23:45:01','error-500.html','error-500.html',1,0,1,'ec8550a06d8b346f7b37ce7a47469d1ec319f363','error-500.html',NULL),
+	(8,47478,1,1,0,0,'Image','2016-05-19 15:55:57','2016-02-02 15:41:48','Platform-Banner.png','Platform Banner',1,47467,503,'e2d2406a56598bd741bb43e31cbcec9f885f75b3','Uploads/Platform-Banner.png',NULL),
+	(9,47470,1,1,0,0,'Image','2016-05-19 15:55:57','2013-10-04 17:30:00','Responsive-SilverStripe.png','Responsive SilverStripe',1,47467,1,'53c24bcd6f663254344ec2c8f6db2b79a36b8441','Uploads/Responsive-SilverStripe.png',NULL),
+	(10,47473,1,1,0,0,'Image','2016-05-19 15:55:57','2013-10-21 10:39:09','responsive-web-design.jpg','responsive web design',1,47467,1,'9ca031a0fafd00295c760084ed832762bf7d1724','Uploads/responsive-web-design.jpg',NULL),
+	(11,47475,1,1,0,0,'Image','2016-05-19 15:55:57','2013-10-21 14:29:34','responsive.png','responsive',1,47467,1,'17c45d8a4d18382b3d802ace725e3edfc1be7d13','Uploads/responsive.png',NULL),
+	(12,47468,1,1,0,0,'Image','2016-05-19 15:55:57','2013-10-04 13:45:06','screen-about.png','screen about',1,47467,1,'f5ffcd8353613b8133a129513bec4a9df1f9bd71','Uploads/screen-about.png',NULL),
+	(13,47479,2,0,1,0,'Image','2016-05-19 16:02:33','2016-05-19 16:02:33','pbjt-3.gif','pbjt 3',1,47467,1,'d3e61a0597ff455ce63299993882318073371f81','Uploads/pbjt-3.gif',NULL),
+	(14,47474,2,1,1,1,'Image','2016-05-19 16:58:32','2013-10-21 11:21:59','change-theme.png','change theme',1,47467,1,'fe35ebea3d549055013070c9643fa0b3dcfe9f88','Uploads/change-theme.png',NULL),
+	(15,47471,2,1,1,1,'Image','2016-05-19 16:58:32','2013-10-21 10:19:01','CMS-editor.png','CMS editor',1,47467,1,'adeedfe42f5e6dc4fa9c8895910b4c7c69aed79a','Uploads/CMS-editor.png',NULL),
+	(16,47472,2,1,1,1,'Image','2016-05-19 16:58:32','2013-10-21 10:22:27','CMS-editor2.png','CMS editor2',1,47467,1,'03356d8a4c5e9207ffdf7203c378e35d0645af2c','Uploads/CMS-editor2.png',NULL),
+	(17,47469,2,1,1,1,'Image','2016-05-19 16:58:32','2013-10-04 14:05:02','community.png','community',1,47467,1,'b83f598780e3c169b67c39580e51bdeb98a4aa72','Uploads/community.png',NULL),
+	(18,47397,2,1,1,1,'File','2016-05-19 16:58:32','2010-04-01 09:29:30','error-404.html','error-404.html',1,0,1,'be4614d8afe7e324dc68adc14f933c5e517d5e90','error-404.html',NULL),
+	(19,47466,2,1,1,1,'File','2016-05-19 16:58:32','2012-06-28 23:45:01','error-500.html','error-500.html',1,0,1,'1e63a4d7143f97362e9356cec15b38180d35343b','error-500.html',NULL),
+	(20,47478,2,1,1,1,'Image','2016-05-19 16:58:32','2016-02-02 15:41:48','Platform-Banner.png','Platform Banner',1,47467,503,'e2d2406a56598bd741bb43e31cbcec9f885f75b3','Uploads/Platform-Banner.png',NULL),
+	(21,47470,2,1,1,1,'Image','2016-05-19 16:58:32','2013-10-04 17:30:00','Responsive-SilverStripe.png','Responsive SilverStripe',1,47467,1,'53c24bcd6f663254344ec2c8f6db2b79a36b8441','Uploads/Responsive-SilverStripe.png',NULL),
+	(22,47473,2,1,1,1,'Image','2016-05-19 16:58:33','2013-10-21 10:39:09','responsive-web-design.jpg','responsive web design',1,47467,1,'9ca031a0fafd00295c760084ed832762bf7d1724','Uploads/responsive-web-design.jpg',NULL),
+	(23,47475,2,1,1,1,'Image','2016-05-19 16:58:33','2013-10-21 14:29:34','responsive.png','responsive',1,47467,1,'17c45d8a4d18382b3d802ace725e3edfc1be7d13','Uploads/responsive.png',NULL),
+	(24,47468,2,1,1,1,'Image','2016-05-19 16:58:33','2013-10-04 13:45:06','screen-about.png','screen about',1,47467,1,'f5ffcd8353613b8133a129513bec4a9df1f9bd71','Uploads/screen-about.png',NULL);
+
+/*!40000 ALTER TABLE `File_versions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table Folder
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Folder`;
+
+CREATE TABLE `Folder` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table Group
@@ -361,6 +552,18 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table Image
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Image`;
+
+CREATE TABLE `Image` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table LoginAttempt
 # ------------------------------------------------------------
 
@@ -510,6 +713,18 @@ VALUES
 
 /*!40000 ALTER TABLE `MemberPassword` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table Page
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Page`;
+
+CREATE TABLE `Page` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table Permission
@@ -670,6 +885,29 @@ CREATE TABLE `RedirectorPage_versions` (
 
 
 
+# Dump of table RememberLoginHash
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `RememberLoginHash`;
+
+CREATE TABLE `RememberLoginHash` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ClassName` enum('RememberLoginHash') DEFAULT 'RememberLoginHash',
+  `LastEdited` datetime DEFAULT NULL,
+  `Created` datetime DEFAULT NULL,
+  `DeviceID` varchar(40) DEFAULT NULL,
+  `Hash` varchar(160) DEFAULT NULL,
+  `ExpiryDate` datetime DEFAULT NULL,
+  `MemberID` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `MemberID` (`MemberID`),
+  KEY `DeviceID` (`DeviceID`),
+  KEY `Hash` (`Hash`),
+  KEY `ClassName` (`ClassName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table SiteConfig
 # ------------------------------------------------------------
 
@@ -763,7 +1001,7 @@ DROP TABLE IF EXISTS `SiteTree`;
 
 CREATE TABLE `SiteTree` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'SiteTree',
+  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -980,7 +1218,7 @@ DROP TABLE IF EXISTS `SiteTree_Live`;
 
 CREATE TABLE `SiteTree_Live` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'SiteTree',
+  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -1076,7 +1314,7 @@ CREATE TABLE `SiteTree_versions` (
   `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `AuthorID` int(11) NOT NULL DEFAULT '0',
   `PublisherID` int(11) NOT NULL DEFAULT '0',
-  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'SiteTree',
+  `ClassName` enum('SiteTree','Page','HomePage','ErrorPage','RedirectorPage','VirtualPage','') CHARACTER SET utf8 DEFAULT 'Page',
   `Created` datetime DEFAULT NULL,
   `LastEdited` datetime DEFAULT NULL,
   `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
