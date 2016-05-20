@@ -16,10 +16,10 @@ class DemoCronTask implements CronTask {
     */
     public function process()
     {
-        $this->request = Controller::curr()->getRequest();
+//        $this->request = Controller::curr()->getRequest();
 
         //refresh demo site
-        $reset_task = new DemoResetTask();
-        $reset_task->run($this->request);
+//        $reset_task = new DemoResetTask();
+//        $reset_task->run($this->request);
     }
 }
