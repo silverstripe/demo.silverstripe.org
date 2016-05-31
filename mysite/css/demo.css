@@ -15,7 +15,6 @@
 }
 
 
-
 /* Login Bar */
 .login-bar {
     height: 70px;
@@ -26,9 +25,6 @@
     z-index: 100;
     color: white;
 	text-align: center;
-}
-.ie8 .login-bar {
-	height: 100px;
 }
 
 
@@ -44,13 +40,7 @@
 .login-bar .logo-type {
 	display: none;
 }
-.ie8 .fallback-logo {
-	float: left;
-	margin: 28px 0 0 28px;
-	width: 165px;
-	height: 42px;
-	background: url(http://demo.dev/mysite/images/logotype.png) no-repeat;
-}
+
 
 
 
@@ -59,29 +49,17 @@
 	margin: 0 auto;
 	height: 100%;
 }
+
 .login-form h3{
 	display: none;
 }
-.ie8 .login-form h3{
-	line-height: normal;
-	font-size: 24px;
-	display: inline-block;
-	margin-top: 38px;
-	margin-right: 18px;
-}
-
-
-
 .login-form form{
 	width: auto;
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 18px;
 }
-.ie8 .login-form form{
-	margin-top: 30px;
-}
-.login-form button {
+.form-holder button {
 	background-color: #142237;
 	color: #47c2ef;
 	border:2px solid #47c2ef;
@@ -95,14 +73,14 @@
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease, opacity 0.3s ease;
 }
 
-.login-form button:hover {
+.form-holder button:hover {
 	background-color: #47c2ef;
 	color: #142237;
 	border: 2px solid #47c2ef;
 }
-.login-form button:focus {outline:0;}
+.form-holder button:focus {outline:0;}
 
-.login-form select {
+.form-holder select {
 	background-color: transparent;
 	color: white;
 	display: inline-block;
@@ -120,10 +98,10 @@
 	text-overflow: '';
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, width 0.3s ease, opacity 0.3s ease;
 }
-.login-form select:hover {
+.form-holder select:hover {
 	color: #47c2ef;
 }
-.login-form select::-ms-expand{
+.form-holder select::-ms-expand{
   display:none;
 }
 
@@ -161,26 +139,16 @@ select:hover:-moz-focusring {
     text-shadow: 0 0 0 #fff;
 }
 
-.login-form fieldset {
+fieldset {
     display: none;
     margin-bottom: 0;
 }
-.login-form fieldset .form-item {
+fieldset .form-item {
 	display: none;
 }
 
 .login-bar a.return {
 	display: none;
-}
-.ie8 .login-bar a.return {
-	display: inline-block;
-	font-size: 18px;
-	width: 200px;
-	color: white;
-	text-decoration: none;
-	float: right;
-	margin-top: 40px;
-	margin-right: 30px;
 }
 
 
@@ -219,11 +187,6 @@ select:hover:-moz-focusring {
 			float: left;
 			margin: 22px 0 0 14px;
 		}
-
-
-
-
-
 		.login-form {
 			float: none;
 		}
@@ -234,12 +197,12 @@ select:hover:-moz-focusring {
 		.login-form form{
 			margin-top: 30px;
 		}
-		.login-form button {
+		.form-holder button {
 			font-size: 18px;
 			text-transform: none;
 			letter-spacing: normal;
 		}
-		.login-form select {
+		.form-holder select {
 			margin-top: 3px;
 		}
 		.login-bar a.return {
