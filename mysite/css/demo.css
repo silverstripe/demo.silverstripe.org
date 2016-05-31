@@ -44,15 +44,12 @@
 .login-bar .logo-type {
 	display: none;
 }
-.fallback-logo {
-	display: none;
-}
-.ie8 div.fallback-logo {
-	display: inline-block;
+.ie8 .fallback-logo {
 	float: left;
 	margin: 28px 0 0 28px;
-	/*width: 165px;
-	height: 42px;*/
+	width: 165px;
+	height: 42px;
+	background: url(http://demo.dev/mysite/images/logotype.png) no-repeat;
 }
 
 
