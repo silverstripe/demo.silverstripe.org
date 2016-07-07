@@ -27,12 +27,12 @@ ErrorDocument 500 /assets/error-500.html
 
 
 	RewriteRule ^vendor(/|$) - [F,L,NC]
-	RewriteRule ^dev(/|$) - [F,L,NC]
+	#RewriteRule ^dev(/|$) - [F,L,NC]
 	RewriteRule silverstripe-cache(/|$) - [F,L,NC]
 	RewriteRule composer\.(json|lock) - [F,L,NC]
 
-	RewriteCond %{QUERY_STRING} flush
-	RewriteRule ^.*$ - [F]
+	#RewriteCond %{QUERY_STRING} flush
+	#RewriteRule ^.*$ - [F]
 
 	RewriteCond %{REQUEST_URI} ^(.*)$
 	RewriteCond %{REQUEST_FILENAME} !-f
