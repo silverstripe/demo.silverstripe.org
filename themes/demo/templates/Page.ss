@@ -12,7 +12,7 @@
         <meta name="description" content="SilverStripe Demo">
         <meta name="viewport" content="width=device-width">
         $MetaTags(false)
-        <% require themedCSS('main') %>
+
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,300,700' rel='stylesheet' type='text/css'>
         <script src="js/build/build.js"></script>
     </head>

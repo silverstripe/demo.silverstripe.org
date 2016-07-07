@@ -8,16 +8,13 @@ class Page_Controller extends ContentController implements TemplateGlobalProvide
 	public function init() {
 		parent::init();
 
-		Requirements::themedCSS('reset');
-		Requirements::themedCSS('layout');
-		Requirements::themedCSS('form');
-		Requirements::themedCSS('typography');
+		Requirements::themedCSS('main');
 
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
 
-		Requirements::css('mysite/css/demo.css');
-		Requirements::css('mysite/css/moduleSupport.css');
-		Requirements::javascript('mysite/javascript/demobar.js');
+		//Requirements::css('mysite/css/main.css');
+		//Requirements::css('mysite/css/moduleSupport.css');
+		//Requirements::javascript('mysite/javascript/demobar.js');
 		Requirements::javascript('mysite/javascript/googleanalytics.js');
 
 	}
