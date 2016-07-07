@@ -1,0 +1,30 @@
+//Colours
+    //Background colours
+        $bg-color-light:#fff;
+        $bg-color-light2:#000;
+        $bg-color-dark:#424e5e;
+        $bg-color-highlight:#5a6a8a;
+
+        $brand-bg-color-dark:#142237;
+        $brand-color-highlight:#47c2ef;
+    //Text colours
+        $color-light:#fff;
+        $color-light2:#fff;
+        $color-dark:#5a6a8a;
+        $color-highlight:#5a6a8a;
+        //$color-highlight2:#fff;
+        $color-brand:white;
+
+//Padding & Layout
+
+
+// Typography
+$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+//Grid Variables
+$container-width: 1320px !default;
+$container-width-larger-than-mobile: 85% !default;
+$container-width-larger-than-phablet: 90% !default;
+$total-columns: 12 !default;
+$column-width: 100 / $total-columns !default; // calculates individual column width based off of # of columns
+$column-margin: 4% !default; // space between columns

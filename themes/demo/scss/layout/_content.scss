@@ -1,0 +1,22 @@
+
+.grey {
+    background: #E8EFF5;
+}
+
+/* Mobile first queries */
+
+    /* Larger than phablet */
+    @media (min-width: 550px) {
+    }
+
+    /* Larger than tablet */
+    @media (min-width: 750px) {
+    }
+
+    /* Larger than desktop */
+    @media (min-width: 1000px) {
+        // Margin to compensate for fixed Navigation
+        .page-container {
+            margin-top: 100px;
+        }
+    }

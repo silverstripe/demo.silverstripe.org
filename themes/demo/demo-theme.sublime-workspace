@@ -1,0 +1,880 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"color-",
+				"bg-color-light"
+			],
+			[
+				"bg-c",
+				"bg-color-light"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"fos",
+				"font-size"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"bor",
+				"border-left"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"B",
+				"background-image"
+			],
+			[
+				"hei",
+				"min-height"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"bcak",
+				"background-position"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fo",
+				"focus"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"Ba",
+				"background-color"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"light",
+				"light-gray-bg"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"high",
+				"highlight"
+			],
+			[
+				"p",
+				"position"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"SS_",
+				"SS_DATABASE_USERNAME"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/utils/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/layout/_navigation.scss",
+			"settings":
+			{
+				"buffer_size": 4878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/main.scss",
+			"settings":
+			{
+				"buffer_size": 445,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 163.0,
+		"last_filter": "Package Control: insta",
+		"selected_items":
+		[
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 431.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jlee/Sites/SilverStripe-Demo",
+		"/Users/jlee/Sites/SilverStripe-Demo/scss",
+		"/Users/jlee/Sites/SilverStripe-Demo/scss/utils"
+	],
+	"file_history":
+	[
+		"/Users/jlee/Sites/SilverStripe-Demo/demo-theme.sublime-project",
+		"/Users/jlee/Sites/SilverStripe-Demo/css/main.css",
+		"/Users/jlee/Library/Application Support/Sublime Text 3/Packages/User/LiveStyle.sublime-settings",
+		"/Users/jlee/Library/Application Support/Sublime Text 3/Packages/LiveStyle/LiveStyle.sublime-settings",
+		"/Users/jlee/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/modules/_blog.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_jumbotron.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/_custom-variables.scss",
+		"/Users/jlee/Sites/ssorg/styleguide/scss/components/_grid.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_showcase.scss",
+		"/Users/jlee/Sites/ssorg/.sass-cache/6665b02a01270d1f5d87d0630379045d807b7c96/_custom-variables.scssc",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/js/build.min.js",
+		"/Users/jlee/Sites/ssorg/.sass-cache/5894a17684a10a22e15272b9c78244786b27c0ba/_showcase.scssc",
+		"/Users/jlee/Sites/demo/framework/templates/forms/FormField_holder.ss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Includes/ButtonFileField.ss",
+		"/Users/jlee/Sites/ssorg/mysite/code/forms/ButtonFileField.php",
+		"/Users/jlee/Sites/demo/framework/forms/FormField.php",
+		"/Users/jlee/Sites/demo/framework/forms/FileField.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Includes/Component_ControlsShowcase.ss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Layout/DownloadPaperForm.ss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/section/_refactor.scss",
+		"/Users/jlee/Sites/ssorg/mysite/code/page_type/LeadGeneratingUserDefinedForm.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/js/main.js",
+		"/Users/jlee/Sites/ssorg/composer.json",
+		"/Users/jlee/Documents/lead-gen.scss",
+		"/Users/jlee/Sites/demo/composer.json",
+		"/Users/jlee/Sites/ssorg/mysite/code/page_type/DownloadPaperForm.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3_blog/templates/Layout/Blog.ss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/_lead-gen-forms.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_addons.scss",
+		"/Users/jlee/Sites/ssorg/mysite/code/page_type/CommunityShowcasePage.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Layout/CommunityShowcasePage_show.ss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/_silverstripe-forms.scss",
+		"/Users/jlee/Sites/ssorg/assets/styleguide/css_component.html",
+		"/Users/jlee/Sites/ssorg/mysite/code/page_type/CaseStudyPage.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Layout/CompanyShowcasePage_show.ss",
+		"/Users/jlee/Google Drive/Work/What is IA Original?",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_component-colours.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_content.scss",
+		"/Users/jlee/Sites/Onering Rentals Template/css/style.css",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/style.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/themes/../_lead-gen-forms.scss",
+		"/Users/jlee/Sites/ssorg/userforms/javascript/FieldEditor.js",
+		"/Users/jlee/Sites/ssorg/userforms/code/model/editableformfields/EditableTextField.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/../_silverstripe-forms.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/themes/_themes.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/themes/_theme-mixin.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/framework/_mixins.scss",
+		"/Users/jlee/Sites/ssorg/userforms/code/model/editableformfields/EditableEmailField.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_table-component.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Includes/Header.ss",
+		"/Users/jlee/Sites/ssorg/toolbar/templates/Includes/GlobalNav_popup.ss",
+		"/Users/jlee/Sites/ssorg/mysite/_config/config.yml",
+		"/Users/jlee/Sites/ssorg/mysite/_config.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/section/_platform.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/section/_header-styles.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_company-header.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/section/_home-page.scss",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Page.ss",
+		"/Users/jlee/Sites/_ss_environment.php",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/scss/components/_navbar-popup.scss",
+		"/Users/jlee/Sites/ssorg/toolbar/templates/GlobalToolbarProfile.ss",
+		"/Users/jlee/Sites/ssorg/maintenance-mode/templates/UtilityPage.ss",
+		"/Users/jlee/Sites/ssorg/styleguide/templates/StyleGuideController.ss",
+		"/Users/jlee/Sites/ssorg/toolbar/sass/toolbar.scss",
+		"/Users/jlee/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/css/toolbar.css",
+		"/Users/jlee/Sites/ssorg/themes/ssv3/templates/Layout/CaseStudyPage.ss",
+		"/Users/jlee/Library/Caches/code.js",
+		"/Users/jlee/Sites/ssorg/package.json",
+		"/Users/jlee/Google Drive/SilverStripe/Marketing/Websites/ss.com/Redesign 2015/Homepage/Land_SVGRepeat.svgz",
+		"/Users/jlee/Desktop/Page.ss",
+		"/Users/jlee/Desktop/FE.xml",
+		"/Users/jlee/Google Drive/SilverStripe/Marketing/Websites/ss.org/Redesign 2012-2014/Designs/2014-main-wireframes-v2/Working Files/ionicons-1.5.2/src/person.svg",
+		"/Users/jlee/Google Drive/SilverStripe/Marketing/Websites/ss.org/Redesign 2012-2014/Designs/2014-main-wireframes-v2/Working Files/ionicons-1.5.2/src/social-google.svg",
+		"/Users/jlee/Downloads/noun_25567_cc.svg",
+		"/Users/jlee/Sites/ssorg/forum/code/model/ForumThread.php",
+		"/Users/jlee/Sites/ssorg/forum/tests/ForumTest.php",
+		"/Users/jlee/Sites/ssorg/.sass-cache/1ab40e42a5b492897dea7fbec79fc6e00b2a7638/forum.scssc",
+		"/Users/jlee/Sites/ssorg/node_modules/grunt-scss-lint/node_modules/xmlbuilder/node_modules/lodash-node/compat/objects/forOwnRight.js",
+		"/Users/jlee/Sites/ssorg/vendor/behat/behat/features/annotations/format_options.feature",
+		"/Users/jlee/Documents/Onering Rentals Template/css/style.less",
+		"/Users/jlee/Documents/Onering Rentals Template/default.html",
+		"/Users/jlee/Documents/Onering Rentals Template/home.html",
+		"/Users/jlee/Documents/Onering Rentals Template/properties-detail.html",
+		"/Users/jlee/Documents/Onering Rentals Template/regions.html",
+		"/Users/jlee/Documents/Onering Rentals Template/find-a-rental.html",
+		"/Users/jlee/Google Drive/Onering Rentals Template/css/style.less",
+		"/Users/jlee/Google Drive/Onering Rentals Template/css/style.css",
+		"/Users/jlee/Google Drive/Onering Rentals Template/home.html",
+		"/Users/jlee/Google Drive/Onering Rentals Template/properties-list-modified.html",
+		"/Users/jlee/Google Drive/Onering Rentals Template/properties-detail-modified.html",
+		"/Users/jlee/Desktop/Tutorial/css/bootstrap.css",
+		"/Users/jlee/Desktop/Tutorial/services.html",
+		"/Users/jlee/Desktop/Tutorial/index.html",
+		"/Users/jlee/Desktop/Tutorial/dogs.html",
+		"/Users/jlee/Desktop/Tutorial/about.html",
+		"/Users/jlee/Desktop/Tutorial/css/custom.css",
+		"/Users/jlee/Desktop/Tutorial/less/custom.less.css",
+		"/Users/jlee/Desktop/Tutorial/less/jumbotron.less",
+		"/Users/jlee/Google Drive/SilverStripe/Communications/Websites/ss.org/Redesign 2012-2014/Designs/Assets/Icons/Homescreen/Code Snippet.txt",
+		"/Users/jlee/Google Drive/SilverStripe/Communications/Websites/ss.org/Redesign 2012-2014/Designs/Homepage/Hero/OGV Sweetspot/How to make OGV Small",
+		"/Applications/Miro Video Converter.app/Contents/Resources/lib/python2.7/mvc/basicconverters.py",
+		"/Applications/MAMP/htdocs/silverstripe/cms/composer.json",
+		"/Users/jlee/Google Drive/SilverStripe/Communications/Websites/ss.org/Redesign 2012-2014/Designs/Homepage/Animation/Sequence/SaveAiLayers2SeparateAiFiles.jsx"
+	],
+	"find":
+	{
+		"height": 58.0
+	},
+	"find_in_files":
+	{
+		"height": 142.0,
+		"where_history":
+		[
+			"/Users/jlee/Downloads/SlidePushMenus",
+			"/Users/jlee/Downloads/SlidePushMenus/,<current file>",
+			"/Users/jlee/Downloads/SlidePushMenus/",
+			"/Users/jlee/Downloads/SlidePushMenus",
+			"<current file>",
+			"/Users/jlee/Sites/",
+			"/Users/jlee/Sites/ssorg/",
+			"/Users/jlee/Sites/ssorg/themes/ssv3/js",
+			"/Users/jlee/Sites/",
+			"/Users/jlee/Sites/ssorg/mysite",
+			"/Users/jlee/Sites/ssorg/",
+			"/Users/jlee/Sites/ssorg/themes/ssv3",
+			"",
+			"scss",
+			"",
+			"*.js",
+			"",
+			"*.js",
+			"",
+			"ssorg",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"color",
+			"//",
+			"less",
+			"cbp-sp",
+			".cbp-sp",
+			"cbp-sp",
+			"cbp-smenu",
+			".btn-default-banner",
+			"$btn-default-banner-color",
+			"btn-default-banner",
+			"COMPONENT_PLATFORM",
+			"screen-md",
+			"theme-dkgreen",
+			"175055",
+			"class=\"platform-promo",
+			"Bring all of them",
+			"bring all of them.\nbring all of them",
+			"bring all of them.\nbring all of them.\nbring them all",
+			"theme-dkgreen",
+			"$theme-dkgreen",
+			"175055",
+			"#175055",
+			"http//",
+			"has-file",
+			"head",
+			".datepicker",
+			"<<<<",
+			">>>>",
+			"====",
+			"500px",
+			"max-width:500px",
+			"@media (max-width:500px)",
+			"preview",
+			"component-showcase-intro",
+			"showcase-blue",
+			".component-featured-showcase",
+			"component-featured-showcase.showcase-blue",
+			"user-profile",
+			"download-release",
+			"date",
+			"bs-date-format",
+			"on handlelist",
+			"manage",
+			"buttonfilefield",
+			"Showcase Guidelines",
+			"SilverStripe showcases allow you to share a case study of your work with the world",
+			"Submit a new project",
+			">'));",
+			"input-group-addon",
+			"projectform",
+			"bootstrap",
+			"border-radius",
+			"border-",
+			"border-ra",
+			"SubmissionContent",
+			"input",
+			"<input",
+			"ProjectForm",
+			"BootstrapForm_ProjectForm_Screenshot",
+			"SubscribeForm.ss",
+			"SubscribeForm",
+			"Component_SubscribeForm",
+			"blog-holder",
+			"btn-add-site",
+			"content_css",
+			"tinymce.init",
+			"select",
+			"lead-gen",
+			"SectorTagID",
+			"sector",
+			"lead-gen-form",
+			"Day",
+			"day",
+			"placeholder=\"day\"",
+			"GatedContentForm",
+			"name",
+			"download",
+			"downloadpaperform",
+			"getFrontEndFields",
+			"form-vertical",
+			"ProjectForm",
+			"BootstrapForm_ProjectForm",
+			"id=\"BootstrapForm_ProjectForm\"",
+			"form-vertical",
+			"BootstrapForm_ProjectForm",
+			"datelaunched",
+			"<span class=\"separator\"",
+			"<span class=\"separator\">/</span>",
+			".separator",
+			"separator",
+			"Launch date of work completed",
+			"ProjectForm",
+			"form-vertical",
+			"BootstrapForm_ProjectForm",
+			"ProjectForm",
+			"Launch date of work completed",
+			"DateLaunched_day",
+			"DateLaunched",
+			"silverstripe forms",
+			"projectform",
+			"Submit a new project",
+			"download",
+			"Keep me updated",
+			"\"Keep me updated\"",
+			"Keep me updated with relevant SilverStripe content ",
+			"Keep me updated with relevant SilverStripe content (We value your privacy and will never spam you!)",
+			"GatedContentForm",
+			"whitepaper",
+			"gatedcontent",
+			"gated",
+			"downloadpaperform",
+			"Tabscomponent",
+			"file",
+			"file:///",
+			"form",
+			".form-control::-moz-placeholder",
+			"show",
+			"date",
+			"show",
+			"date",
+			"control",
+			"form-control",
+			"FormHeading",
+			"field",
+			"field text",
+			"Request a demo",
+			"Silverstripe_form",
+			"favicon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			" ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2383.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scss/utils/_variables.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "scss/layout/_navigation.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2447,
+								2447
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1892.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scss/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.629695578414,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "demo-theme.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"component_download",
+				"themes/ssv3/templates/Includes/Component_DownloadReleases.ss"
+			],
+			[
+				"download",
+				"mysite/code/components/DownloadComponent.php"
+			],
+			[
+				"_cust",
+				".sass-cache/6665b02a01270d1f5d87d0630379045d807b7c96/_custom-variables.scssc"
+			],
+			[
+				"_cus",
+				".sass-cache/6665b02a01270d1f5d87d0630379045d807b7c96/_custom-variables.scssc"
+			],
+			[
+				"composer.lock",
+				"composer.lock"
+			],
+			[
+				"ssproject.php",
+				"mysite/code/model/SSProject.php"
+			],
+			[
+				"main.js",
+				"themes/ssv3/js/main.js"
+			],
+			[
+				"style.css",
+				"themes/ssv3/css/style.css"
+			],
+			[
+				"lead-gen",
+				"themes/ssv3/scss/framework/_lead-gen-forms.scss"
+			],
+			[
+				"_showcase",
+				"themes/ssv3/scss/components/_showcase.scss"
+			],
+			[
+				"showcase.s",
+				".sass-cache/5894a17684a10a22e15272b9c78244786b27c0ba/_showcase.scssc"
+			],
+			[
+				"sspro",
+				"mysite/code/model/SSProject.php"
+			],
+			[
+				"community",
+				"themes/ssv3/templates/Layout/CommunityShowcasePage_manage.ss"
+			],
+			[
+				"communitysho",
+				"ssorg/mysite/code/page_type/CommunityShowcasePage.php"
+			],
+			[
+				"formfield.php",
+				"demo/framework/forms/FormField.php"
+			],
+			[
+				"filefie",
+				"demo/framework/forms/FileField.php"
+			],
+			[
+				"formfiel",
+				"demo/framework/templates/forms/FormField_holder.ss"
+			],
+			[
+				"date",
+				"demo/framework/forms/DateField.php"
+			],
+			[
+				"compos",
+				"ssorg/composer.json"
+			],
+			[
+				"lead",
+				"ssorg/mysite/code/page_type/LeadGeneratingUserDefinedForm.php"
+			],
+			[
+				"editabletex",
+				"ssorg/userforms/code/model/editableformfields/EditableTextField.php"
+			],
+			[
+				"editablee",
+				"ssorg/userforms/code/model/editableformfields/EditableEmailField.php"
+			],
+			[
+				"forumthre",
+				"ssorg/forum/code/model/ForumThread.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

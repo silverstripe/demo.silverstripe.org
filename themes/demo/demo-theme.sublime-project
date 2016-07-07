@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"livestyle": {
+	        	"globals": ["./scss/**/*.scss"]
+	   		}
+		}
+	]
+}

@@ -1,0 +1,31 @@
+header.hero{
+    background-color: $bg-color-highlight;
+    color: $color-light;
+    text-align: left;
+    padding: 100px 0 90px 0;
+//    padding-left: 100px;
+//    padding-right: 100px;
+    min-height: 300px; //content placeholder
+    .hero-cta{
+
+    }
+}
+
+section {
+    // max-width: 1320px;
+    margin: 0 auto;
+}
+
+/* Mobile first queries */
+
+    /* Larger than phablet */
+    @media (min-width: 550px) {
+    }
+
+    /* Larger than tablet */
+    @media (min-width: 750px) {
+    }
+
+    /* Larger than desktop */
+    @media (min-width: 1000px) {
+    }

@@ -16,7 +16,8 @@ framework/
 testsession/
 userforms/
 widgets/
-themes/
+themes/simple/
+themes/demo/node_modules/
 raygun/
 /reports
 /siteconfig
