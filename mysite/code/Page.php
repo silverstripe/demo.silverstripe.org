@@ -11,10 +11,7 @@ class Page_Controller extends ContentController implements TemplateGlobalProvide
 		Requirements::themedCSS('main');
 
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-
-		//Requirements::css('mysite/css/main.css');
-		//Requirements::css('mysite/css/moduleSupport.css');
-		//Requirements::javascript('mysite/javascript/demobar.js');
+		
 		Requirements::javascript('mysite/javascript/googleanalytics.js');
 
 	}
