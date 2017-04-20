@@ -8,6 +8,7 @@ silverstripe-cache
 .idea
 .DS_Store
 vendor/
+admin/
 blog/
 cms/
 docsviewer/
@@ -23,3 +24,8 @@ raygun/
 silverstripe-dynamodb/
 crontask/
 asset-admin/
+campaign-admin/
+silverstripe-admin/
+versioned/
+silverstripe-assets/
+graphql/
