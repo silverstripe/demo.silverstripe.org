@@ -12,12 +12,12 @@ SSViewer:
 LeftAndMain:
   extra_requirements_javascript:
     - 'mysite/javascript/googleanalytics.js'
-    - 'mysite/javascript/calltoaction.js'
-  extra_requirements_css:
-    - 'mysite/css/calltoaction.css'
 SiteTree:
   nested_urls: true
 MySQLDatabase:
   connection_charset: 'utf8'
 Security:
   default_login_dest: '/admin/pages'
+File:
+  allowed_extensions:
+    - 'html'

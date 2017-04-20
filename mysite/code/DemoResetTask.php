@@ -34,6 +34,8 @@ class DemoResetTask extends BuildTask {
 		echo "<pre>";
 		echo htmlentities(`nice -n 5 php ./framework/cli-script.php dev/build`);
 		echo "</pre>";
+		echo "Migrating File records...\n<br>";
+		echo htmlentities(`nice -n 5 php ./framework/cli-script.php dev/tasks/MigrateFileTask`);
 		echo "Done!\n";
 	}
 }
