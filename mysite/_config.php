@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Control\Director;
+
 global $project;
 $project = 'mysite';
 

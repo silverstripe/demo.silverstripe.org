@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+
 class HomePage extends Page {
 
 	private static $db = array(

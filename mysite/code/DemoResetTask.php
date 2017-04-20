@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Dev\BuildTask;
+
 class DemoResetTask extends BuildTask {
 	function run($request) {
 		global $databaseConfig;

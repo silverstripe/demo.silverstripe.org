@@ -3,21 +3,24 @@
 	"description": "Demo SilverStripe Project",
 	"require": {
 		"php": ">=5.6.0",
-		"silverstripe/admin": "1.0.0-alpha6",
-		"silverstripe/asset-admin": "1.0.0-alpha6",
-		"silverstripe/assets": "1.0.0-alpha6",
-		"silverstripe/campaign-admin": "1.0.0-alpha6",
-		"silverstripe/cms": "4.0.0-alpha6",
-		"silverstripe/config": "1.0.0-alpha6",
-		"silverstripe/framework": "4.0.0-alpha6",
-		"silverstripe/graphql": "0.2.2",
-		"silverstripe/reports": "4.0.0-alpha6",
-		"silverstripe/siteconfig": "4.0.0-alpha6",
-		"silverstripe/versioned": "1.0.0-alpha6",
+		"silverstripe/admin": "~1.0.0@alpha",
+        "silverstripe/asset-admin": "~1.0.0@alpha",
+        "silverstripe/assets": "~1.0.0@alpha",
+        "silverstripe/campaign-admin": "~1.0.0@alpha",
+        "silverstripe/cms": "~4.0.0@alpha",
+        "silverstripe/config": "~1.0.0@alpha",
+        "silverstripe/framework": "~4.0.0@alpha",
+        "silverstripe/graphql": "~0.2.2@stable",
+        "silverstripe/reports": "~4.0.0@alpha",
+        "silverstripe/siteconfig": "~4.0.0@alpha",
+        "silverstripe/versioned": "~1.0.0@alpha",
 		"silverstripe-themes/simple": "*@dev",
-		"silverstripe/dynamodb": "~1.1",
+		"silverstripe/dynamodb": "*@dev",
 		"silverstripe/crontask": "*@dev"
 	},
+	"require-dev": {
+        "phpunit/PHPUnit": "^5.7"
+    },
 	"config": {
 		"process-timeout": 600
 	},
