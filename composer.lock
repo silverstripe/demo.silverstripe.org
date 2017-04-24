@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2cc466f3b6e4220beb13bcfa362c41b",
+    "content-hash": "94a27ec2ffe6ac13ba8201aa08129ce9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1470,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-dynamodb.git",
-                "reference": "5275dcb21bec2f5762bdefb8f5d4d4b4efa3a31f"
+                "reference": "eb55bc1afaf63a7b69cb67dae24fa985fb815bd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-dynamodb/zipball/5275dcb21bec2f5762bdefb8f5d4d4b4efa3a31f",
-                "reference": "5275dcb21bec2f5762bdefb8f5d4d4b4efa3a31f",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-dynamodb/zipball/eb55bc1afaf63a7b69cb67dae24fa985fb815bd8",
+                "reference": "eb55bc1afaf63a7b69cb67dae24fa985fb815bd8",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1520,7 @@
                 "dynamodb",
                 "silverstripe"
             ],
-            "time": "2017-04-20 23:48:06"
+            "time": "2017-04-24 03:46:50"
         },
         {
             "name": "silverstripe/framework",

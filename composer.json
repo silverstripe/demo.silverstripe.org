@@ -15,7 +15,7 @@
         "silverstripe/siteconfig": "4.0.x-dev",
         "silverstripe/versioned": "1.0.x-dev",
 		"silverstripe-themes/simple": "*@dev",
-		"silverstripe/dynamodb": "^3@dev",
+		"silverstripe/dynamodb": "3.0.x-dev",
 		"silverstripe/crontask": "*@dev"
 	},
 	"require-dev": {
