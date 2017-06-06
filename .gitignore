@@ -23,3 +23,8 @@ raygun/
 silverstripe-dynamodb/
 crontask/
 asset-admin/
+campaign-admin/
+graphql/
+silverstripe-admin/
+silverstripe-assets/
+versioned/

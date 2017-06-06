@@ -2,17 +2,34 @@
 	"name": "silverstripe/demo.silverstripe.org",
 	"description": "Demo SilverStripe Project",
 	"require": {
-		"php": ">=5.3.2",
-		"silverstripe/cms": "4.0.0-alpha1",
-		"silverstripe/asset-admin": "1.0.0-alpha1",
-		"silverstripe/framework": "4.0.0-alpha1",
-		"silverstripe/reports": "4.0.0-alpha1",
-		"silverstripe/siteconfig": "4.0.0-alpha1",
-		"silverstripe-themes/simple": "*@dev",
-		"silverstripe/dynamodb": "~1.1",
-		"silverstripe/crontask": "*@dev"
+		"php": ">=5.6.0",
+		"silverstripe/admin": "1.0.0-alpha7",
+		"silverstripe/asset-admin": "1.0.0-alpha7",
+		"silverstripe/assets": "1.0.0-alpha7",
+		"silverstripe/campaign-admin": "1.0.0-alpha7",
+		"silverstripe/cms": "4.0.0-alpha7",
+		"silverstripe/config": "1.0.0-alpha8",
+		"silverstripe/framework": "4.0.0-alpha7",
+		"silverstripe/graphql": "0.2.3@stable",
+		"silverstripe/reports": "4.0.0-alpha7",
+		"silverstripe/siteconfig": "4.0.0-alpha7",
+		"silverstripe/versioned": "1.0.0-alpha7",
+		"silverstripe-themes/simple": "~3.2.0",
+		"silverstripe/dynamodb": "dev-master",
+		"silverstripe/crontask": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/PHPUnit": "^5.7"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "4.0.x-dev"
+		}
 	},
 	"config": {
 		"process-timeout": 600
-	}
+	},
+	"prefer-stable": true,
+	"minimum-stability": "dev"
 }
+

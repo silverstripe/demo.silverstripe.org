@@ -1,5 +1,9 @@
 <?php
 
+use SilverStripe\Control\Director;
+
+require_once __DIR__ . '/env-shiv.php';
+
 global $project;
 $project = 'mysite';
 

@@ -1,23 +1,17 @@
 ---
 Name: mysite
-After:
-  - 'framework/*'
-  - 'cms/*'
 ---
-# YAML configuration for SilverStripe
-# See http://doc.silverstripe.org/framework/en/topics/configuration
-# Caution: Indentation through two spaces, not tabs
-SSViewer:
-  theme: 'simple'
-LeftAndMain:
+SilverStripe\View\SSViewer:
+  themes:
+    - 'simple'
+    - '$default'
+SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - 'mysite/javascript/googleanalytics.js'
-SiteTree:
-  nested_urls: true
-MySQLDatabase:
-  connection_charset: 'utf8'
-Security:
+SilverStripe\Security:
   default_login_dest: '/admin/pages'
-File:
+SilverStripe\Assets\File:
   allowed_extensions:
     - 'html'
+SilverStripe\CMS\Model\ErrorPage:
+  enable_static_file: false

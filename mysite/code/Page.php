@@ -1,11 +1,17 @@
 <?php
 
-class Page extends SiteTree {
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Control\Controller;
+use SilverStripe\Security\Security;
+use SilverStripe\View\Requirements;
+use SilverStripe\View\TemplateGlobalProvider;
+
+class Page extends SilverStripe\CMS\Model\SiteTree {
 }
 
-class Page_Controller extends ContentController implements TemplateGlobalProvider  {
+class PageController extends  ContentController implements TemplateGlobalProvider  {
 
-	public function init() {
+	protected function init() {
 		parent::init();
 
 		Requirements::themedCSS('reset');
@@ -13,7 +19,7 @@ class Page_Controller extends ContentController implements TemplateGlobalProvide
 		Requirements::themedCSS('form');
 		Requirements::themedCSS('typography');
 
-		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+		Requirements::javascript( 'mysite/javascript/jquery-3.2.1.min.js');
 
 		Requirements::css('mysite/css/demo.css');
 		Requirements::css('mysite/css/moduleSupport.css');
