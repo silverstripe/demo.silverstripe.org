@@ -7,5 +7,6 @@ use SilverStripe\Security\Security;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\View\TemplateGlobalProvider;
 
-class Page extends SiteTree {
+class Page extends SiteTree
+{
 }

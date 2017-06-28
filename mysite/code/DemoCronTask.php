@@ -2,21 +2,20 @@
 
 use SilverStripe\Control\Controller;
 use SilverStripe\CronTask\Interfaces\CronTask;
-class DemoCronTask implements CronTask {
 
+class DemoCronTask implements CronTask
+{
     /**
-    *
-    * @return string
-    */
+     * @return string
+     */
     public function getSchedule()
     {
         return "*/20 * * * *";
     }
 
     /**
-    *
-    * @return void
-    */
+     * @return void
+     */
     public function process()
     {
         $this->request = Controller::curr()->getRequest();
