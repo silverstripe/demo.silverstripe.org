@@ -1,10 +1,14 @@
 <?php
+
 /**
  * Imports SS_* constants into the environment so dotenv can read them.
  *
  * This file is temporary - until SilverStripe Platform supports auto-generation
  * of .env files instead of/as well as _ss_environment.php
  */
+
+use SilverStripe\ORM\DB;
+
 if (!file_exists(BASE_PATH . '/.env')) {
 	// Define paths to look for _ss_environment in
 	$paths = [
@@ -31,5 +35,15 @@ if (!file_exists(BASE_PATH . '/.env')) {
 			break;
 		}
 	}
+
+	DB::setConfig([
+		'type' => 'MySQLPDODatabase',
+		'server' => SS_DATABASE_SERVER,
+		'username' => SS_DATABASE_USERNAME,
+		'password' => SS_DATABASE_PASSWORD,
+		'database' => SS_DATABASE_NAME,
+	]);
+
 }
+
 unset($path, $paths, $constantName, $constantValue);
