@@ -23,18 +23,18 @@ DROP TABLE IF EXISTS `ChangeSet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ChangeSet` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Versioned\\ChangeSet') DEFAULT 'SilverStripe\\Versioned\\ChangeSet',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `Name` varchar(255) DEFAULT NULL,
-  `State` enum('open','published','reverted') DEFAULT 'open',
-  `OwnerID` int(11) NOT NULL DEFAULT 0,
-  `IsInferred` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Description` mediumtext DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `OwnerID` (`OwnerID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Versioned\\ChangeSet') DEFAULT 'SilverStripe\\Versioned\\ChangeSet',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`Name` varchar(255) DEFAULT NULL,
+	`State` enum('open','published','reverted') DEFAULT 'open',
+	`OwnerID` int(11) NOT NULL DEFAULT 0,
+	`IsInferred` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Description` mediumtext DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `OwnerID` (`OwnerID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,21 +55,21 @@ DROP TABLE IF EXISTS `ChangeSetItem`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ChangeSetItem` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Versioned\\ChangeSetItem') DEFAULT 'SilverStripe\\Versioned\\ChangeSetItem',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `VersionBefore` int(11) NOT NULL DEFAULT 0,
-  `VersionAfter` int(11) NOT NULL DEFAULT 0,
-  `Added` enum('explicitly','implicitly') DEFAULT 'implicitly',
-  `ChangeSetID` int(11) NOT NULL DEFAULT 0,
-  `ObjectID` int(11) NOT NULL DEFAULT 0,
-  `ObjectClass` enum('SilverStripe\\CronTask\\CronTaskStatus','SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','SilverStripe\\SiteConfig\\SiteConfig','SilverStripe\\Versioned\\ChangeSet','SilverStripe\\Versioned\\ChangeSetItem','SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','SilverStripe\\Security\\Group','SilverStripe\\Security\\LoginAttempt','SilverStripe\\Security\\Member','SilverStripe\\Security\\MemberPassword','SilverStripe\\Security\\Permission','SilverStripe\\Security\\PermissionRole','SilverStripe\\Security\\PermissionRoleCode','SilverStripe\\Security\\RememberLoginHash') DEFAULT 'SilverStripe\\CronTask\\CronTaskStatus',
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `ObjectUniquePerChangeSet` (`ObjectID`,`ObjectClass`,`ChangeSetID`),
-  KEY `ChangeSetID` (`ChangeSetID`),
-  KEY `ObjectID` (`ObjectID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Versioned\\ChangeSetItem') DEFAULT 'SilverStripe\\Versioned\\ChangeSetItem',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`VersionBefore` int(11) NOT NULL DEFAULT 0,
+	`VersionAfter` int(11) NOT NULL DEFAULT 0,
+	`Added` enum('explicitly','implicitly') DEFAULT 'implicitly',
+	`ChangeSetID` int(11) NOT NULL DEFAULT 0,
+	`ObjectID` int(11) NOT NULL DEFAULT 0,
+	`ObjectClass` enum('SilverStripe\\CronTask\\CronTaskStatus','SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','SilverStripe\\SiteConfig\\SiteConfig','SilverStripe\\Versioned\\ChangeSet','SilverStripe\\Versioned\\ChangeSetItem','SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','SilverStripe\\Security\\Group','SilverStripe\\Security\\LoginAttempt','SilverStripe\\Security\\Member','SilverStripe\\Security\\MemberPassword','SilverStripe\\Security\\Permission','SilverStripe\\Security\\PermissionRole','SilverStripe\\Security\\PermissionRoleCode','SilverStripe\\Security\\RememberLoginHash') DEFAULT 'SilverStripe\\CronTask\\CronTaskStatus',
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `ObjectUniquePerChangeSet` (`ObjectID`,`ObjectClass`,`ChangeSetID`),
+	KEY `ChangeSetID` (`ChangeSetID`),
+	KEY `ObjectID` (`ObjectID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -90,12 +90,12 @@ DROP TABLE IF EXISTS `ChangeSetItem_ReferencedBy`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ChangeSetItem_ReferencedBy` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ChangeSetItemID` int(11) NOT NULL DEFAULT 0,
-  `ChildID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `ChangeSetItemID` (`ChangeSetItemID`),
-  KEY `ChildID` (`ChildID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ChangeSetItemID` int(11) NOT NULL DEFAULT 0,
+	`ChildID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `ChangeSetItemID` (`ChangeSetItemID`),
+	KEY `ChildID` (`ChildID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,15 +116,15 @@ DROP TABLE IF EXISTS `CronTaskStatus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CronTaskStatus` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\CronTask\\CronTaskStatus') DEFAULT 'SilverStripe\\CronTask\\CronTaskStatus',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `TaskClass` varchar(255) DEFAULT NULL,
-  `LastChecked` datetime DEFAULT NULL,
-  `LastRun` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\CronTask\\CronTaskStatus') DEFAULT 'SilverStripe\\CronTask\\CronTaskStatus',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`TaskClass` varchar(255) DEFAULT NULL,
+	`LastChecked` datetime DEFAULT NULL,
+	`LastRun` datetime DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -145,13 +145,13 @@ DROP TABLE IF EXISTS `ErrorPage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ErrorPage` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ErrorCode` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ErrorCode` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7207 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -173,13 +173,13 @@ DROP TABLE IF EXISTS `ErrorPage_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ErrorPage_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ErrorCode` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ErrorCode` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7207 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -201,23 +201,23 @@ DROP TABLE IF EXISTS `ErrorPage_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ErrorPage_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AuthorID` int(11) NOT NULL DEFAULT 0,
-  `PublisherID` int(11) NOT NULL DEFAULT 0,
-  `ErrorCode` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `AuthorID` (`AuthorID`),
-  KEY `PublisherID` (`PublisherID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AuthorID` int(11) NOT NULL DEFAULT 0,
+	`PublisherID` int(11) NOT NULL DEFAULT 0,
+	`ErrorCode` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`),
+	KEY `AuthorID` (`AuthorID`),
+	KEY `PublisherID` (`PublisherID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -239,33 +239,33 @@ DROP TABLE IF EXISTS `File`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `File` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Folder','Image') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Assets\\File',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Filename` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `Sort` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `OwnerID` int(11) NOT NULL DEFAULT 0,
-  `PopupWidth` int(11) NOT NULL DEFAULT 0,
-  `PopupHeight` int(11) NOT NULL DEFAULT 0,
-  `Embed` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `LimitDimensions` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `FileHash` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `FileFilename` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `FileVariant` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `OwnerID` (`OwnerID`),
-  KEY `ClassName` (`ClassName`),
-  KEY `SubsiteID` (`SubsiteID`),
-  FULLTEXT KEY `SearchFields` (`Filename`,`Title`,`Content`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Folder','Image') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Assets\\File',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Filename` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`Sort` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`OwnerID` int(11) NOT NULL DEFAULT 0,
+	`PopupWidth` int(11) NOT NULL DEFAULT 0,
+	`PopupHeight` int(11) NOT NULL DEFAULT 0,
+	`Embed` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`LimitDimensions` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`FileHash` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`FileFilename` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`FileVariant` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `OwnerID` (`OwnerID`),
+	KEY `ClassName` (`ClassName`),
+	KEY `SubsiteID` (`SubsiteID`),
+	FULLTEXT KEY `SearchFields` (`Filename`,`Title`,`Content`)
 ) ENGINE=MyISAM AUTO_INCREMENT=47479 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -287,23 +287,23 @@ DROP TABLE IF EXISTS `File_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `File_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Image') DEFAULT 'SilverStripe\\Assets\\File',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `Name` varchar(255) DEFAULT NULL,
-  `Title` varchar(255) DEFAULT NULL,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `OwnerID` int(11) NOT NULL DEFAULT 0,
-  `FileHash` varchar(255) DEFAULT NULL,
-  `FileFilename` varchar(255) DEFAULT NULL,
-  `FileVariant` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `OwnerID` (`OwnerID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Image') DEFAULT 'SilverStripe\\Assets\\File',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`Name` varchar(255) DEFAULT NULL,
+	`Title` varchar(255) DEFAULT NULL,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`OwnerID` int(11) NOT NULL DEFAULT 0,
+	`FileHash` varchar(255) DEFAULT NULL,
+	`FileFilename` varchar(255) DEFAULT NULL,
+	`FileVariant` varchar(255) DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `OwnerID` (`OwnerID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=47479 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -325,32 +325,32 @@ DROP TABLE IF EXISTS `File_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `File_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AuthorID` int(11) NOT NULL DEFAULT 0,
-  `PublisherID` int(11) NOT NULL DEFAULT 0,
-  `ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Image') DEFAULT 'SilverStripe\\Assets\\File',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `Name` varchar(255) DEFAULT NULL,
-  `Title` varchar(255) DEFAULT NULL,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `OwnerID` int(11) NOT NULL DEFAULT 0,
-  `FileHash` varchar(255) DEFAULT NULL,
-  `FileFilename` varchar(255) DEFAULT NULL,
-  `FileVariant` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `AuthorID` (`AuthorID`),
-  KEY `PublisherID` (`PublisherID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `OwnerID` (`OwnerID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AuthorID` int(11) NOT NULL DEFAULT 0,
+	`PublisherID` int(11) NOT NULL DEFAULT 0,
+	`ClassName` enum('SilverStripe\\Assets\\File','SilverStripe\\Assets\\Folder','SilverStripe\\Assets\\Image','File','Image') DEFAULT 'SilverStripe\\Assets\\File',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`Name` varchar(255) DEFAULT NULL,
+	`Title` varchar(255) DEFAULT NULL,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 1,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`OwnerID` int(11) NOT NULL DEFAULT 0,
+	`FileHash` varchar(255) DEFAULT NULL,
+	`FileFilename` varchar(255) DEFAULT NULL,
+	`FileVariant` varchar(255) DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `RecordID_Version` (`RecordID`,`Version`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`),
+	KEY `AuthorID` (`AuthorID`),
+	KEY `PublisherID` (`PublisherID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `OwnerID` (`OwnerID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -372,26 +372,26 @@ DROP TABLE IF EXISTS `Group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Group` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\Group','Group') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Group',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `CanCMS` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `CanCMSAdmin` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Locked` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Sort` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `Description` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `IPRestrictions` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `_obsolete_SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `HtmlEditorConfig` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `AccessAllSubsites` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `ClassName` (`ClassName`),
-  KEY `SubsiteID` (`_obsolete_SubsiteID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\Group','Group') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Group',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`CanCMS` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`CanCMSAdmin` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Locked` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Sort` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`Description` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`IPRestrictions` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`_obsolete_SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`HtmlEditorConfig` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`AccessAllSubsites` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `ClassName` (`ClassName`),
+	KEY `SubsiteID` (`_obsolete_SubsiteID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -413,12 +413,12 @@ DROP TABLE IF EXISTS `Group_Members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Group_Members` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  `MemberID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `GroupID` (`GroupID`),
-  KEY `MemberID` (`MemberID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	`MemberID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `GroupID` (`GroupID`),
+	KEY `MemberID` (`MemberID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1511 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -440,12 +440,12 @@ DROP TABLE IF EXISTS `Group_Roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Group_Roles` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  `PermissionRoleID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `GroupID` (`GroupID`),
-  KEY `PermissionRoleID` (`PermissionRoleID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	`PermissionRoleID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `GroupID` (`GroupID`),
+	KEY `PermissionRoleID` (`PermissionRoleID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -466,9 +466,9 @@ DROP TABLE IF EXISTS `HomePage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `HomePage` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RightContent` mediumtext DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RightContent` mediumtext DEFAULT NULL,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -478,7 +478,7 @@ CREATE TABLE `HomePage` (
 
 LOCK TABLES `HomePage` WRITE;
 /*!40000 ALTER TABLE `HomePage` DISABLE KEYS */;
-INSERT INTO `HomePage` VALUES (86,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
+INSERT INTO `HomePage` VALUES (86,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
 /*!40000 ALTER TABLE `HomePage` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -490,9 +490,9 @@ DROP TABLE IF EXISTS `HomePage_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `HomePage_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RightContent` mediumtext DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RightContent` mediumtext DEFAULT NULL,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -502,7 +502,7 @@ CREATE TABLE `HomePage_Live` (
 
 LOCK TABLES `HomePage_Live` WRITE;
 /*!40000 ALTER TABLE `HomePage_Live` DISABLE KEYS */;
-INSERT INTO `HomePage_Live` VALUES (86,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
+INSERT INTO `HomePage_Live` VALUES (86,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
 /*!40000 ALTER TABLE `HomePage_Live` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -514,14 +514,14 @@ DROP TABLE IF EXISTS `HomePage_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `HomePage_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `RightContent` mediumtext DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`RightContent` mediumtext DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -531,7 +531,7 @@ CREATE TABLE `HomePage_Versions` (
 
 LOCK TABLES `HomePage_Versions` WRITE;
 /*!40000 ALTER TABLE `HomePage_Versions` DISABLE KEYS */;
-INSERT INTO `HomePage_Versions` VALUES (1,86,259,NULL),(2,86,260,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(3,86,261,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(4,86,262,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(5,86,263,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(6,86,264,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(7,86,265,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(8,86,266,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(9,86,267,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://demo.silverstripe.com/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(10,86,268,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(11,86,269,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><div class=\"platform-promo\">\n<div class=\"clearfix\">\n<div class=\"col-md-12 col-xs-6 wrapper-dl\"><img src=\"http://www.silverstripe.org/themes/ssv3/img/SSPLogoWhite.svg\" alt=\"\" title=\"\"><h3>Download releases</h3>\n<p>Managed Platform by SilverStripe Ltd. offers professional hosting and web development, along with training and commercial support services, for organisations that demand system reliability and efficient development teams.</p>\n<a class=\"btn btn-default-banner\" href=\"http://www.silverstripe.org/download/#download-releases\">Find out more</a></div>\n<div class=\"col-md-6 col-xs-6 hideImage\"><img src=\"http://www.silverstripe.org/themes/ssv3/img/Platform-Banner.png\" alt=\"\" title=\"\"></div>\n</div>\n</div>'),(12,86,270,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><img class=\"leftAlone\" title=\"\" src=\"assets/Uploads/_resampled/ResizedImageWzYwMCw1NDNd-Screenshot-2016-02-02-15.12.06.png\" alt=\"Screenshot 2016 02 02 15.12.06\" width=\"600\" height=\"543\"></p>\n<hr>'),(13,86,271,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><img class=\"leftAlone\" title=\"\" src=\"assets/Uploads/Platform-Banner-jared.png\" alt=\"Platform Banner jared\" width=\"255\" height=\"255\"></p>\n<hr>'),(14,86,272,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner-jared.png\" alt=\"Platform Banner jared\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(15,86,273,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(16,86,274,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(17,86,275,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(18,86,276,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>'),(19,86,277,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://ss3.demo.silverstripe.org/Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
+INSERT INTO `HomePage_Versions` VALUES (1,86,259,NULL),(2,86,260,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(3,86,261,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(4,86,262,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(5,86,263,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(6,86,264,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(7,86,265,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"admin/security\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(8,86,266,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"http://Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(9,86,267,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(10,86,268,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><blockquote>I know a number of front-end developers who had limited PHP skills but were able to adapt to this CMS very quickly. I\'ve used it myself, and apart from the flexibility and the ease of integration, the actual UI for the CMS is very intuitive and easy to use, so your clients will love it as well. <cite><strong>Usman Sheilk</strong> <br>\"Expert tip of the month\" .net magazine July 2010.</cite></blockquote>'),(11,86,269,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<hr><div class=\"platform-promo\">\n<div class=\"clearfix\">\n<div class=\"col-md-12 col-xs-6 wrapper-dl\"><img src=\"http://www.silverstripe.org/themes/ssv3/img/SSPLogoWhite.svg\" alt=\"\" title=\"\"><h3>Download releases</h3>\n<p>Managed Platform by SilverStripe Ltd. offers professional hosting and web development, along with training and commercial support services, for organisations that demand system reliability and efficient development teams.</p>\n<a class=\"btn btn-default-banner\" href=\"http://www.silverstripe.org/download/#download-releases\">Find out more</a></div>\n<div class=\"col-md-6 col-xs-6 hideImage\"><img src=\"http://www.silverstripe.org/themes/ssv3/img/Platform-Banner.png\" alt=\"\" title=\"\"></div>\n</div>\n</div>'),(12,86,270,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><img class=\"leftAlone\" title=\"\" src=\"assets/Uploads/_resampled/ResizedImageWzYwMCw1NDNd-Screenshot-2016-02-02-15.12.06.png\" alt=\"Screenshot 2016 02 02 15.12.06\" width=\"600\" height=\"543\"></p>\n<hr>'),(13,86,271,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><img class=\"leftAlone\" title=\"\" src=\"assets/Uploads/Platform-Banner-jared.png\" alt=\"Platform Banner jared\" width=\"255\" height=\"255\"></p>\n<hr>'),(14,86,272,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner-jared.png\" alt=\"Platform Banner jared\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(15,86,273,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(16,86,274,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: 0;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(17,86,275,'<h3>Try out the content authoring interface yourself!</h3>\n<div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div>\n<p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p>\n<p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p>\n<hr>'),(18,86,276,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>'),(19,86,277,'<h3>Try out the content authoring interface yourself!</h3><div class=\"Actions\"><a class=\"btn\" href=\"admin\">Log in to try the CMS</a><br><a title=\"Language support\" href=\"Security/login\">Language support</a><hr><a class=\"btn\" href=\"http://www.silverstripe.org/stable-download/\">Download SilverStripe</a></div><p>Visit the SilverStripe community on <a href=\"http://www.silverstripe.org/\">silverstripe.org</a></p><p><a href=\"http://www.silverstripe.com/platform\" target=\"_blank\"><img class=\"leftAlone\" style=\"border: 0; box-shadow: none;\" title=\"\" src=\"assets/Uploads/Platform-Banner.png\" alt=\"Platform Banner\" width=\"255\" height=\"255\"></a></p><hr>');
 /*!40000 ALTER TABLE `HomePage_Versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -543,17 +543,17 @@ DROP TABLE IF EXISTS `LoginAttempt`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `LoginAttempt` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\LoginAttempt') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\LoginAttempt',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Email` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Status` enum('Success','Failure') CHARACTER SET utf8 DEFAULT 'Success',
-  `IP` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MemberID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `MemberID` (`MemberID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\LoginAttempt') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\LoginAttempt',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Email` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Status` enum('Success','Failure') CHARACTER SET utf8 DEFAULT 'Success',
+	`IP` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MemberID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `MemberID` (`MemberID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -574,72 +574,72 @@ DROP TABLE IF EXISTS `Member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Member` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\Member','Member') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Member',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `FirstName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Surname` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Email` varchar(254) CHARACTER SET utf8 DEFAULT NULL,
-  `Password` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
-  `NumVisit` int(11) NOT NULL DEFAULT 0,
-  `LastVisited` datetime DEFAULT NULL,
-  `Bounced` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AutoLoginHash` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
-  `AutoLoginExpired` datetime DEFAULT NULL,
-  `BlacklistedEmail` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `ForumRank` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Occupation` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Country` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Nickname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `FirstNamePublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `SurnamePublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `OccupationPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `CountryPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `EmailPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `LastViewed` datetime DEFAULT NULL,
-  `AvatarID` int(11) NOT NULL DEFAULT 0,
-  `Address` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `AddressLine2` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `City` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `HomePhone` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `MobilePhone` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Notes` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `RememberLoginToken` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
-  `PasswordEncryption` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Salt` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Locale` varchar(6) CHARACTER SET utf8 DEFAULT NULL,
-  `IdentityURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Hash` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
-  `GroupCode` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `PasswordExpiry` date DEFAULT NULL,
-  `LockedOutUntil` datetime DEFAULT NULL,
-  `Signature` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `Company` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `CompanyPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `CityPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `FailedLoginCount` int(11) NOT NULL DEFAULT 0,
-  `Street` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `Suburb` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `CityTown` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `DateFormat` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `TimeFormat` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `FavouritePageID` int(11) NOT NULL DEFAULT 0,
-  `AFileID` int(11) NOT NULL DEFAULT 0,
-  `AImageID` int(11) NOT NULL DEFAULT 0,
-  `SuspendedUntil` date DEFAULT NULL,
-  `TempIDHash` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
-  `TempIDExpired` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `AutoLoginHash` (`AutoLoginHash`),
-  UNIQUE KEY `IdentityURL` (`IdentityURL`),
-  KEY `Email` (`Email`),
-  KEY `ClassName` (`ClassName`),
-  KEY `AvatarID` (`AvatarID`),
-  KEY `Nickname` (`Nickname`),
-  KEY `FavouritePageID` (`FavouritePageID`),
-  KEY `AFileID` (`AFileID`),
-  KEY `AImageID` (`AImageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\Member','Member') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Member',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`FirstName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Surname` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Email` varchar(254) CHARACTER SET utf8 DEFAULT NULL,
+	`Password` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
+	`NumVisit` int(11) NOT NULL DEFAULT 0,
+	`LastVisited` datetime DEFAULT NULL,
+	`Bounced` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AutoLoginHash` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
+	`AutoLoginExpired` datetime DEFAULT NULL,
+	`BlacklistedEmail` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`ForumRank` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Occupation` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Country` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Nickname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`FirstNamePublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`SurnamePublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`OccupationPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`CountryPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`EmailPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`LastViewed` datetime DEFAULT NULL,
+	`AvatarID` int(11) NOT NULL DEFAULT 0,
+	`Address` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`AddressLine2` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`City` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`HomePhone` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`MobilePhone` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Notes` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`RememberLoginToken` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
+	`PasswordEncryption` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Salt` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Locale` varchar(6) CHARACTER SET utf8 DEFAULT NULL,
+	`IdentityURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Hash` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+	`GroupCode` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`PasswordExpiry` date DEFAULT NULL,
+	`LockedOutUntil` datetime DEFAULT NULL,
+	`Signature` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`Company` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`CompanyPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`CityPublic` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`FailedLoginCount` int(11) NOT NULL DEFAULT 0,
+	`Street` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`Suburb` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`CityTown` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`DateFormat` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+	`TimeFormat` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+	`FavouritePageID` int(11) NOT NULL DEFAULT 0,
+	`AFileID` int(11) NOT NULL DEFAULT 0,
+	`AImageID` int(11) NOT NULL DEFAULT 0,
+	`SuspendedUntil` date DEFAULT NULL,
+	`TempIDHash` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
+	`TempIDExpired` datetime DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `AutoLoginHash` (`AutoLoginHash`),
+	UNIQUE KEY `IdentityURL` (`IdentityURL`),
+	KEY `Email` (`Email`),
+	KEY `ClassName` (`ClassName`),
+	KEY `AvatarID` (`AvatarID`),
+	KEY `Nickname` (`Nickname`),
+	KEY `FavouritePageID` (`FavouritePageID`),
+	KEY `AFileID` (`AFileID`),
+	KEY `AImageID` (`AImageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=504 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -661,17 +661,17 @@ DROP TABLE IF EXISTS `MemberPassword`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MemberPassword` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\MemberPassword','MemberPassword') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\MemberPassword',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Password` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
-  `Salt` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `PasswordEncryption` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `MemberID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `MemberID` (`MemberID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\MemberPassword','MemberPassword') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\MemberPassword',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Password` varchar(160) CHARACTER SET utf8 DEFAULT NULL,
+	`Salt` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`PasswordEncryption` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`MemberID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `MemberID` (`MemberID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -693,18 +693,18 @@ DROP TABLE IF EXISTS `Permission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Permission` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\Permission','Permission') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Permission',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Arg` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  `Type` int(11) NOT NULL DEFAULT 1,
-  PRIMARY KEY (`ID`),
-  KEY `GroupID` (`GroupID`),
-  KEY `Code` (`Code`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\Permission','Permission') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\Permission',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Arg` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	`Type` int(11) NOT NULL DEFAULT 1,
+	PRIMARY KEY (`ID`),
+	KEY `GroupID` (`GroupID`),
+	KEY `Code` (`Code`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -726,14 +726,14 @@ DROP TABLE IF EXISTS `PermissionRole`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `PermissionRole` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\PermissionRole') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\PermissionRole',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `OnlyAdminCanApply` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\PermissionRole') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\PermissionRole',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`OnlyAdminCanApply` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -754,15 +754,15 @@ DROP TABLE IF EXISTS `PermissionRoleCode`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `PermissionRoleCode` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\PermissionRoleCode') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\PermissionRoleCode',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `RoleID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `RoleID` (`RoleID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\PermissionRoleCode') CHARACTER SET utf8 DEFAULT 'SilverStripe\\Security\\PermissionRoleCode',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`RoleID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `RoleID` (`RoleID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -783,16 +783,16 @@ DROP TABLE IF EXISTS `RedirectorPage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RedirectorPage` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
-  `ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
-  `LinkToID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `LinkToID` (`LinkToID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
+	`ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
+	`LinkToID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `LinkToID` (`LinkToID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6687 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -814,16 +814,16 @@ DROP TABLE IF EXISTS `RedirectorPage_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RedirectorPage_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
-  `ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
-  `LinkToID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `LinkToID` (`LinkToID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
+	`ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
+	`LinkToID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `LinkToID` (`LinkToID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6687 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -845,26 +845,26 @@ DROP TABLE IF EXISTS `RedirectorPage_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RedirectorPage_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AuthorID` int(11) NOT NULL DEFAULT 0,
-  `PublisherID` int(11) NOT NULL DEFAULT 0,
-  `RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
-  `ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
-  `LinkToID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `LinkToID` (`LinkToID`),
-  KEY `AuthorID` (`AuthorID`),
-  KEY `PublisherID` (`PublisherID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AuthorID` int(11) NOT NULL DEFAULT 0,
+	`PublisherID` int(11) NOT NULL DEFAULT 0,
+	`RedirectionType` enum('Internal','External') CHARACTER SET utf8 DEFAULT 'Internal',
+	`ExternalURL` varchar(2083) CHARACTER SET utf8 DEFAULT NULL,
+	`LinkToID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`),
+	KEY `LinkToID` (`LinkToID`),
+	KEY `AuthorID` (`AuthorID`),
+	KEY `PublisherID` (`PublisherID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -885,19 +885,19 @@ DROP TABLE IF EXISTS `RememberLoginHash`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RememberLoginHash` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\Security\\RememberLoginHash') DEFAULT 'SilverStripe\\Security\\RememberLoginHash',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `DeviceID` varchar(40) DEFAULT NULL,
-  `Hash` varchar(160) DEFAULT NULL,
-  `ExpiryDate` datetime DEFAULT NULL,
-  `MemberID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `MemberID` (`MemberID`),
-  KEY `DeviceID` (`DeviceID`),
-  KEY `Hash` (`Hash`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\Security\\RememberLoginHash') DEFAULT 'SilverStripe\\Security\\RememberLoginHash',
+	`LastEdited` datetime DEFAULT NULL,
+	`Created` datetime DEFAULT NULL,
+	`DeviceID` varchar(40) DEFAULT NULL,
+	`Hash` varchar(160) DEFAULT NULL,
+	`ExpiryDate` datetime DEFAULT NULL,
+	`MemberID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `MemberID` (`MemberID`),
+	KEY `DeviceID` (`DeviceID`),
+	KEY `Hash` (`Hash`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -918,25 +918,25 @@ DROP TABLE IF EXISTS `SiteConfig`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteConfig` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\SiteConfig\\SiteConfig','SiteConfig') CHARACTER SET utf8 DEFAULT 'SilverStripe\\SiteConfig\\SiteConfig',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Tagline` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Theme` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
-  `CanEditType` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
-  `CanCreateTopLevelType` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MobileSubdomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `MobileTheme` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MobileSiteType` enum('Disabled','RedirectToDomain','MobileThemeOnly') CHARACTER SET utf8 DEFAULT 'Disabled',
-  `MobileDomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `FullSiteDomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `ClassName` (`ClassName`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\SiteConfig\\SiteConfig','SiteConfig') CHARACTER SET utf8 DEFAULT 'SilverStripe\\SiteConfig\\SiteConfig',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Tagline` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Theme` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
+	`CanEditType` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
+	`CanCreateTopLevelType` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MobileSubdomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`MobileTheme` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MobileSiteType` enum('Disabled','RedirectToDomain','MobileThemeOnly') CHARACTER SET utf8 DEFAULT 'Disabled',
+	`MobileDomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`FullSiteDomain` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `ClassName` (`ClassName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -946,7 +946,7 @@ CREATE TABLE `SiteConfig` (
 
 LOCK TABLES `SiteConfig` WRITE;
 /*!40000 ALTER TABLE `SiteConfig` DISABLE KEYS */;
-INSERT INTO `SiteConfig` VALUES (2,'SilverStripe\\SiteConfig\\SiteConfig','2010-03-30 15:38:33','2013-10-04 13:23:46','SilverStripe Demo','SilverStripe demo using the Simple theme','simple','Anyone','LoggedInUsers','LoggedInUsers',2,NULL,'blackcandymobile','RedirectToDomain','http://m.ss3.demo.silverstripe.org','http://ss3.demo.silverstripe.org');
+INSERT INTO `SiteConfig` VALUES (2,'SilverStripe\\SiteConfig\\SiteConfig','2010-03-30 15:38:33','2013-10-04 13:23:46','SilverStripe Demo','SilverStripe demo using the Simple theme','simple','Anyone','LoggedInUsers','LoggedInUsers',2,NULL,'blackcandymobile','RedirectToDomain','http://m.ss3.demo.silverstripe.org','');
 /*!40000 ALTER TABLE `SiteConfig` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -958,12 +958,12 @@ DROP TABLE IF EXISTS `SiteConfig_CreateTopLevelGroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteConfig_CreateTopLevelGroups` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteConfigID` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SiteConfigID` (`SiteConfigID`),
-  KEY `GroupID` (`GroupID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteConfigID` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SiteConfigID` (`SiteConfigID`),
+	KEY `GroupID` (`GroupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -984,12 +984,12 @@ DROP TABLE IF EXISTS `SiteConfig_EditorGroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteConfig_EditorGroups` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteConfigID` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SiteConfigID` (`SiteConfigID`),
-  KEY `GroupID` (`GroupID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteConfigID` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SiteConfigID` (`SiteConfigID`),
+	KEY `GroupID` (`GroupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1010,12 +1010,12 @@ DROP TABLE IF EXISTS `SiteConfig_ViewerGroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteConfig_ViewerGroups` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteConfigID` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SiteConfigID` (`SiteConfigID`),
-  KEY `GroupID` (`GroupID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteConfigID` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SiteConfigID` (`SiteConfigID`),
+	KEY `GroupID` (`GroupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1036,51 +1036,51 @@ DROP TABLE IF EXISTS `SiteTree`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','ErrorPage') CHARACTER SET utf8 DEFAULT 'Page',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Sort` int(11) NOT NULL DEFAULT 0,
-  `LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
-  `_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
-  `_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
-  `_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `Priority` float DEFAULT NULL,
-  `ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  `RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `ClassName` (`ClassName`),
-  KEY `URLSegment` (`URLSegment`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`),
-  KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
-  FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
-  FULLTEXT KEY `TitleSearchFields` (`Title`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','ErrorPage') CHARACTER SET utf8 DEFAULT 'Page',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Sort` int(11) NOT NULL DEFAULT 0,
+	`LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
+	`_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
+	`_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
+	`_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`Priority` float DEFAULT NULL,
+	`ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	`RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `ClassName` (`ClassName`),
+	KEY `URLSegment` (`URLSegment`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`),
+	KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
+	FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
+	FULLTEXT KEY `TitleSearchFields` (`Title`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7207 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1102,12 +1102,12 @@ DROP TABLE IF EXISTS `SiteTree_EditorGroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_EditorGroups` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteTreeID` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SiteTreeID` (`SiteTreeID`),
-  KEY `GroupID` (`GroupID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteTreeID` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SiteTreeID` (`SiteTreeID`),
+	KEY `GroupID` (`GroupID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1129,13 +1129,13 @@ DROP TABLE IF EXISTS `SiteTree_ImageTracking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_ImageTracking` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteTreeID` int(11) NOT NULL DEFAULT 0,
-  `FileID` int(11) NOT NULL DEFAULT 0,
-  `FieldName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `SiteTreeID` (`SiteTreeID`),
-  KEY `FileID` (`FileID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteTreeID` int(11) NOT NULL DEFAULT 0,
+	`FileID` int(11) NOT NULL DEFAULT 0,
+	`FieldName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `SiteTreeID` (`SiteTreeID`),
+	KEY `FileID` (`FileID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=546 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1157,13 +1157,13 @@ DROP TABLE IF EXISTS `SiteTree_LinkTracking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_LinkTracking` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteTreeID` int(11) NOT NULL DEFAULT 0,
-  `ChildID` int(11) NOT NULL DEFAULT 0,
-  `FieldName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `SiteTreeID` (`SiteTreeID`),
-  KEY `ChildID` (`ChildID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteTreeID` int(11) NOT NULL DEFAULT 0,
+	`ChildID` int(11) NOT NULL DEFAULT 0,
+	`FieldName` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	PRIMARY KEY (`ID`),
+	KEY `SiteTreeID` (`SiteTreeID`),
+	KEY `ChildID` (`ChildID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1185,51 +1185,51 @@ DROP TABLE IF EXISTS `SiteTree_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','ErrorPage') CHARACTER SET utf8 DEFAULT 'Page',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Sort` int(11) NOT NULL DEFAULT 0,
-  `LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
-  `_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
-  `_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
-  `_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `Priority` float DEFAULT NULL,
-  `ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  `RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `ParentID` (`ParentID`),
-  KEY `ClassName` (`ClassName`),
-  KEY `URLSegment` (`URLSegment`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`),
-  KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
-  FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
-  FULLTEXT KEY `TitleSearchFields` (`Title`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','ErrorPage') CHARACTER SET utf8 DEFAULT 'Page',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Sort` int(11) NOT NULL DEFAULT 0,
+	`LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
+	`_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
+	`_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
+	`_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`Priority` float DEFAULT NULL,
+	`ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	`RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `ParentID` (`ParentID`),
+	KEY `ClassName` (`ClassName`),
+	KEY `URLSegment` (`URLSegment`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`),
+	KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
+	FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
+	FULLTEXT KEY `TitleSearchFields` (`Title`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7207 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1251,60 +1251,60 @@ DROP TABLE IF EXISTS `SiteTree_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AuthorID` int(11) NOT NULL DEFAULT 0,
-  `PublisherID` int(11) NOT NULL DEFAULT 0,
-  `ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','','SiteTree','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
-  `Created` datetime DEFAULT NULL,
-  `LastEdited` datetime DEFAULT NULL,
-  `URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Sort` int(11) NOT NULL DEFAULT 0,
-  `LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
-  `_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
-  `_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
-  `_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
-  `ParentID` int(11) NOT NULL DEFAULT 0,
-  `Priority` float DEFAULT NULL,
-  `ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
-  `CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
-  `Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  `RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `ParentID` (`ParentID`),
-  KEY `ClassName` (`ClassName`),
-  KEY `AuthorID` (`AuthorID`),
-  KEY `PublisherID` (`PublisherID`),
-  KEY `URLSegment` (`URLSegment`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`),
-  KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
-  KEY `RecordID_Version` (`RecordID`,`Version`),
-  FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
-  FULLTEXT KEY `TitleSearchFields` (`Title`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AuthorID` int(11) NOT NULL DEFAULT 0,
+	`PublisherID` int(11) NOT NULL DEFAULT 0,
+	`ClassName` enum('SilverStripe\\CMS\\Model\\SiteTree','Page','HomePage','SilverStripe\\CMS\\Model\\ErrorPage','SilverStripe\\CMS\\Model\\RedirectorPage','SilverStripe\\CMS\\Model\\VirtualPage','','SiteTree','ErrorPage','RedirectorPage','VirtualPage') CHARACTER SET utf8 DEFAULT 'Page',
+	`Created` datetime DEFAULT NULL,
+	`LastEdited` datetime DEFAULT NULL,
+	`URLSegment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MenuTitle` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`Content` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaTitle` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`MetaDescription` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`MetaKeywords` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`ShowInMenus` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`ShowInSearch` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HomepageForDomain` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+	`ProvideComments` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Sort` int(11) NOT NULL DEFAULT 0,
+	`LegacyURL` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`HasBrokenFile` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`HasBrokenLink` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`Status` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+	`ReportClass` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+	`_obsolete_Viewers` enum('Anyone','LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'Anyone',
+	`_obsolete_Editors` enum('LoggedInUsers','OnlyTheseUsers') CHARACTER SET utf8 DEFAULT 'LoggedInUsers',
+	`_obsolete_ViewersGroup` int(11) NOT NULL DEFAULT 0,
+	`_obsolete_EditorsGroup` int(11) NOT NULL DEFAULT 0,
+	`ParentID` int(11) NOT NULL DEFAULT 0,
+	`Priority` float DEFAULT NULL,
+	`ExtraMeta` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`ToDo` mediumtext CHARACTER SET utf8 DEFAULT NULL,
+	`CanViewType` enum('Anyone','LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`CanEditType` enum('LoggedInUsers','OnlyTheseUsers','Inherit') CHARACTER SET utf8 DEFAULT 'Inherit',
+	`Locale` varchar(16) CHARACTER SET utf8 DEFAULT NULL,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	`RelationFieldsTestPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`),
+	KEY `ParentID` (`ParentID`),
+	KEY `ClassName` (`ClassName`),
+	KEY `AuthorID` (`AuthorID`),
+	KEY `PublisherID` (`PublisherID`),
+	KEY `URLSegment` (`URLSegment`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`),
+	KEY `RelationFieldsTestPageID` (`RelationFieldsTestPageID`),
+	KEY `RecordID_Version` (`RecordID`,`Version`),
+	FULLTEXT KEY `SearchFields` (`Title`,`MenuTitle`,`Content`,`MetaTitle`,`MetaDescription`,`MetaKeywords`),
+	FULLTEXT KEY `TitleSearchFields` (`Title`)
 ) ENGINE=MyISAM AUTO_INCREMENT=49725 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1327,12 +1327,12 @@ DROP TABLE IF EXISTS `SiteTree_ViewerGroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SiteTree_ViewerGroups` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SiteTreeID` int(11) NOT NULL DEFAULT 0,
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `SiteTreeID` (`SiteTreeID`),
-  KEY `GroupID` (`GroupID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`SiteTreeID` int(11) NOT NULL DEFAULT 0,
+	`GroupID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `SiteTreeID` (`SiteTreeID`),
+	KEY `GroupID` (`GroupID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1354,15 +1354,15 @@ DROP TABLE IF EXISTS `VirtualPage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `VirtualPage` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `VersionID` int(11) NOT NULL DEFAULT 0,
-  `CopyContentFromID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `CopyContentFromID` (`CopyContentFromID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`VersionID` int(11) NOT NULL DEFAULT 0,
+	`CopyContentFromID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `CopyContentFromID` (`CopyContentFromID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6685 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1384,15 +1384,15 @@ DROP TABLE IF EXISTS `VirtualPage_Live`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `VirtualPage_Live` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `VersionID` int(11) NOT NULL DEFAULT 0,
-  `CopyContentFromID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  KEY `CopyContentFromID` (`CopyContentFromID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`VersionID` int(11) NOT NULL DEFAULT 0,
+	`CopyContentFromID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	KEY `CopyContentFromID` (`CopyContentFromID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1413,25 +1413,25 @@ DROP TABLE IF EXISTS `VirtualPage_Versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `VirtualPage_Versions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `RecordID` int(11) NOT NULL DEFAULT 0,
-  `Version` int(11) NOT NULL DEFAULT 0,
-  `WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `AuthorID` int(11) NOT NULL DEFAULT 0,
-  `PublisherID` int(11) NOT NULL DEFAULT 0,
-  `VersionID` int(11) NOT NULL DEFAULT 0,
-  `CopyContentFromID` int(11) NOT NULL DEFAULT 0,
-  `SubsiteID` int(11) NOT NULL DEFAULT 0,
-  `MasterPageID` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
-  KEY `RecordID` (`RecordID`),
-  KEY `Version` (`Version`),
-  KEY `CopyContentFromID` (`CopyContentFromID`),
-  KEY `AuthorID` (`AuthorID`),
-  KEY `PublisherID` (`PublisherID`),
-  KEY `SubsiteID` (`SubsiteID`),
-  KEY `MasterPageID` (`MasterPageID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`RecordID` int(11) NOT NULL DEFAULT 0,
+	`Version` int(11) NOT NULL DEFAULT 0,
+	`WasPublished` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`AuthorID` int(11) NOT NULL DEFAULT 0,
+	`PublisherID` int(11) NOT NULL DEFAULT 0,
+	`VersionID` int(11) NOT NULL DEFAULT 0,
+	`CopyContentFromID` int(11) NOT NULL DEFAULT 0,
+	`SubsiteID` int(11) NOT NULL DEFAULT 0,
+	`MasterPageID` int(11) NOT NULL DEFAULT 0,
+	PRIMARY KEY (`ID`),
+	UNIQUE KEY `RecordID_Version` (`RecordID`,`Version`),
+	KEY `RecordID` (`RecordID`),
+	KEY `Version` (`Version`),
+	KEY `CopyContentFromID` (`CopyContentFromID`),
+	KEY `AuthorID` (`AuthorID`),
+	KEY `PublisherID` (`PublisherID`),
+	KEY `SubsiteID` (`SubsiteID`),
+	KEY `MasterPageID` (`MasterPageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1452,8 +1452,8 @@ DROP TABLE IF EXISTS `_obsolete_Folder`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Folder` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1474,8 +1474,8 @@ DROP TABLE IF EXISTS `_obsolete_Folder2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Folder2` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1496,8 +1496,8 @@ DROP TABLE IF EXISTS `_obsolete_Folder3`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Folder3` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1518,8 +1518,8 @@ DROP TABLE IF EXISTS `_obsolete_Folder4`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Folder4` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1540,8 +1540,8 @@ DROP TABLE IF EXISTS `_obsolete_Folder5`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Folder5` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1562,8 +1562,8 @@ DROP TABLE IF EXISTS `_obsolete_Image`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Image` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1584,8 +1584,8 @@ DROP TABLE IF EXISTS `_obsolete_Image2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Image2` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1606,8 +1606,8 @@ DROP TABLE IF EXISTS `_obsolete_Image3`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Image3` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1628,8 +1628,8 @@ DROP TABLE IF EXISTS `_obsolete_Image4`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Image4` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1650,8 +1650,8 @@ DROP TABLE IF EXISTS `_obsolete_Image5`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Image5` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1672,8 +1672,8 @@ DROP TABLE IF EXISTS `_obsolete_Page`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Page` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1694,8 +1694,8 @@ DROP TABLE IF EXISTS `_obsolete_Page2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Page2` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1716,8 +1716,8 @@ DROP TABLE IF EXISTS `_obsolete_Page3`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Page3` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1738,8 +1738,8 @@ DROP TABLE IF EXISTS `_obsolete_Page4`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Page4` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1760,8 +1760,8 @@ DROP TABLE IF EXISTS `_obsolete_Page5`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_obsolete_Page5` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

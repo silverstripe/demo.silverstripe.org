@@ -1,10 +1,11 @@
 <?php
 
 use SilverStripe\Dev\BuildTask;
+use SilverStripe\ORM\DB;
 
 class DemoResetTask extends BuildTask {
 	function run($request) {
-		global $databaseConfig;
+		$databaseConfig = DB::getConfig();
 
 		$CLI_dbuser = escapeshellarg($databaseConfig['username']);
 		$CLI_dbpassArg = $databaseConfig['password'] ? escapeshellarg("-p" . $databaseConfig['password']) : '';
