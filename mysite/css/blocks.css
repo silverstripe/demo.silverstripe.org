@@ -1,0 +1,8 @@
+/**
+ * Blocks styles - for demo only
+ */
+.content-block {
+    border: 1px dashed red;
+    margin-top: 5px;
+    padding: 20px;
+}
