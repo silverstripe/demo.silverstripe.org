@@ -28,3 +28,5 @@ graphql/
 silverstripe-admin/
 silverstripe-assets/
 versioned/
+silverstripe-errorpage/
+.env

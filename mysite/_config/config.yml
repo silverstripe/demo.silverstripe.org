@@ -3,8 +3,8 @@ Name: mysite
 ---
 SilverStripe\View\SSViewer:
   themes:
-    - 'simple'
     - '$default'
+    - 'simple'
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - 'mysite/javascript/googleanalytics.js'

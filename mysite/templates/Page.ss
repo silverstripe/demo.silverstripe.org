@@ -26,7 +26,7 @@ Change it, enhance it and most importantly enjoy it!
 	<% require themedCSS('typography') %>
 	<% require themedCSS('form') %>
 	<% require themedCSS('layout') %>
-	<link rel="shortcut icon" href="$ThemeDir/images/favicon.ico" />
+	<link rel="shortcut icon" href="themes/simple/images/favicon.ico" />
 </head>
 <body class="$ClassName<% if not $Menu(2) %> no-sidebar<% end_if %>" <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
 <% if not CurrentMember %>
@@ -40,9 +40,8 @@ Change it, enhance it and most importantly enjoy it!
 </div>
 <% include Footer %>
 
-<% require javascript('framework/thirdparty/jquery/jquery.js') %>
-<%-- Please move: Theme javascript (below) should be moved to mysite/code/page.php  --%>
-<script type="text/javascript" src="{$ThemeDir}/javascript/script.js"></script>
+<% require javascript('//code.jquery.com/jquery-1.7.2.min.js') %>
+<% require themedJavascript('script') %>
 
 </body>
 </html>

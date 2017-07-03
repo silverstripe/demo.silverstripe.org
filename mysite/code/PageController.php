@@ -20,6 +20,7 @@ class PageController extends ContentController implements TemplateGlobalProvider
         Requirements::javascript('mysite/javascript/jquery-3.2.1.min.js');
 
         Requirements::css('mysite/css/demo.css');
+        Requirements::css('mysite/css/blocks.css');
         Requirements::css('mysite/css/moduleSupport.css');
         Requirements::javascript('mysite/javascript/loginbar.js');
         Requirements::javascript('mysite/javascript/googleanalytics.js');
