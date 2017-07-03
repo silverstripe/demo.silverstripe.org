@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.30.3",
+            "version": "3.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2208af5a13082a0e5c1b7a8f4f7336a7e8805966"
+                "reference": "21480f1ba2b7a329241f47d3042e9c9ad06e8e5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2208af5a13082a0e5c1b7a8f4f7336a7e8805966",
-                "reference": "2208af5a13082a0e5c1b7a8f4f7336a7e8805966",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/21480f1ba2b7a329241f47d3042e9c9ad06e8e5e",
+                "reference": "21480f1ba2b7a329241f47d3042e9c9ad06e8e5e",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-06-27T22:53:36+00:00"
+            "time": "2017-06-30T19:39:55+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1318,12 +1318,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-admin.git",
-                "reference": "42f2216192d18c01ee24e25540c886f010ea544d"
+                "reference": "a92b15a8b4bd1992248b302078fe1966793e1ad2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-admin/zipball/42f2216192d18c01ee24e25540c886f010ea544d",
-                "reference": "42f2216192d18c01ee24e25540c886f010ea544d",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-admin/zipball/a92b15a8b4bd1992248b302078fe1966793e1ad2",
+                "reference": "a92b15a8b4bd1992248b302078fe1966793e1ad2",
                 "shasum": ""
             },
             "require": {
@@ -1366,7 +1366,7 @@
                 "admin",
                 "silverstripe"
             ],
-            "time": "2017-06-29 01:50:27"
+            "time": "2017-07-03 03:31:10"
         },
         {
             "name": "silverstripe/asset-admin",
@@ -1374,12 +1374,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-asset-admin.git",
-                "reference": "e627cf557911060f39f336b1008aaf2a27c9ffea"
+                "reference": "a1ff103461493a7c15d76efedf4caaa138f1de88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-asset-admin/zipball/e627cf557911060f39f336b1008aaf2a27c9ffea",
-                "reference": "e627cf557911060f39f336b1008aaf2a27c9ffea",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-asset-admin/zipball/a1ff103461493a7c15d76efedf4caaa138f1de88",
+                "reference": "a1ff103461493a7c15d76efedf4caaa138f1de88",
                 "shasum": ""
             },
             "require": {
@@ -1413,7 +1413,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Asset management for the SilverStripe CMS",
-            "time": "2017-06-29 03:44:25"
+            "time": "2017-06-30 02:16:06"
         },
         {
             "name": "silverstripe/assets",
@@ -1421,12 +1421,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-assets.git",
-                "reference": "387b840c65c018c5b0d04944ea2b1dd5ff2943f7"
+                "reference": "a71c2db638dca67a9d48204af40b6b4131197bca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-assets/zipball/387b840c65c018c5b0d04944ea2b1dd5ff2943f7",
-                "reference": "387b840c65c018c5b0d04944ea2b1dd5ff2943f7",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-assets/zipball/a71c2db638dca67a9d48204af40b6b4131197bca",
+                "reference": "a71c2db638dca67a9d48204af40b6b4131197bca",
                 "shasum": ""
             },
             "require": {
@@ -1471,7 +1471,7 @@
                 "assets",
                 "silverstripe"
             ],
-            "time": "2017-06-28 09:25:37"
+            "time": "2017-07-02 22:02:28"
         },
         {
             "name": "silverstripe/campaign-admin",
@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "9816efc97f62a2a207636a89656e47905e1e2b39"
+                "reference": "e5cd8c0d4b98630be07b691b31b13d86cbe8adb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/9816efc97f62a2a207636a89656e47905e1e2b39",
-                "reference": "9816efc97f62a2a207636a89656e47905e1e2b39",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/e5cd8c0d4b98630be07b691b31b13d86cbe8adb9",
+                "reference": "e5cd8c0d4b98630be07b691b31b13d86cbe8adb9",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1592,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2017-06-28 14:21:22"
+            "time": "2017-06-30 02:50:29"
         },
         {
             "name": "silverstripe/config",
@@ -1761,12 +1761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "d4b41b95413cceccaca58fc86c60720eb4ab1610"
+                "reference": "63ba092765be08303ce6708bc5d20179de8038dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/d4b41b95413cceccaca58fc86c60720eb4ab1610",
-                "reference": "d4b41b95413cceccaca58fc86c60720eb4ab1610",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/63ba092765be08303ce6708bc5d20179de8038dc",
+                "reference": "63ba092765be08303ce6708bc5d20179de8038dc",
                 "shasum": ""
             },
             "require": {
@@ -1864,7 +1864,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2017-06-29 03:35:39"
+            "time": "2017-07-03 01:22:12"
         },
         {
             "name": "silverstripe/graphql",
@@ -2024,12 +2024,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-versioned.git",
-                "reference": "723a6a983422f8c22a98f64f8c1b51379fb21cbe"
+                "reference": "341b3d12593a44bfc02217f0164650353854c9f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-versioned/zipball/723a6a983422f8c22a98f64f8c1b51379fb21cbe",
-                "reference": "723a6a983422f8c22a98f64f8c1b51379fb21cbe",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-versioned/zipball/341b3d12593a44bfc02217f0164650353854c9f1",
+                "reference": "341b3d12593a44bfc02217f0164650353854c9f1",
                 "shasum": ""
             },
             "require": {
@@ -2070,7 +2070,7 @@
                 "silverstripe",
                 "versioned"
             ],
-            "time": "2017-06-27 02:22:22"
+            "time": "2017-06-29 09:04:31"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2681,6 +2681,64 @@
                 "instantiate"
             ],
             "time": "2015-06-14T21:17:01+00:00"
+        },
+        {
+            "name": "instaclick/php-webdriver",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/instaclick/php-webdriver.git",
+                "reference": "0c20707dcf30a32728fd6bdeeab996c887fdb2fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/instaclick/php-webdriver/zipball/0c20707dcf30a32728fd6bdeeab996c887fdb2fb",
+                "reference": "0c20707dcf30a32728fd6bdeeab996c887fdb2fb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "WebDriver": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Bishop",
+                    "email": "jubishop@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anthon Pang",
+                    "email": "apang@softwaredevelopment.ca",
+                    "role": "Fork Maintainer"
+                }
+            ],
+            "description": "PHP WebDriver for Selenium 2",
+            "homepage": "http://instaclick.com/",
+            "keywords": [
+                "browser",
+                "selenium",
+                "webdriver",
+                "webtest"
+            ],
+            "time": "2015-06-15T20:19:33+00:00"
         },
         {
             "name": "myclabs/deep-copy",
