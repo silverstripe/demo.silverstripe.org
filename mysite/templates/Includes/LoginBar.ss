@@ -1,4 +1,4 @@
-
+<%--
     <section class="login-bar">
         <a href="http://www.silverstripe.org/">
             <svg class="logo-icon" viewBox="0 0 99.31 100">
@@ -57,5 +57,6 @@
         </div>
         <a class="return" href="http://www.silverstripe.org/">
             <%-- SilverStripe community site --%>
-        </a>
+<%--        </a>
     </section>
+--%>

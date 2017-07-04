@@ -38,23 +38,23 @@ class PageController extends ContentController implements TemplateGlobalProvider
         return $this->dbObject('Content');
     }
 
-    public static function get_template_global_variables()
-    {
-        return array(
-            'Action' => 'nbn',
-        );
-    }
+    // public static function get_template_global_variables()
+    // {
+    //     return array(
+    //         'Action' => 'nbn',
+    //     );
+    // }
 
-    public static function nbn()
-    {
-        return Controller::curr()->getAction();
-    }
+    // public static function nbn()
+    // {
+    //     return Controller::curr()->getAction();
+    // }
 
-    public function LoginForm()
-    {
-        $s = new Security();
-        $form = $s->LoginForm();
-        $form->Actions()->removeByName('forgotPassword');
-        return $form;
-    }
+    // public function LoginForm()
+    // {
+    //     $s = new Security();
+    //     $form = $s->LoginForm();
+    //     $form->Actions()->removeByName('forgotPassword');
+    //     return $form;
+    // }
 }
