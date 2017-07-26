@@ -2,17 +2,18 @@
 	"name": "silverstripe/demo.silverstripe.org",
 	"description": "Demo SilverStripe Project",
 	"require": {
-		"php": ">=5.3.2",
-		"silverstripe/cms": "3.3.1@stable",
-		"silverstripe/framework": "3.3.1@stable",
-		"silverstripe/reports": "3.3.1@stable",
-		"silverstripe/siteconfig": "3.3.1@stable",
+		"php": ">=5.6",
+		"silverstripe/cms": "~3.6.0",
+		"silverstripe/framework": "~3.6.0",
+		"silverstripe/reports": "~3.6.0",
+		"silverstripe/siteconfig": "~3.6.0",
 		"silverstripe-themes/simple": "*",
 		"silverstripe/raygun": "*@dev",
 		"silverstripe/dynamodb": "~1.1"
 	},
 	"config": {
-		"process-timeout": 600	
+		"process-timeout": 600
 	},
+	"prefer-stable": true,
 	"minimum-stability": "dev"
 }
