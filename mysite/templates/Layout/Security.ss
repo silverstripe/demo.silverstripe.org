@@ -1,14 +1,14 @@
 <div class="content-container unit size3of4 lastUnit">
 	<article>
 		<h1>$Title</h1>
-		<% if Action = login %>
+		<% if $LoginForm %>
 			<% if $CurrentMember %><% else %><div class="content">Please login using email "admin" and password: "password"</div><% end_if %>
 		<% else %>
 			<div class="content">$Content</div>
 		<% end_if %>
 	</article>
 		$Form
-	<% if $Action = 'login' %>
+	<% if $LoginForm %>
 	<div>
 		<p>You can also try the CMS interface in a different language with the following logins:</p>
 		<ul>
