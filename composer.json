@@ -1,29 +1,38 @@
 {
-	"name": "silverstripe/demo.silverstripe.org",
-	"description": "Demo SilverStripe Project",
-	"require": {
-		"php": ">=5.6.0",
-		"silverstripe/admin": "1.0.x-dev",
-        "silverstripe/asset-admin": "1.0.x-dev",
-        "silverstripe/assets": "1.0.x-dev",
-        "silverstripe/campaign-admin": "1.0.x-dev",
-        "silverstripe/cms": "4.0.x-dev",
-        "silverstripe/config": "1.0.x-dev",
-        "silverstripe/framework": "4.0.x-dev",
-        "silverstripe/graphql": "0.2.x-dev",
-        "silverstripe/reports": "4.0.x-dev",
-        "silverstripe/siteconfig": "4.0.x-dev",
-        "silverstripe/versioned": "1.0.x-dev",
-		"silverstripe-themes/simple": "*@dev",
-		"silverstripe/dynamodb": "3.0.x-dev",
-		"silverstripe/crontask": "*@dev"
-	},
-	"require-dev": {
+    "name": "silverstripe/demo.silverstripe.org",
+    "description": "Demo SilverStripe Project",
+    "require": {
+        "php": ">=5.6.0",
+        "silverstripe/installer": "~4.0.0",
+        "silverstripe/dynamodb": "3.0.x-dev",
+        "silverstripe/crontask": "*@dev"
+    },
+    "require-dev": {
         "phpunit/PHPUnit": "^5.7"
     },
-	"config": {
-		"process-timeout": 600
-	},
-	"prefer-stable": true,
-	"minimum-stability": "dev"
+    "config": {
+        "process-timeout": 600
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "extra": {
+        "project-files-installed": [
+            ".env.example",
+            ".htaccess",
+            "assets/.gitignore",
+            "assets/.htaccess",
+            "assets/web.config",
+            "favicon.ico",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
+            "mysite/.htaccess",
+            "mysite/_config.php",
+            "mysite/_config/mysite.yml",
+            "mysite/_config/theme.yml",
+            "mysite/code/Page.php",
+            "mysite/code/PageController.php",
+            "web.config"
+        ]
+    }
 }
