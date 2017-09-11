@@ -39,11 +39,8 @@ Change it, enhance it and most importantly enjoy it!
             <div class="content-container unit size3of4 lastUnit">
                 <article>
                     <h1>$Title</h1>
-                    <% if $Action = 'login' %>
-                        <% if $CurrentMember %><% else %>
-                            <div class="content">Please login using email "admin" and password: "password"</div><% end_if %>
-                    <% else %>
-                        <div class="content">$Content</div>
+                    <% if not $CurrentMember %>
+                        <div class="content">Please login using email "admin" and password: "password"</div>
                     <% end_if %>
                 </article>
                 $Form
