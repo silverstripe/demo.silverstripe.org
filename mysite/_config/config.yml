@@ -1,17 +1,8 @@
 ---
 Name: mysite
 ---
-SilverStripe\View\SSViewer:
-  theme: simple
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - mysite/javascript/googleanalytics.js
-SilverStripe\CMS\Model\SiteTree:
-  nested_urls: true
-SilverStripe\ORM\Connect\MySQLDatabase:
-  connection_charset: utf8
 SilverStripe\Security\Security:
-  default_login_dest: /admin/pages
-SilverStripe\Assets\File:
-  allowed_extensions:
-    - html
+  default_login_dest: admin/pages

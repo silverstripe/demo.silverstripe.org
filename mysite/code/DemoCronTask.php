@@ -1,6 +1,7 @@
 <?php
 
 use SilverStripe\Control\Controller;
+use SilverStripe\Core\Injector\Injector;
 use SilverStripe\CronTask\Interfaces\CronTask;
 
 class DemoCronTask implements CronTask
@@ -13,15 +14,10 @@ class DemoCronTask implements CronTask
         return "*/20 * * * *";
     }
 
-    /**
-     * @return void
-     */
     public function process()
     {
-        $this->request = Controller::curr()->getRequest();
-
         //refresh demo site
         $reset_task = new DemoResetTask();
-        $reset_task->run($this->request);
+        $reset_task->run(null);
     }
 }
