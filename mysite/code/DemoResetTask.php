@@ -31,10 +31,10 @@ class DemoResetTask extends BuildTask
         echo "</pre>";
         echo "Running dev/build...\n<br>";
         echo "<pre>";
-        echo htmlentities(`nice -n 5 $phpBin ./framework/cli-script.php dev/build`);
+        echo htmlentities(`nice -n 5 $phpBin ./vendor/silverstripe/framework/cli-script.php dev/build`);
         echo "</pre>";
         echo "Migrating File records...\n<br>";
-        echo htmlentities(`nice -n 5 $phpBin ./framework/cli-script.php dev/tasks/MigrateFileTask`);
+        echo htmlentities(`nice -n 5 $phpBin ./vendor/silverstripe/framework/cli-script.php dev/tasks/MigrateFileTask`);
         echo "Done!\n";
     }
 
