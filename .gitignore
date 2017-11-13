@@ -1,31 +1,15 @@
-assets/*
-_ss_environment.php
-tools/phing-metadata
-silverstripe-cache
-.buildpath
-.project
-.settings
-.idea
-.DS_Store
-vendor/
-admin/
-blog/
-cms/
-docsviewer/
-forum/
-framework/
-testsession/
-userforms/
-widgets/
-themes/
-raygun/
-/reports
-/siteconfig
-silverstripe-dynamodb/
-crontask/
-asset-admin/
-campaign-admin/
-silverstripe-admin/
-versioned/
-silverstripe-assets/
-graphql/
+# ignore cache folder
+/silverstripe-cache/
+
+# ignore .env file
+/.env
+
+# ignore build tools
+/tools/phing-metadata
+
+# ignore composer vendor folder
+/vendor/
+
+# ignore default modules from composer
+/assets/
+/resources/

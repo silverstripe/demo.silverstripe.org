@@ -1,7 +1,5 @@
 <?php
 
-use SilverStripe\Control\Controller;
-use SilverStripe\Core\Injector\Injector;
 use SilverStripe\CronTask\Interfaces\CronTask;
 
 class DemoCronTask implements CronTask
