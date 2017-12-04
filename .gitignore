@@ -13,3 +13,6 @@
 # ignore default modules from composer
 /assets/
 /resources/
+
+# ignore default theme
+/themes/simple/
