@@ -16,6 +16,3 @@
 
 # ignore default theme
 /themes/simple/
-
-# ignore platform requirements
-/silverstripe-dynamodb/
