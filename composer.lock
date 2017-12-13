@@ -1379,7 +1379,7 @@
                 "silverstripe",
                 "theme"
             ],
-            "time": "2017-11-15T08:37:24+00:00"
+            "time": "2017-11-15 08:37:24"
         },
         {
             "name": "silverstripe/admin",
@@ -1721,12 +1721,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-crontask.git",
-                "reference": "582d9b3c26e2f30a2e42ae90354811f2174b44dc"
+                "reference": "af43beacca5bc1d1b2f2d8781cd4c409fbcb2f28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-crontask/zipball/582d9b3c26e2f30a2e42ae90354811f2174b44dc",
-                "reference": "582d9b3c26e2f30a2e42ae90354811f2174b44dc",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-crontask/zipball/af43beacca5bc1d1b2f2d8781cd4c409fbcb2f28",
+                "reference": "af43beacca5bc1d1b2f2d8781cd4c409fbcb2f28",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1773,7 @@
                 "cron",
                 "silverstripe"
             ],
-            "time": "2017-10-26T20:38:15+00:00"
+            "time": "2017-12-13 15:24:46"
         },
         {
             "name": "silverstripe/dynamodb",
