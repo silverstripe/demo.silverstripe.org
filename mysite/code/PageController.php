@@ -20,11 +20,9 @@ class PageController extends ContentController implements TemplateGlobalProvider
         Requirements::themedCSS('form');
         Requirements::themedCSS('typography');
 
-        $admin = ModuleLoader::getModule('silverstripe/admin');
-        Requirements::javascript($admin->getRelativeResourcePath('thirdparty/jquery/jquery.js'));
-
         Requirements::css('mysite/css/demo.css');
         Requirements::css('mysite/css/moduleSupport.css');
+        Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js');
         Requirements::javascript('mysite/javascript/googleanalytics.js');
     }
 

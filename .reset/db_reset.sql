@@ -105,36 +105,6 @@ CREATE TABLE `ChangeSetItem_ReferencedBy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
-# Dump of table CronTaskStatus
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `CronTaskStatus`;
-
-CREATE TABLE `CronTaskStatus` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ClassName` enum('SilverStripe\\CronTask\\CronTaskStatus') DEFAULT 'SilverStripe\\CronTask\\CronTaskStatus',
-  `LastEdited` datetime DEFAULT NULL,
-  `Created` datetime DEFAULT NULL,
-  `TaskClass` varchar(255) DEFAULT NULL,
-  `LastChecked` datetime DEFAULT NULL,
-  `LastRun` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ClassName` (`ClassName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `CronTaskStatus` WRITE;
-/*!40000 ALTER TABLE `CronTaskStatus` DISABLE KEYS */;
-
-INSERT INTO `CronTaskStatus` (`ID`, `ClassName`, `LastEdited`, `Created`, `TaskClass`, `LastChecked`, `LastRun`)
-VALUES
-	(1,'SilverStripe\\CronTask\\CronTaskStatus','2017-04-26 09:08:03','2017-04-26 09:00:14','GarbageCollectSessionCronTask','2017-04-26 09:08:03',NULL),
-	(2,'SilverStripe\\CronTask\\CronTaskStatus','2017-04-26 09:08:03','2017-04-26 09:01:02','DemoCronTask','2017-04-26 09:08:03',NULL);
-
-/*!40000 ALTER TABLE `CronTaskStatus` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
 # Dump of table ErrorPage
 # ------------------------------------------------------------
 
