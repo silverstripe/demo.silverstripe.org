@@ -3,7 +3,7 @@
     "description": "Demo SilverStripe Project",
     "require": {
         "php": ">=5.6.0",
-        "silverstripe/installer": "~4.1.0@stable",
+        "silverstripe/installer": "4.3.0@stable",
         "silverstripe/dynamodb": "^4.0",
         "silverstripe/crontask": "*@dev"
     },
@@ -22,6 +22,12 @@
         "project-files-installed": [
             ".env.example",
             ".htaccess",
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mysite.yml",
+            "app/_config/theme.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php",
             "assets/.gitignore",
             "assets/.htaccess",
             "assets/web.config",
