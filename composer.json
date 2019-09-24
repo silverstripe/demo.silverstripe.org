@@ -3,7 +3,7 @@
     "description": "Demo SilverStripe Project",
     "require": {
         "php": ">=7.1.0",
-        "silverstripe/installer": "4.4.1@stable",
+        "silverstripe/installer": "4.4.4@stable",
         "silverstripe/dynamodb": "^4.0",
         "silverstripe/crontask": "*@dev"
     },
