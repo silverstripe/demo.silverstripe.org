@@ -4,6 +4,10 @@
 
 Sample project to demonstrate the capabilities of
 [SilverStripe CMS](http://www.silverstripe.org).
+Hosted on [https://demo.silverstripe.org](https://demo.silverstripe.org).
+
+See [https://silverstripe.org/try](https://silverstripe.org/try) for a list of available demos.
+Most notably, the [Bambusa Demo](https://github.com/silverstripe/bambusa-installer) by Silverstripe Ltd.
 
 ## Installation
 
