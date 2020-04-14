@@ -3,12 +3,12 @@
     "description": "Demo SilverStripe Project",
     "require": {
         "php": ">=7.1.0",
-        "silverstripe/installer": "4.5.1@stable",
+        "silverstripe/installer": "4.5.2@stable",
         "silverstripe/dynamodb": "^4.0",
         "silverstripe/crontask": "*@dev"
     },
     "require-dev": {
-        "phpunit/PHPUnit": "^5.7"
+        "phpunit/phpunit": "^5.7"
     },
     "config": {
         "process-timeout": 600,
@@ -24,6 +24,7 @@
             ".htaccess",
             "app/.htaccess",
             "app/_config.php",
+            "app/_config/assets.yml",
             "app/_config/mysite.yml",
             "app/_config/theme.yml",
             "app/src/Page.php",
