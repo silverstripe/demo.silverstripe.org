@@ -13,7 +13,7 @@
     "config": {
         "process-timeout": 600,
         "platform": {
-            "php": "7.1.0"
+            "php": "7.3.0"
         }
     },
     "prefer-stable": true,
@@ -27,6 +27,7 @@
             "app/_config.php",
             "app/_config/assets.yml",
             "app/_config/database.yml",
+            "app/_config/email.yml",
             "app/_config/mimevalidator.yml",
             "app/_config/mysite.yml",
             "app/_config/theme.yml",
