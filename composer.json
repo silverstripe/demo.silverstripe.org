@@ -2,15 +2,15 @@
     "name": "silverstripe/demo.silverstripe.org",
     "description": "Demo SilverStripe Project",
     "require": {
-        "php": ">=7.4.0",
-        "silverstripe/installer": "^4.11.1",
+        "php": ">=8.1.0",
+        "silverstripe/installer": "^4.13.0",
         "silverstripe/dynamodb": "^4.1",
         "silverstripe/crontask": "^2.5"
     },
     "config": {
         "process-timeout": 600,
         "platform": {
-            "php": "7.4.0"
+            "php": "8.1.0"
         },
         "allow-plugins": {
             "composer/installers": true,
@@ -24,7 +24,18 @@
         "resources-dir": "_resources",
         "project-files-installed": [
             ".env.example",
+            ".graphql-generated/_manifest_exclude",
             ".htaccess",
+            "app/_config/assets.yml",
+            "app/_config/email.yml",
+            "app/_config/theme.yml",
+            "assets/.gitignore",
+            "assets/.htaccess",
+            "assets/web.config",
+            "favicon.ico",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
             "mysite/.htaccess",
             "mysite/_config.php",
             "mysite/_config/assets.yml",
@@ -35,13 +46,6 @@
             "mysite/_config/theme.yml",
             "mysite/code/Page.php",
             "mysite/code/PageController.php",
-            "assets/.gitignore",
-            "assets/.htaccess",
-            "assets/web.config",
-            "favicon.ico",
-            "index.php",
-            "install-frameworkmissing.html",
-            "install.php",
             "web.config"
         ],
         "public-files-installed": [
