@@ -1,8 +1,8 @@
 ---
-Name: mysite
+Name: app
 ---
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
-    - mysite/javascript/googleanalytics.js
+    - app/javascript/googleanalytics.js
 SilverStripe\Security\Security:
   default_login_dest: admin/pages

@@ -23,11 +23,11 @@ class DemoResetTask extends BuildTask
 
         echo "Resetting database...\n<br>";
         echo "<pre>";
-        echo htmlentities(`nice -n 5 cat .reset/db_reset.sql | $mysqlBin -h $CLI_server -u $CLI_dbuser $CLI_dbpassArg -D $CLI_database &> /dev/stdout`);
+        echo htmlentities(`nice -n 5 cat .reset/db_reset.sql | $mysqlBin -h $CLI_server -u $CLI_dbuser $CLI_dbpassArg -D $CLI_database &> /dev/stdout` || '');
         echo "</pre>";
         echo "Resetting assets...\n<br>";
         echo "<pre>";
-        echo htmlentities(`nice -n 5 rsync -av --delete .reset/assets_reset/ assets &> /dev/stdout`);
+        echo htmlentities(`nice -n 5 rsync -av --delete .reset/assets_reset/ public/assets &> /dev/stdout`);
         echo "</pre>";
         echo "Running dev/build...\n<br>";
         echo "<pre>";
