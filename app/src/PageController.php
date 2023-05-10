@@ -2,8 +2,6 @@
 
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Control\Controller;
-use SilverStripe\Core\Manifest\ModuleLoader;
-use SilverStripe\Forms\Form;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
@@ -20,10 +18,10 @@ class PageController extends ContentController implements TemplateGlobalProvider
         Requirements::themedCSS('form');
         Requirements::themedCSS('typography');
 
-        Requirements::css('mysite/css/demo.css');
-        Requirements::css('mysite/css/moduleSupport.css');
-        Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js');
-        Requirements::javascript('mysite/javascript/googleanalytics.js');
+        Requirements::css('app/css/demo.css');
+        Requirements::css('app/css/moduleSupport.css');
+        Requirements::javascript('//code.jquery.com/jquery-3.6.4.min.js');
+        Requirements::javascript('app/javascript/googleanalytics.js');
     }
 
     /**

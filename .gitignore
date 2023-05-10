@@ -11,13 +11,12 @@
 /vendor/
 
 # ignore default modules from composer
-/assets/
-/resources/
-/_resources/
+/public/assets/
+/public/_resources/
 
 # ignore default theme
 /themes/simple/
 
 # ignore graphql v4 schema folders
 /.graphql-generated/
-/_graphql/
+/public/_graphql/

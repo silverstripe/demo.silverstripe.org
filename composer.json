@@ -3,25 +3,22 @@
     "description": "Demo SilverStripe Project",
     "require": {
         "php": ">=8.1.0",
-        "silverstripe/installer": "^4.13.0",
-        "silverstripe/dynamodb": "^4.1",
-        "silverstripe/crontask": "^2.5"
+        "silverstripe/installer": "^5",
+        "silverstripe/dynamodb": "^5",
+        "silverstripe/crontask": "^3"
     },
     "config": {
         "process-timeout": 600,
-        "platform": {
-            "php": "8.1.0"
-        },
         "allow-plugins": {
             "composer/installers": true,
             "silverstripe/recipe-plugin": true,
             "silverstripe/vendor-plugin": true
         }
     },
+    "license": "BSD-3-Clause",
     "prefer-stable": true,
     "minimum-stability": "dev",
     "extra": {
-        "resources-dir": "_resources",
         "project-files-installed": [
             ".env.example",
             ".graphql-generated/_manifest_exclude",
@@ -29,6 +26,8 @@
             "app/_config/assets.yml",
             "app/_config/email.yml",
             "app/_config/theme.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php",
             "assets/.gitignore",
             "assets/.htaccess",
             "assets/web.config",
@@ -58,6 +57,10 @@
             "install-frameworkmissing.html",
             "install.php",
             "web.config"
+        ],
+        "expose": [
+            "app/javascript",
+            "app/css"
         ]
     }
 }
