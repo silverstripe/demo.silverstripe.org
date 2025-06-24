@@ -1,51 +1,51 @@
 {
     "name": "silverstripe/demo.silverstripe.org",
     "description": "Demo SilverStripe Project",
+    "license": "BSD-3-Clause",
     "require": {
-        "php": ">=8.1.0",
-        "silverstripe/installer": "^5",
-        "silverstripe/dynamodb": "^5",
-        "silverstripe/crontask": "^3"
+        "silverstripe/installer": "^6",
+        "silverstripe/dynamodb": "^6",
+        "symfony/process": "^7.3"
     },
     "config": {
         "process-timeout": 600,
         "allow-plugins": {
-            "composer/installers": true,
             "silverstripe/recipe-plugin": true,
-            "silverstripe/vendor-plugin": true
+            "silverstripe/vendor-plugin": true,
+            "composer/installers": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "8.3"
         }
     },
-    "license": "BSD-3-Clause",
     "prefer-stable": true,
     "minimum-stability": "dev",
     "extra": {
+        "expose": [
+            "themes/ss4demo/css",
+            "themes/ss4demo/javascript"
+        ],
+        "project-files": [
+            "app/_config/*",
+            ".env.example",
+            ".graphql-generated/*"
+        ],
+        "public-files": [
+            "assets/*",
+            "favicon.ico"
+        ],
         "project-files-installed": [
             ".env.example",
             ".graphql-generated/_manifest_exclude",
             ".htaccess",
-            "app/_config/assets.yml",
-            "app/_config/email.yml",
+            "app/.htaccess",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
             "app/_config/theme.yml",
             "app/src/Page.php",
-            "app/src/PageController.php",
-            "assets/.gitignore",
-            "assets/.htaccess",
-            "assets/web.config",
-            "favicon.ico",
-            "index.php",
-            "install-frameworkmissing.html",
-            "install.php",
-            "mysite/.htaccess",
-            "mysite/_config.php",
-            "mysite/_config/assets.yml",
-            "mysite/_config/database.yml",
-            "mysite/_config/email.yml",
-            "mysite/_config/mimevalidator.yml",
-            "mysite/_config/mysite.yml",
-            "mysite/_config/theme.yml",
-            "mysite/code/Page.php",
-            "mysite/code/PageController.php",
-            "web.config"
+            "app/src/PageController.php"
         ],
         "public-files-installed": [
             ".htaccess",
@@ -54,13 +54,7 @@
             "assets/web.config",
             "favicon.ico",
             "index.php",
-            "install-frameworkmissing.html",
-            "install.php",
             "web.config"
-        ],
-        "expose": [
-            "app/javascript",
-            "app/css"
         ]
     }
 }

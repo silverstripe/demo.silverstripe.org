@@ -4,21 +4,20 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 class HomePage extends Page
 {
-    public function canEdit($member = null)
-    {
-        return false;
-    }
-
-    private static $db = array(
-        'RightContent' => "HTMLText"
-    );
+    private static $db = [
+        'RightContent' => 'HTMLText'
+    ];
 
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-
-        $fields->addFieldToTab("Root.RightContent", new HTMLEditorField("RightContent", "Right Content"));
-
+        $field = HTMLEditorField::create('RightContent', 'Right Content');
+        $fields->addFieldToTab('Root.RightContent', $field);
         return $fields;
+    }
+
+    public function canEdit($member = null)
+    {
+        return false;
     }
 }
