@@ -12,37 +12,40 @@ class PageController extends ContentController implements TemplateGlobalProvider
     protected function init()
     {
         parent::init();
+        // these were from simple theme
+        // Requirements::themedCSS('reset');
+        // Requirements::themedCSS('layout');
+        // Requirements::themedCSS('form');
+        // Requirements::themedCSS('typography');
 
-        Requirements::themedCSS('reset');
-        Requirements::themedCSS('layout');
-        Requirements::themedCSS('form');
-        Requirements::themedCSS('typography');
+        // todo
 
-        Requirements::css('app/css/demo.css');
-        Requirements::css('app/css/moduleSupport.css');
-        Requirements::javascript('//code.jquery.com/jquery-3.6.4.min.js');
+        // Requirements::themedCSS('startup');
+        // Requirements::css('app/css/demo');
+        // Requirements::css('app/css/moduleSupport');
+        // Requirements::javascript('//code.jquery.com/jquery-3.6.4.min.js');
         Requirements::javascript('app/javascript/googleanalytics.js');
     }
 
     /**
      * Hide content on the login pages as the warning message is hard coded in
      * the form.
-     *
-     * @return DBField|false
      */
-    public function Content()
+    public function Content(): DBField|false
     {
-        if (Controller::has_curr() && Controller::curr() instanceof Security) {
+        if (Controller::curr() instanceof Security) {
             return false;
         }
-        return $this->data()->dbObject('Content');
+        /** @var Page $page */
+        $page = $this->data();
+        return $page->dbObject('Content');
     }
 
     public static function get_template_global_variables()
     {
-        return array(
+        return [
             'Action' => 'nbn',
-        );
+        ];
     }
 
     public static function nbn()

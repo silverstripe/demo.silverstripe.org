@@ -3,8 +3,9 @@ Name: mytheme
 ---
 SilverStripe\View\SSViewer:
   themes:
+    - '$public'
     - '/app'
-    - 'simple'
+    - 'startup-theme'
     - '$default'
 
 SilverStripe\LoginForms\EnablerExtension:
