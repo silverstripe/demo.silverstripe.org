@@ -3,13 +3,14 @@ Name: mytheme
 ---
 SilverStripe\View\SSViewer:
   themes:
-    - '/app'
-    - 'simple'
+    - '$public'
+    - 'ss4demo'
+    - 'startup-theme'
     - '$default'
 
 SilverStripe\LoginForms\EnablerExtension:
   login_themes:
     - '$public'
+    - 'ss4demo'
     - 'silverstripe/login-forms:login-forms'
-    - 'simple'
     - '$default'

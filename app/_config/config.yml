@@ -3,6 +3,7 @@ Name: app
 ---
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
-    - app/javascript/googleanalytics.js
+    - themes/ss4demo/javascript/googleanalytics.js
+
 SilverStripe\Security\Security:
   default_login_dest: admin/pages

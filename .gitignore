@@ -1,22 +1,7 @@
-# ignore cache folder
-/silverstripe-cache/
-
-# ignore .env file
 /.env
-
-# ignore build tools
 /tools/phing-metadata
-
-# ignore composer vendor folder
 /vendor/
-
-# ignore default modules from composer
 /public/assets/
 /public/_resources/
-
-# ignore default theme
-/themes/simple/
-
-# ignore graphql v4 schema folders
-/.graphql-generated/
-/public/_graphql/
+/themes/startup-theme/
+*.sspak
