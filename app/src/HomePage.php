@@ -16,8 +16,8 @@ class HomePage extends Page
         return $fields;
     }
 
-    public function canEdit($member = null)
-    {
-        return false;
-    }
+    // public function canEdit($member = null)
+    // {
+    //     return false;
+    // }
 }

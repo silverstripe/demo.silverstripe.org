@@ -25,6 +25,9 @@ class DemoResetTask extends BuildTask
      */
     public function execute(InputInterface $input, PolyOutput $output): int
     {
+        // Disable reset task
+        return Command::SUCCESS;
+
         $this->output = $output;
         $methods = ['resetDBSql', 'resetAssets', 'runDevBuild'];
         foreach ($methods as $method) {
