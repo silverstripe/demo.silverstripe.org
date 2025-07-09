@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "467f4338e3b0d61d7338c3dae77bd57b",
+    "content-hash": "9a154b0b1649e02d62bec09217daf0b9",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3808,16 +3808,16 @@
         },
         {
             "name": "silverstripe/startup-theme",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/startup-theme.git",
-                "reference": "bdc05b0000efc40aae82d1ff2668418016d9e8ff"
+                "reference": "36bc88d1826c0d5cdfb240b56f0d87aa0e96374e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/startup-theme/zipball/bdc05b0000efc40aae82d1ff2668418016d9e8ff",
-                "reference": "bdc05b0000efc40aae82d1ff2668418016d9e8ff",
+                "url": "https://api.github.com/repos/silverstripe/startup-theme/zipball/36bc88d1826c0d5cdfb240b56f0d87aa0e96374e",
+                "reference": "36bc88d1826c0d5cdfb240b56f0d87aa0e96374e",
                 "shasum": ""
             },
             "require": {
@@ -3850,9 +3850,9 @@
             ],
             "support": {
                 "issues": "https://github.com/silverstripe/startup-theme/issues",
-                "source": "https://github.com/silverstripe/startup-theme/tree/1.0.0"
+                "source": "https://github.com/silverstripe/startup-theme/tree/1.0.1"
             },
-            "time": "2025-05-12T23:16:10+00:00"
+            "time": "2025-07-09T01:02:52+00:00"
         },
         {
             "name": "silverstripe/supported-modules",
