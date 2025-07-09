@@ -5,3 +5,6 @@
 /public/_resources/
 /themes/startup-theme/
 *.sspak
+/.ddev*/
+/silverstripe-cache/
+/.vscode/
