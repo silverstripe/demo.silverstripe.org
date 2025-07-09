@@ -3808,16 +3808,16 @@
         },
         {
             "name": "silverstripe/startup-theme",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/startup-theme.git",
-                "reference": "36bc88d1826c0d5cdfb240b56f0d87aa0e96374e"
+                "reference": "6dd4957e3c4485e80787271409ccb7a5e7d47663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/startup-theme/zipball/36bc88d1826c0d5cdfb240b56f0d87aa0e96374e",
-                "reference": "36bc88d1826c0d5cdfb240b56f0d87aa0e96374e",
+                "url": "https://api.github.com/repos/silverstripe/startup-theme/zipball/6dd4957e3c4485e80787271409ccb7a5e7d47663",
+                "reference": "6dd4957e3c4485e80787271409ccb7a5e7d47663",
                 "shasum": ""
             },
             "require": {
@@ -3850,9 +3850,9 @@
             ],
             "support": {
                 "issues": "https://github.com/silverstripe/startup-theme/issues",
-                "source": "https://github.com/silverstripe/startup-theme/tree/1.0.1"
+                "source": "https://github.com/silverstripe/startup-theme/tree/1.0.2"
             },
-            "time": "2025-07-09T01:02:52+00:00"
+            "time": "2025-07-09T22:39:41+00:00"
         },
         {
             "name": "silverstripe/supported-modules",
