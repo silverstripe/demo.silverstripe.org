@@ -1,3 +1,38 @@
-.right-content {
-    font-size:var(--font-size-base);
+.page-menu.page-menu--homepage {
+  @media (min-width: 992px) {
+    width: 30rem;
+  }
+}
+
+.homepage-cta-right {
+  border: 0.1rem #949494 solid;
+  padding: 3rem;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+.homepage-cta-right__heading {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.homepage-cta-right__content {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+.homepage-cta-right__link.button {
+  --button-background-color: var(--color-bright-blue);
+  --button-border-color: var(--color-bright-blue);
+  font-weight: var(--font-weight-semibold);
+
+  @media (min-width: 992px) {
+    width: 100%;
+  }
+
+  &:hover {
+    --button-background-color: #0049A3;
+    --button-border-color: #0049A3;
+  }
 }
