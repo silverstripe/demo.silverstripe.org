@@ -73,18 +73,27 @@ class DemoResetTask extends BuildTask
         if (!is_dir($sourceDir)) {
             return $this->error("Source assets directory not found: $sourceDir");
         }
-        // Delete old assets dir
+        // Delete contents of the assets dir
         if (is_dir($targetDir)) {
-            $command = ['rm', '-rf', $targetDir];
-            $exitCode = $this->runCommand("Delete assets dir", $command);
-            if ($exitCode !== Command::SUCCESS) {
-                return $exitCode;
+            $files = array_diff(scandir($targetDir), ['.', '..']);
+            foreach ($files as $file) {
+                $path = Path::join($targetDir, $file);
+                if (is_dir($path)) {
+                    $command = ['rm', '-rf', $path];
+                } else {
+                    $command = ['rm', '-f', $path];
+                }
+                $exitCode = $this->runCommand("Delete asset: $file", $command);
+                if ($exitCode !== Command::SUCCESS) {
+                    return $exitCode;
+                }
             }
-        }
-        // Create new asset dir
-        $res = mkdir($targetDir, 0777, true);
-        if (!$res) {
-            return $this->error("Could not create target assets directory: $targetDir");
+        } else {
+            // Create asset dir if it doesn't exist
+            $res = mkdir($targetDir, 0777, true);
+            if (!$res) {
+                return $this->error("Could not create target assets directory: $targetDir");
+            }
         }
         // Copy all files from the source directory to the target directory
         $files = array_diff(scandir($sourceDir), ['.', '..']);
